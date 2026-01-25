@@ -1,0 +1,18 @@
+2026-01-24 15:53:39,927 - utils - INFO - Config file not found, using defaults
+2026-01-24 15:53:52,329 - utils - INFO - Config file not found, using defaults
+2026-01-24 15:53:54,171 - utils - INFO - Starting AAU Helpdesk Chatbot...
+2026-01-24 15:53:54,191 - utils - INFO - Chatbot initialized successfully!
+2026-01-24 15:54:32,574 - utils - INFO - Conversation: {'user_message': 'I want to apply for computer science admission', 'bot_response': "Could you clarify what you're looking for? I want to make sure I give you the right information.", 'intent': 'admission_inquiry', 'confidence': 0.3573553230941137, 'parameters': {'department': ['computer science']}, 'user_id': None, 'session_id': None}
+2026-01-24 15:58:18,268 - utils - INFO - Config file not found, using defaults
+2026-01-24 17:22:42,641 - utils - INFO - Config file not found, using defaults
+2026-01-24 17:22:53,127 - utils - INFO - Config file not found, using defaults
+2026-01-24 17:22:55,941 - utils - INFO - Starting AAU Helpdesk Chatbot...
+2026-01-24 17:22:55,958 - utils - INFO - Chatbot initialized successfully!
+2026-01-24 17:23:29,875 - utils - INFO - Conversation: {'user_message': 'How do I apply for computer science admission', 'bot_response': "I'd like to help you better. Could you provide more specific details about your request?", 'intent': 'admission_inquiry', 'confidence': 0.3382240942528849, 'parameters': {'department': ['computer science']}, 'user_id': None, 'session_id': None}
+2026-01-24 17:25:28,820 - utils - INFO - Config file not found, using defaults
+2026-01-24 17:25:30,990 - utils - INFO - Starting AAU Helpdesk Chatbot...
+2026-01-24 17:25:31,005 - utils - INFO - Chatbot initialized successfully!
+2026-01-24 17:26:33,026 - utils - INFO - Config file not found, using defaults
+2026-01-24 17:26:34,855 - utils - INFO - Starting AAU Helpdesk Chatbot...
+2026-01-24 17:26:34,876 - utils - INFO - Chatbot initialized successfully!
+2026-01-24 17:27:45,239 - utils - INFO - Config file not found, using defaults
