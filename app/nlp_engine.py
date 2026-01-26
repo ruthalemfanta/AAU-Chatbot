@@ -3,16 +3,16 @@ NLP Engine for AAU Helpdesk Chatbot
 Handles intent recognition and parameter extraction with precision metrics
 """
 
-import spacy
 import re
-from typing import Dict, List, Tuple, Optional, Any
+from typing import Dict, List, Tuple, Any
+
+import pandas as pd
+import spacy
 from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics import precision_score, recall_score, f1_score
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.pipeline import Pipeline
-from sklearn.metrics import precision_score, recall_score, f1_score
-import pandas as pd
-import json
-from datetime import datetime
+
 
 class IntentClassifier:
     """Intent classification using scikit-learn pipeline"""

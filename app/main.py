@@ -7,12 +7,11 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Dict, List, Any, Optional
 import uvicorn
-import logging
 from datetime import datetime
 
 from nlp_engine import AAUNLPEngine
 from templates import ResponseTemplates
-from utils import DataLoader, TextProcessor, ValidationUtils, config, logger
+from utils import DataLoader, TextProcessor, config, logger
 
 # Initialize FastAPI app
 app = FastAPI(
