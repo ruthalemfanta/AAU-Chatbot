@@ -1,0 +1,432 @@
+# AAU Helpdesk Chatbot - Intent and Slot Specifications
+# This is the single source of truth for all intents, slots, templates, and follow-up questions
+
+intents:
+  admission_inquiry:
+    description: "Questions about admission requirements, deadlines, and application processes"
+    required_slots: []
+    optional_slots: [department, academic_year, program_type]
+    example_utterances:
+      - "What are the admission requirements?"
+      - "How do I apply for admission?"
+      - "What documents do I need for admission?"
+      - "When is the admission deadline?"
+      - "What are the requirements for Computer Science department?"
+      - "How can I apply to AAU?"
+      - "What is needed for undergraduate admission?"
+    response_template: "For admission to {department} at AAU, you need to submit the following documents: [list]. The application deadline is typically [date]. For more specific information about {program_type} programs, please visit the admissions office."
+    follow_up_questions:
+      - "Which department or program are you interested in?"
+      - "Are you applying for undergraduate or graduate studies?"
+
+  registration_help:
+    description: "Course registration assistance and guidance"
+    required_slots: [semester]
+    optional_slots: [student_id, department, course_code]
+    example_utterances:
+      - "How do I register for courses?"
+      - "I need help with course registration"
+      - "When does registration start for Fall 2024?"
+      - "How to register for classes?"
+      - "Registration process for new students"
+      - "Course registration deadline"
+    response_template: "Course registration for {semester} typically begins on [date]. To register: 1) Log into the student portal, 2) Select your courses, 3) Confirm registration. If you need assistance with course {course_code}, please contact your department advisor."
+    follow_up_questions:
+      - "For which semester are you trying to register?"
+      - "Do you have your student ID ready?"
+
+  fee_payment:
+    description: "Inquiries about tuition fees, payment methods, and deadlines"
+    required_slots: [fee_type]
+    optional_slots: [semester, amount, payment_method, deadline]
+    example_utterances:
+      - "How much is the tuition fee?"
+      - "When is the fee payment deadline?"
+      - "How do I pay my registration fee?"
+      - "What is the tuition for this semester?"
+      - "Payment methods for fees"
+      - "How much do I need to pay?"
+      - "Fee payment deadline for Spring 2025"
+    response_template: "The {fee_type} for {semester} is {amount} ETB. Payment deadline is {deadline}. You can pay through {payment_method}. For more details, visit the finance office or check the student portal."
+    follow_up_questions:
+      - "Which type of fee are you asking about? (tuition, registration, library, lab, etc.)"
+      - "For which semester?"
+
+  transcript_request:
+    description: "Requesting official transcripts and academic records"
+    required_slots: [document_type]
+    optional_slots: [student_id, delivery_method, purpose, date]
+    example_utterances:
+      - "How do I request a transcript?"
+      - "I need an official transcript"
+      - "Where can I get my transcript?"
+      - "Transcript request process"
+      - "How long does it take to get a transcript?"
+      - "Request official academic record"
+    response_template: "To request a {document_type}, you need to: 1) Fill out the transcript request form, 2) Submit your student ID {student_id}, 3) Pay the required fee. Processing time is typically 5-7 business days. Delivery method: {delivery_method}."
+    follow_up_questions:
+      - "What type of document do you need? (transcript, certificate, diploma)"
+      - "Do you have your student ID?"
+
+  grade_inquiry:
+    description: "Checking grades, GPA calculation, and academic performance"
+    required_slots: []
+    optional_slots: [student_id, semester, course_code, gpa]
+    example_utterances:
+      - "How do I check my grades?"
+      - "What is my GPA?"
+      - "How to calculate GPA?"
+      - "View my academic transcript"
+      - "Check grades for Fall 2024"
+      - "My grade for course CS101"
+    response_template: "You can check your grades by logging into the student portal. Your current GPA is {gpa}. For {semester}, you can view all your course grades including {course_code}. If you need an official grade report, please request it from the registrar's office."
+    follow_up_questions:
+      - "Which semester's grades are you looking for?"
+      - "Do you need help calculating your GPA?"
+
+  schedule_inquiry:
+    description: "Class schedules, exam schedules, and academic calendar information"
+    required_slots: []
+    optional_slots: [semester, department, course_code, date, schedule_type]
+    example_utterances:
+      - "When are the classes scheduled?"
+      - "What is the exam schedule?"
+      - "Class timetable for this semester"
+      - "When are exams for Spring 2025?"
+      - "Schedule for Computer Science department"
+      - "Academic calendar dates"
+    response_template: "The {schedule_type} for {semester} is available on the student portal. Classes typically run from [start_date] to [end_date]. Exam period: {date}. For {department} specific schedules, check the department notice board or website."
+    follow_up_questions:
+      - "Are you asking about class schedule or exam schedule?"
+      - "For which semester?"
+
+  library_services:
+    description: "Library hours, book availability, and library services"
+    required_slots: []
+    optional_slots: [book_title, service_type, date, hours]
+    example_utterances:
+      - "What are the library hours?"
+      - "Is this book available in the library?"
+      - "How do I borrow books?"
+      - "Library opening hours"
+      - "Check book availability"
+      - "Library services information"
+    response_template: "The library is open {hours}. For {service_type}, you can visit the library or access online resources. Book availability for '{book_title}' can be checked through the library catalog system. For more information, contact the library at [contact]."
+    follow_up_questions:
+      - "What specific library service do you need?"
+      - "Are you looking for a specific book?"
+
+  dormitory_info:
+    description: "Housing information, dormitory applications, and accommodation"
+    required_slots: []
+    optional_slots: [application_deadline, dormitory_type, availability]
+    example_utterances:
+      - "How do I apply for dormitory?"
+      - "Dormitory application process"
+      - "Housing information for students"
+      - "When can I apply for accommodation?"
+      - "Dormitory availability"
+      - "Student housing options"
+    response_template: "Dormitory applications for {dormitory_type} are accepted during [period]. Application deadline: {application_deadline}. Availability: {availability}. To apply, submit the housing application form to the student affairs office along with required documents."
+    follow_up_questions:
+      - "Are you a new student or returning student?"
+      - "What type of accommodation are you looking for?"
+
+  graduation_requirements:
+    description: "Graduation criteria, ceremony information, and degree completion"
+    required_slots: []
+    optional_slots: [department, gpa, credit_hours, graduation_date]
+    example_utterances:
+      - "What are the graduation requirements?"
+      - "When is the graduation ceremony?"
+      - "How many credits do I need to graduate?"
+      - "Graduation requirements for my department"
+      - "When can I graduate?"
+      - "Graduation ceremony date"
+    response_template: "To graduate from {department}, you need: {credit_hours} credit hours, minimum GPA of {gpa}, and completion of all required courses. The graduation ceremony is scheduled for {graduation_date}. For specific requirements, check with your department advisor."
+    follow_up_questions:
+      - "Which department are you in?"
+      - "Are you asking about undergraduate or graduate requirements?"
+
+  department_contact:
+    description: "Department contact information and office locations"
+    required_slots: [department]
+    optional_slots: [contact_method, office_location, email, phone]
+    example_utterances:
+      - "What is the contact information for Computer Science department?"
+      - "How do I contact my department?"
+      - "Department office location"
+      - "Email address for Engineering department"
+      - "Phone number for my department"
+      - "Where is the department office?"
+    response_template: "The {department} department can be contacted at: Phone: {phone}, Email: {email}. Office location: {office_location}. Office hours: [hours]. For inquiries, you can visit the office or contact via {contact_method}."
+    follow_up_questions:
+      - "Which department are you asking about?"
+      - "What is your preferred contact method?"
+
+  document_request:
+    description: "Requesting various official documents (certificates, letters, etc.)"
+    required_slots: [document_type]
+    optional_slots: [student_id, purpose, delivery_method, date]
+    example_utterances:
+      - "How do I get a certificate?"
+      - "I need an official letter"
+      - "Request enrollment certificate"
+      - "How to get a recommendation letter?"
+      - "Document request process"
+      - "Official letter from university"
+    response_template: "To request a {document_type}, submit a written request with your student ID {student_id} to the registrar's office. Purpose: {purpose}. Processing time: 3-5 business days. Delivery: {delivery_method}. Required fee: [amount] ETB."
+    follow_up_questions:
+      - "What type of document do you need?"
+      - "What is the purpose of this document?"
+
+  semester_info:
+    description: "Academic calendar, semester dates, and important deadlines"
+    required_slots: []
+    optional_slots: [semester, academic_year, start_date, end_date, important_dates]
+    example_utterances:
+      - "When does the semester start?"
+      - "Academic calendar for 2024/2025"
+      - "Semester dates and deadlines"
+      - "When is the next semester?"
+      - "Important dates for this academic year"
+      - "Semester schedule"
+    response_template: "For {academic_year}, {semester} semester runs from {start_date} to {end_date}. Important dates: Registration: [date], Midterm exams: [date], Final exams: {important_dates}. For the complete academic calendar, visit the university website."
+    follow_up_questions:
+      - "Which semester are you asking about?"
+      - "Which academic year?"
+
+  financial_aid:
+    description: "Scholarships, financial assistance, and funding opportunities"
+    required_slots: []
+    optional_slots: [scholarship_type, eligibility, application_deadline, amount]
+    example_utterances:
+      - "How do I apply for scholarship?"
+      - "What scholarships are available?"
+      - "Financial aid information"
+      - "Scholarship application process"
+      - "Available financial assistance"
+      - "How to get financial aid?"
+    response_template: "For {scholarship_type} scholarships, eligibility requirements include: {eligibility}. Application deadline: {application_deadline}. Award amount: {amount} ETB per semester. To apply, submit the scholarship application form along with required documents to the financial aid office."
+    follow_up_questions:
+      - "What type of financial aid are you interested in?"
+      - "Are you a current student or prospective student?"
+
+  campus_facilities:
+    description: "Information about campus facilities, services, and amenities"
+    required_slots: []
+    optional_slots: [facility_type, location, hours, services]
+    example_utterances:
+      - "What facilities are available on campus?"
+      - "Where is the gym located?"
+      - "Campus facilities information"
+      - "What services does the university provide?"
+      - "Cafeteria hours and location"
+      - "Student facilities"
+    response_template: "The campus offers various facilities including {facility_type}. Location: {location}. Operating hours: {hours}. Services available: {services}. For more information about specific facilities, visit the student affairs office or check the campus map."
+    follow_up_questions:
+      - "Which facility are you asking about?"
+      - "What type of service do you need?"
+
+  general_inquiry:
+    description: "General questions that don't fit into specific categories"
+    required_slots: []
+    optional_slots: [topic, contact_info]
+    example_utterances:
+      - "I have a question"
+      - "General information about the university"
+      - "How can I get help?"
+      - "Who should I contact?"
+      - "General inquiry"
+      - "I need information"
+    response_template: "For general inquiries about {topic}, you can contact the main information desk at {contact_info}. Our office hours are [hours]. For specific questions, please provide more details so we can direct you to the appropriate department."
+    follow_up_questions:
+      - "Could you provide more details about what you need?"
+      - "What specific information are you looking for?"
+
+# Slot Definitions
+slots:
+  department:
+    description: "Academic department name"
+    examples: ["Computer Science", "Engineering", "Business", "Medicine", "Law"]
+    extraction_hints: ["department", "faculty", "school", "college"]
+  
+  document_type:
+    description: "Type of official document"
+    examples: ["transcript", "certificate", "diploma", "letter", "enrollment certificate"]
+    extraction_hints: ["transcript", "certificate", "diploma", "letter", "document"]
+  
+  fee_type:
+    description: "Type of fee or payment"
+    examples: ["tuition", "registration", "library", "lab", "examination", "graduation"]
+    extraction_hints: ["fee", "payment", "tuition", "registration", "charge"]
+  
+  semester:
+    description: "Academic semester"
+    examples: ["Fall 2024", "Spring 2025", "Summer 2024", "Semester 1", "Semester 2"]
+    extraction_hints: ["semester", "term", "fall", "spring", "summer"]
+  
+  academic_year:
+    description: "Academic year"
+    examples: ["2024/2025", "2023/2024", "2024-2025"]
+    extraction_hints: ["academic year", "year", "2024/2025"]
+  
+  student_id:
+    description: "Student identification number"
+    examples: ["UGR/1234/14", "12345678"]
+    extraction_hints: ["student id", "id number", "registration number"]
+  
+  reference_number:
+    description: "Transaction or request reference number"
+    examples: ["REF123456", "TXN789012"]
+    extraction_hints: ["reference", "ref", "transaction", "txn"]
+  
+  date:
+    description: "Specific date or deadline"
+    examples: ["2024-12-31", "December 31, 2024", "end of semester"]
+    extraction_hints: ["date", "deadline", "when", "by"]
+  
+  amount:
+    description: "Monetary amount"
+    examples: ["5000 ETB", "5000", "five thousand birr"]
+    extraction_hints: ["amount", "cost", "price", "fee", "ETB", "birr"]
+  
+  contact_method:
+    description: "Preferred method of contact"
+    examples: ["email", "phone", "in-person", "online"]
+    extraction_hints: ["contact", "email", "phone", "visit"]
+  
+  program_type:
+    description: "Type of academic program"
+    examples: ["undergraduate", "graduate", "PhD", "diploma"]
+    extraction_hints: ["program", "degree", "undergraduate", "graduate"]
+  
+  course_code:
+    description: "Course code or identifier"
+    examples: ["CS101", "ENG201", "MATH301"]
+    extraction_hints: ["course", "code", "CS", "ENG", "MATH"]
+  
+  gpa:
+    description: "Grade Point Average"
+    examples: ["3.5", "3.75", "4.0"]
+    extraction_hints: ["GPA", "grade point", "average"]
+  
+  schedule_type:
+    description: "Type of schedule"
+    examples: ["class schedule", "exam schedule", "academic calendar"]
+    extraction_hints: ["schedule", "timetable", "calendar"]
+  
+  book_title:
+    description: "Title of a book"
+    examples: ["Introduction to Algorithms", "Database Systems"]
+    extraction_hints: ["book", "title", "textbook"]
+  
+  service_type:
+    description: "Type of service"
+    examples: ["book borrowing", "research assistance", "study space"]
+    extraction_hints: ["service", "help", "assistance"]
+  
+  dormitory_type:
+    description: "Type of dormitory or accommodation"
+    examples: ["male dormitory", "female dormitory", "off-campus"]
+    extraction_hints: ["dormitory", "dorm", "housing", "accommodation"]
+  
+  application_deadline:
+    description: "Application deadline date"
+    examples: ["2024-08-15", "August 15, 2024"]
+    extraction_hints: ["deadline", "application", "due date"]
+  
+  availability:
+    description: "Availability status"
+    examples: ["available", "limited", "full", "waiting list"]
+    extraction_hints: ["available", "availability", "space"]
+  
+  credit_hours:
+    description: "Number of credit hours"
+    examples: ["120", "180", "240"]
+    extraction_hints: ["credit", "credits", "hours"]
+  
+  graduation_date:
+    description: "Graduation ceremony date"
+    examples: ["2024-06-15", "June 2024"]
+    extraction_hints: ["graduation", "ceremony", "commencement"]
+  
+  office_location:
+    description: "Office or building location"
+    examples: ["Main Building, Room 201", "Science Building, 2nd Floor"]
+    extraction_hints: ["location", "office", "building", "room"]
+  
+  email:
+    description: "Email address"
+    examples: ["cs@aau.edu.et", "info@aau.edu.et"]
+    extraction_hints: ["email", "e-mail", "@"]
+  
+  phone:
+    description: "Phone number"
+    examples: ["+251-11-123-4567", "011-123-4567"]
+    extraction_hints: ["phone", "telephone", "call"]
+  
+  purpose:
+    description: "Purpose or reason for request"
+    examples: ["job application", "further studies", "immigration"]
+    extraction_hints: ["purpose", "reason", "for", "because"]
+  
+  delivery_method:
+    description: "Method of document delivery"
+    examples: ["pickup", "mail", "email", "courier"]
+    extraction_hints: ["delivery", "pickup", "mail", "send"]
+  
+  start_date:
+    description: "Start date"
+    examples: ["2024-09-01", "September 1, 2024"]
+    extraction_hints: ["start", "begin", "opening"]
+  
+  end_date:
+    description: "End date"
+    examples: ["2024-12-31", "December 31, 2024"]
+    extraction_hints: ["end", "finish", "closing"]
+  
+  important_dates:
+    description: "Important dates or deadlines"
+    examples: ["Midterm: Oct 15, Finals: Dec 10"]
+    extraction_hints: ["important", "deadline", "date"]
+  
+  scholarship_type:
+    description: "Type of scholarship"
+    examples: ["merit-based", "need-based", "athletic", "academic"]
+    extraction_hints: ["scholarship", "grant", "aid"]
+  
+  eligibility:
+    description: "Eligibility requirements"
+    examples: ["GPA > 3.5", "Financial need", "Academic excellence"]
+    extraction_hints: ["eligible", "requirement", "qualify"]
+  
+  facility_type:
+    description: "Type of facility"
+    examples: ["gym", "library", "cafeteria", "computer lab"]
+    extraction_hints: ["facility", "building", "center"]
+  
+  location:
+    description: "Physical location"
+    examples: ["Main Campus", "North Campus", "Building A"]
+    extraction_hints: ["location", "where", "campus"]
+  
+  hours:
+    description: "Operating hours"
+    examples: ["8:00 AM - 5:00 PM", "Monday-Friday", "24/7"]
+    extraction_hints: ["hours", "open", "time", "schedule"]
+  
+  services:
+    description: "Available services"
+    examples: ["printing", "internet", "study rooms"]
+    extraction_hints: ["service", "available", "offer"]
+  
+  topic:
+    description: "General topic of inquiry"
+    examples: ["admission", "registration", "fees"]
+    extraction_hints: ["about", "topic", "subject"]
+  
+  contact_info:
+    description: "Contact information"
+    examples: ["info@aau.edu.et", "+251-11-123-4567"]
+    extraction_hints: ["contact", "reach", "get in touch"]
