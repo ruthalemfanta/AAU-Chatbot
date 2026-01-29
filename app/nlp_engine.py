@@ -4,7 +4,7 @@ Handles intent recognition and parameter extraction with precision metrics
 """
 
 import re
-from typing import Dict, List, Tuple, Any
+from typing import Dict, List, Tuple, Optional, Any
 
 import pandas as pd
 import spacy
@@ -103,11 +103,52 @@ class ParameterExtractor:
         
         return entities
     
-    def extract_parameters(self, text: str, intent: str) -> Dict[str, Any]:
+    def extract_parameters(self, text: str, intent: str, context: Optional[Dict] = None) -> Dict[str, Any]:
         """Extract intent-specific parameters"""
         text_lower = text.lower()
         parameters = {}
         
+        # If this looks like a simple answer to a follow-up question, try to infer the parameter type
+        if context and context.get('missing_parameters'):
+            missing_params = context['missing_parameters']
+            
+            # Try to extract all missing parameters from the text
+            extracted_params = {}
+            
+            # Always try to extract all parameter types from the text
+            # Extract semester
+            semester = self._extract_semester_from_answer(text_lower)
+            if semester and 'semester' in missing_params:
+                extracted_params['semester'] = [semester]
+            
+            # Extract year
+            year = self._extract_year_from_answer(text)
+            if year and 'year' in missing_params:
+                extracted_params['year'] = [year]
+            
+            # Extract department
+            dept = self._normalize_department_answer(text_lower)
+            if dept and 'department' in missing_params:
+                extracted_params['department'] = [dept]
+            
+            # Extract document type
+            doc_type = self._extract_document_from_answer(text_lower)
+            if doc_type and 'document_type' in missing_params:
+                extracted_params['document_type'] = [doc_type]
+            
+            # Extract fee amount
+            amount = self._extract_amount_from_answer(text)
+            if amount and 'fee_amount' in missing_params:
+                extracted_params['fee_amount'] = [amount]
+            
+            # If we extracted any parameters, return them
+            if extracted_params:
+                parameters.update(extracted_params)
+                # If this was a follow-up, we might have gotten everything we need
+                if len(extracted_params) >= len(missing_params):
+                    return parameters
+        
+        # Regular parameter extraction (existing logic)
         # Extract departments
         departments = []
         for pattern in self.department_patterns:
@@ -181,6 +222,120 @@ class ParameterExtractor:
                 parameters['student_id'] = [match[1] for match in id_matches]
         
         return parameters
+    
+    def _normalize_department_answer(self, text: str) -> Optional[str]:
+        """Normalize a simple department answer"""
+        text = text.strip()
+        
+        # Common department mappings
+        dept_mappings = {
+            'cs': 'computer science',
+            'cse': 'computer science',
+            'computer science': 'computer science',
+            'comp sci': 'computer science',
+            'engineering': 'engineering',
+            'eng': 'engineering',
+            'medicine': 'medicine',
+            'med': 'medicine',
+            'law': 'law',
+            'business': 'business',
+            'biz': 'business',
+            'economics': 'economics',
+            'econ': 'economics',
+            'psychology': 'psychology',
+            'psych': 'psychology'
+        }
+        
+        return dept_mappings.get(text)
+    
+    def _extract_semester_from_answer(self, text: str) -> Optional[str]:
+        """Extract semester from a simple answer"""
+        text = text.strip()
+        
+        # Look for ordinal patterns first
+        ordinal_match = re.search(r'\b(1st|2nd|3rd|first|second|third)\s*semester\b', text, re.IGNORECASE)
+        if ordinal_match:
+            ordinal = ordinal_match.group(1).lower()
+            if ordinal in ['1st', 'first']:
+                return 'first'
+            elif ordinal in ['2nd', 'second']:
+                return 'second'
+            elif ordinal in ['3rd', 'third']:
+                return 'third'
+        
+        # Look for just the ordinal without "semester"
+        semester_mappings = {
+            'first': 'first',
+            '1st': 'first',
+            '1': 'first',
+            'second': 'second',
+            '2nd': 'second',
+            '2': 'second',
+            'third': 'third',
+            '3rd': 'third',
+            '3': 'third',
+            'fall': 'fall',
+            'spring': 'spring',
+            'summer': 'summer'
+        }
+        
+        # Check if the whole text is just a semester indicator
+        if text in semester_mappings:
+            return semester_mappings[text]
+        
+        # Look for semester words in the text
+        for key, value in semester_mappings.items():
+            if key in text:
+                return value
+        
+        return None
+    
+    def _extract_year_from_answer(self, text: str) -> Optional[str]:
+        """Extract year from a simple answer"""
+        # Look for 4-digit year first
+        year_match = re.search(r'\b(20\d{2})\b', text)
+        if year_match:
+            return year_match.group(1)
+        
+        # Look for ordinal year patterns like "2nd year", "3rd year"
+        ordinal_match = re.search(r'\b(\d+)(?:st|nd|rd|th)?\s*year\b', text, re.IGNORECASE)
+        if ordinal_match:
+            year_num = int(ordinal_match.group(1))
+            # Convert to actual year (assuming current academic year context)
+            current_year = 2024  # You can make this dynamic
+            return str(current_year - 4 + year_num)  # Rough conversion
+        
+        # Look for just numbers that could be years
+        number_match = re.search(r'\b(\d{4})\b', text)
+        if number_match:
+            year = int(number_match.group(1))
+            if 2020 <= year <= 2030:  # Reasonable year range
+                return str(year)
+        
+        return None
+    
+    def _extract_document_from_answer(self, text: str) -> Optional[str]:
+        """Extract document type from a simple answer"""
+        text = text.strip()
+        
+        doc_mappings = {
+            'transcript': 'transcript',
+            'certificate': 'certificate',
+            'diploma': 'diploma',
+            'degree': 'degree certificate',
+            'grade report': 'grade report',
+            'grades': 'grade report'
+        }
+        
+        return doc_mappings.get(text)
+    
+    def _extract_amount_from_answer(self, text: str) -> Optional[str]:
+        """Extract fee amount from a simple answer"""
+        # Look for numbers
+        amount_match = re.search(r'\b(\d+(?:,\d{3})*(?:\.\d{2})?)\b', text)
+        if amount_match:
+            return amount_match.group(1)
+        return None
 
 class AAUNLPEngine:
     """Main NLP engine combining intent classification and parameter extraction"""
@@ -190,20 +345,41 @@ class AAUNLPEngine:
         self.parameter_extractor = ParameterExtractor()
         self.confidence_threshold = 0.3  # Lower threshold for better responsiveness
     
-    def process_query(self, text: str) -> Dict[str, Any]:
+    def process_query(self, text: str, context: Optional[Dict] = None) -> Dict[str, Any]:
         """Process user query and return intent, parameters, and confidence"""
         # Clean and preprocess text
         cleaned_text = self._preprocess_text(text)
         
-        # Classify intent
-        intent, confidence = self.intent_classifier.predict(cleaned_text)
-        
-        # Extract parameters
-        parameters = self.parameter_extractor.extract_parameters(cleaned_text, intent)
+        # Check if this is a follow-up response to a previous question
+        if context and context.get('missing_parameters') and len(cleaned_text.split()) <= 5:
+            # This looks like a follow-up answer, use the previous intent
+            intent = context.get('last_intent', 'general_info')
+            confidence = 0.8  # High confidence for follow-up responses
+            
+            # Extract parameters with context
+            parameters = self.parameter_extractor.extract_parameters(cleaned_text, intent, context)
+            
+            # Merge with previous parameters
+            if context.get('all_parameters'):
+                merged_parameters = context['all_parameters'].copy()
+                merged_parameters.update(parameters)
+                parameters = merged_parameters
+        else:
+            # Regular processing for new queries
+            intent, confidence = self.intent_classifier.predict(cleaned_text)
+            parameters = self.parameter_extractor.extract_parameters(cleaned_text, intent, context)
+            
+            # Merge with context parameters if available
+            if context and context.get('all_parameters'):
+                merged_parameters = context['all_parameters'].copy()
+                for key, value in parameters.items():
+                    if value:  # Only update if new parameter has a value
+                        merged_parameters[key] = value
+                parameters = merged_parameters
         
         # Determine if we have enough information
         required_params = self._get_required_parameters(intent)
-        missing_params = [param for param in required_params if param not in parameters]
+        missing_params = [param for param in required_params if param not in parameters or not parameters[param]]
         
         return {
             'intent': intent,
@@ -211,7 +387,8 @@ class AAUNLPEngine:
             'parameters': parameters,
             'missing_parameters': missing_params,
             'needs_clarification': len(missing_params) > 0 or confidence < self.confidence_threshold,
-            'processed_text': cleaned_text
+            'processed_text': cleaned_text,
+            'context_used': context is not None
         }
     
     def _preprocess_text(self, text: str) -> str:

@@ -14,6 +14,55 @@ interface ChatMessageProps {
   missing_parameters?: string[];
 }
 
+// Simple markdown-like formatting function
+const formatMessage = (text: string): JSX.Element => {
+  // Split by line breaks first
+  const lines = text.split('\n');
+  
+  return (
+    <div className="space-y-2">
+      {lines.map((line, lineIndex) => {
+        if (!line.trim()) return <br key={lineIndex} />;
+        
+        // Process each line for formatting
+        const parts = line.split(/(\*\*.*?\*\*)/g);
+        
+        return (
+          <div key={lineIndex} className="leading-relaxed">
+            {parts.map((part, partIndex) => {
+              // Handle bold text
+              if (part.startsWith('**') && part.endsWith('**')) {
+                const boldText = part.slice(2, -2);
+                return <strong key={partIndex} className="font-semibold">{boldText}</strong>;
+              }
+              
+              // Handle numbered lists
+              if (/^\d+\./.test(part.trim())) {
+                return (
+                  <div key={partIndex} className="ml-4 my-1">
+                    {part}
+                  </div>
+                );
+              }
+              
+              // Handle bullet points
+              if (part.trim().startsWith('- ')) {
+                return (
+                  <div key={partIndex} className="ml-4 my-1">
+                    • {part.trim().slice(2)}
+                  </div>
+                );
+              }
+              
+              return <span key={partIndex}>{part}</span>;
+            })}
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
 export function ChatMessage({ 
   message, 
   isUser, 
@@ -55,9 +104,15 @@ export function ChatMessage({
               : "bg-chat-bot text-chat-bot-foreground rounded-tl-md"
           )}
         >
-          <p className="text-sm leading-relaxed">{message}</p>
+          <div className="text-sm">
+            {isUser ? (
+              <p className="leading-relaxed">{message}</p>
+            ) : (
+              formatMessage(message)
+            )}
+          </div>
           {timestamp && (
-            <span className="text-xs opacity-70 mt-1 block">{timestamp}</span>
+            <span className="text-xs opacity-70 mt-2 block">{timestamp}</span>
           )}
         </div>
         

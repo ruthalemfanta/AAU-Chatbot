@@ -137,8 +137,13 @@ async def chat(request: ChatRequest):
                 timestamp=datetime.now().isoformat()
             )
         
-        # Process with NLP engine
-        result = nlp_engine.process_query(cleaned_message)
+        # Check for conversation context
+        context = None
+        if request.session_id and request.session_id in conversation_context:
+            context = conversation_context[request.session_id]
+        
+        # Process with NLP engine (with context)
+        result = nlp_engine.process_query(cleaned_message, context)
         
         # Generate response
         response_text = response_templates.generate_response(
@@ -148,11 +153,21 @@ async def chat(request: ChatRequest):
             confidence=result['confidence']
         )
         
-        # Store conversation context
+        # Store conversation context (merge with previous parameters)
         if request.session_id:
+            # Merge current parameters with previous ones
+            merged_parameters = {}
+            if context and 'last_parameters' in context:
+                merged_parameters.update(context['last_parameters'])
+            merged_parameters.update(result['parameters'])
+            
             conversation_context[request.session_id] = {
                 'last_intent': result['intent'],
-                'last_parameters': result['parameters'],
+                'last_parameters': merged_parameters,
+                'all_parameters': merged_parameters,  # Keep all collected parameters
+                'conversation_history': conversation_context.get(request.session_id, {}).get('conversation_history', []) + [
+                    {'user': cleaned_message, 'bot': response_text, 'timestamp': datetime.now().isoformat()}
+                ],
                 'timestamp': datetime.now().isoformat()
             }
         

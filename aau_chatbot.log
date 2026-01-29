@@ -62,3 +62,47 @@
 2026-01-29 18:51:41,784 - utils - INFO - Conversation: {'user_message': 'How do I register for software engineering', 'bot_response': 'I can help with registration! Which semester and year are you registering for?\n\n• Which semester are you referring to (1st, 2nd, etc.)?\n• Could you specify the year?', 'intent': 'registration_help', 'confidence': 0.35381578883133463, 'parameters': {'department': ['engineering']}, 'user_id': None, 'session_id': 'session-1769701881485'}
 2026-01-29 18:52:06,948 - utils - INFO - Conversation: {'user_message': '1st semster 2nd year', 'bot_response': 'To provide specific registration guidance, please let me know the semester and academic year.\n\n• Which academic year are you asking about?', 'intent': 'registration_help', 'confidence': 0.26686876554614, 'parameters': {'semester': ['1st sem'], 'date': ['1st semster 2nd year']}, 'user_id': None, 'session_id': 'session-1769701881485'}
 2026-01-29 18:52:19,113 - utils - INFO - Conversation: {'user_message': '1st semster 2nd year', 'bot_response': 'I can help with registration! Which semester and year are you registering for?\n\n• What year is this for?', 'intent': 'registration_help', 'confidence': 0.26686876554614, 'parameters': {'semester': ['1st sem'], 'date': ['1st semster 2nd year']}, 'user_id': None, 'session_id': 'session-1769701881485'}
+2026-01-29 21:16:19,939 - utils - INFO - Starting AAU Helpdesk Chatbot...
+2026-01-29 21:16:19,943 - utils - INFO - Loaded 113 samples from quality Q&A data
+2026-01-29 21:16:19,945 - utils - INFO - Loaded 51 samples from enhanced data
+2026-01-29 21:16:19,947 - utils - INFO - Loaded 75 samples from AAU data
+2026-01-29 21:16:19,947 - utils - INFO - Total training data: 239 samples
+2026-01-29 21:16:19,996 - utils - INFO - Chatbot initialized successfully!
+2026-01-29 21:16:59,085 - utils - INFO - Conversation: {'user_message': 'How do I get admitted to software engineering', 'bot_response': 'Welcome to AAU! For engineering admission information:\n\n**Steps to Apply:**\n1. Obtain application form from AAU or online\n2. Submit required documents\n3. Pay application fee\n4. Take entrance exam (if required)\n\nThe engineering program has specific prerequisites. Contact the admissions office for detailed requirements.', 'intent': 'admission_inquiry', 'confidence': 0.31770925983807957, 'parameters': {'department': ['engineering']}, 'user_id': None, 'session_id': 'session-1769710584641'}
+2026-01-29 21:17:16,842 - utils - INFO - Conversation: {'user_message': 'How do i see my grade', 'bot_response': 'I can help with grade inquiries. Which semester and year are you asking about?\n\n• Which semester are you referring to (1st, 2nd, etc.)?\n• Could you specify the year?', 'intent': 'grade_inquiry', 'confidence': 0.2823273343253263, 'parameters': {'department': ['engineering']}, 'user_id': None, 'session_id': 'session-1769710584641'}
+2026-01-29 21:17:30,442 - utils - INFO - Conversation: {'user_message': '1st semester 2nd year', 'bot_response': 'I can help with registration! Which semester and year are you registering for?\n\n• Which academic year are you asking about?', 'intent': 'registration_help', 'confidence': 0.3629764995574786, 'parameters': {'department': ['engineering'], 'semester': ['1st semester', 'semester 2'], 'date': ['1st semester 2nd year']}, 'user_id': None, 'session_id': 'session-1769710584641'}
+2026-01-29 21:19:51,280 - app.utils - INFO - Loaded 113 samples from quality Q&A data
+2026-01-29 21:19:51,300 - app.utils - INFO - Loaded 51 samples from enhanced data
+2026-01-29 21:19:51,325 - app.utils - INFO - Loaded 75 samples from AAU data
+2026-01-29 21:19:51,327 - app.utils - INFO - Total training data: 239 samples
+2026-01-29 21:20:42,254 - utils - INFO - Starting AAU Helpdesk Chatbot...
+2026-01-29 21:20:42,256 - utils - INFO - Loaded 113 samples from quality Q&A data
+2026-01-29 21:20:42,258 - utils - INFO - Loaded 51 samples from enhanced data
+2026-01-29 21:20:42,259 - utils - INFO - Loaded 75 samples from AAU data
+2026-01-29 21:20:42,259 - utils - INFO - Total training data: 239 samples
+2026-01-29 21:20:42,270 - utils - INFO - Chatbot initialized successfully!
+2026-01-29 21:20:55,212 - utils - INFO - Starting AAU Helpdesk Chatbot...
+2026-01-29 21:20:55,214 - utils - INFO - Loaded 113 samples from quality Q&A data
+2026-01-29 21:20:55,215 - utils - INFO - Loaded 51 samples from enhanced data
+2026-01-29 21:20:55,216 - utils - INFO - Loaded 75 samples from AAU data
+2026-01-29 21:20:55,216 - utils - INFO - Total training data: 239 samples
+2026-01-29 21:20:55,230 - utils - INFO - Chatbot initialized successfully!
+2026-01-29 21:21:46,768 - app.utils - INFO - Loaded 113 samples from quality Q&A data
+2026-01-29 21:21:46,769 - app.utils - INFO - Loaded 51 samples from enhanced data
+2026-01-29 21:21:46,770 - app.utils - INFO - Loaded 75 samples from AAU data
+2026-01-29 21:21:46,771 - app.utils - INFO - Total training data: 239 samples
+2026-01-29 21:22:17,058 - utils - INFO - Starting AAU Helpdesk Chatbot...
+2026-01-29 21:22:17,061 - utils - INFO - Loaded 113 samples from quality Q&A data
+2026-01-29 21:22:17,063 - utils - INFO - Loaded 51 samples from enhanced data
+2026-01-29 21:22:17,064 - utils - INFO - Loaded 75 samples from AAU data
+2026-01-29 21:22:17,065 - utils - INFO - Total training data: 239 samples
+2026-01-29 21:22:17,080 - utils - INFO - Chatbot initialized successfully!
+2026-01-29 21:23:29,968 - utils - INFO - Starting AAU Helpdesk Chatbot...
+2026-01-29 21:23:29,970 - utils - INFO - Loaded 113 samples from quality Q&A data
+2026-01-29 21:23:29,972 - utils - INFO - Loaded 51 samples from enhanced data
+2026-01-29 21:23:29,973 - utils - INFO - Loaded 75 samples from AAU data
+2026-01-29 21:23:29,974 - utils - INFO - Total training data: 239 samples
+2026-01-29 21:23:29,982 - utils - INFO - Chatbot initialized successfully!
+2026-01-29 21:24:56,926 - utils - INFO - Conversation: {'user_message': 'How do i check my grades', 'bot_response': 'I can help with grade inquiries. Which semester and year are you asking about?\n\n• Which semester are you referring to (1st, 2nd, etc.)?\n• What year is this for?', 'intent': 'grade_inquiry', 'confidence': 0.6351170517383151, 'parameters': {}, 'user_id': None, 'session_id': 'session-1769711090551'}
+2026-01-29 21:25:28,912 - utils - INFO - Conversation: {'user_message': '1st semester 2nd year', 'bot_response': 'To provide specific registration guidance, please let me know the semester and academic year.\n\n• Which academic year are you asking about?', 'intent': 'registration_help', 'confidence': 0.3629764995574786, 'parameters': {'semester': ['1st semester', 'semester 2'], 'date': ['1st semester 2nd year']}, 'user_id': None, 'session_id': 'session-1769711090551'}
+2026-01-29 21:25:40,832 - utils - INFO - Conversation: {'user_message': '1st semester 2nd year 2026', 'bot_response': "For 1st semester, semester 2 2026 registration:\n\n**Registration Steps:**\n1. Meet with your academic advisor\n2. Select courses based on your curriculum\n3. Complete online registration\n4. Pay semester fees\n5. Confirm registration\n\n**Important:** Registration typically opens 2 weeks before semester start.\n**Need help?** Contact the registrar's office.", 'intent': 'registration_help', 'confidence': 0.3629764995574786, 'parameters': {'semester': ['1st semester', 'semester 2'], 'date': ['1st semester 2nd year 2026'], 'year': ['2026']}, 'user_id': None, 'session_id': 'session-1769711090551'}
