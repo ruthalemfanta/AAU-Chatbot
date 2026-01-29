@@ -8,19 +8,21 @@ import { Loader2 } from "lucide-react";
 
 export default function Chat() {
   const { messages, sendMessage, isLoading } = useChat();
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   useEffect(() => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
-    }
+    scrollToBottom();
   }, [messages, isLoading]);
 
   return (
     <div className="flex flex-col h-screen bg-background">
       <ChatHeader />
       
-      <ScrollArea ref={scrollRef} className="flex-1 p-4">
+      <ScrollArea className="flex-1 p-4">
         <div className="max-w-3xl mx-auto space-y-4">
           {messages.map((msg) => (
             <ChatMessage
@@ -32,6 +34,7 @@ export default function Chat() {
               confidence={msg.confidence}
               parameters={msg.parameters}
               missing_parameters={msg.missing_parameters}
+              related_news={msg.related_news}
             />
           ))}
           {isLoading && (
@@ -48,6 +51,7 @@ export default function Chat() {
               </div>
             </div>
           )}
+          <div ref={messagesEndRef} />
         </div>
       </ScrollArea>
 
