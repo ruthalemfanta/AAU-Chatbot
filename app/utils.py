@@ -43,13 +43,46 @@ class DataLoader:
     @staticmethod
     def get_sample_training_data() -> List[Dict[str, Any]]:
         """Generate sample training data for AAU helpdesk"""
-        # Try to load enhanced training data first
+        # Try to load all available training data sources
+        all_data = []
+        
+        # Load quality Q&A training data FIRST (highest priority)
+        try:
+            with open('data/raw/quality_training_data.json', 'r', encoding='utf-8') as f:
+                quality_data = json.load(f)
+                all_data.extend(quality_data)
+                logger.info(f"Loaded {len(quality_data)} samples from quality Q&A data")
+        except FileNotFoundError:
+            logger.info("No quality training data found")
+        
+        # Load enhanced training data
         try:
             with open('data/raw/enhanced_training_data.json', 'r', encoding='utf-8') as f:
                 enhanced_data = json.load(f)
-            return enhanced_data
+                # Filter out low-quality entries (hashtags, very short text, etc.)
+                filtered_enhanced = [
+                    item for item in enhanced_data 
+                    if len(item.get('text', '')) > 20 
+                    and not item.get('text', '').startswith('#')
+                    and '?' in item.get('text', '') or any(word in item.get('text', '').lower() for word in ['how', 'what', 'where', 'when', 'need', 'want', 'help'])
+                ]
+                all_data.extend(filtered_enhanced)
+                logger.info(f"Loaded {len(filtered_enhanced)} samples from enhanced data")
         except FileNotFoundError:
-            pass
+            logger.info("No enhanced training data found")
+        
+        # Load other training data sources
+        try:
+            with open('data/raw/aau_training_data.json', 'r', encoding='utf-8') as f:
+                aau_data = json.load(f)
+                all_data.extend(aau_data)
+                logger.info(f"Loaded {len(aau_data)} samples from AAU data")
+        except FileNotFoundError:
+            logger.info("No AAU training data found")
+        
+        if all_data:
+            logger.info(f"Total training data: {len(all_data)} samples")
+            return all_data
         
         # Fallback to basic sample data
         return [

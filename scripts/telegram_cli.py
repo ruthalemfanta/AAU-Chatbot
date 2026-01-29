@@ -11,10 +11,17 @@ from datetime import datetime, timedelta
 import re
 from pathlib import Path
 import argparse
+import os
 
-# Note: This is a simplified version. For full Telegram integration, you would need:
-# from telegram import Bot
-# from telegram.ext import Application, MessageHandler, filters
+# Telethon for scraping Telegram channels
+try:
+    from telethon import TelegramClient
+    from telethon.tl.types import Message, Channel, Chat
+    from telethon.errors import FloodWaitError, ChannelPrivateError
+    TELETHON_AVAILABLE = True
+except ImportError:
+    TELETHON_AVAILABLE = False
+    print("⚠️ Telethon not installed. Run: pip install telethon")
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -22,16 +29,26 @@ logger = logging.getLogger(__name__)
 class TelegramDataCollector:
     """Collect data from Telegram channels for training"""
     
-    def __init__(self, bot_token: Optional[str] = None):
-        self.bot_token = bot_token
+    def __init__(self, api_id: Optional[str] = None, api_hash: Optional[str] = None):
+        # Get credentials from environment variables or parameters
+        self.api_id = api_id or os.getenv('TELEGRAM_API_ID')
+        self.api_hash = api_hash or os.getenv('TELEGRAM_API_HASH')
+        self.client = None
         self.collected_messages = []
         
-        # AAU-related channel patterns (examples)
+        # AAU-related channel patterns (add your actual channels)
         self.aau_channels = [
             '@aau_official',
-            '@aau_students',
-            '@aau_announcements',
-            # Add actual AAU Telegram channels
+            # '@aau_students',
+            # '@aau_announcements',
+            '@aau2025_UGStudents',
+            '@ctbe_student_council',
+            '@Hsquareedu',
+            '@CNCS_studentCouncil',
+            '@PECCAAiT',
+            '@AAiTSiTEnoticeboard'
+            # Add actual AAU Telegram channels here
+            # Example: '@AddisAbabaUniversity', '@AAU_Students_Forum'
         ]
         
         # Keywords for filtering relevant messages
@@ -40,6 +57,143 @@ class TelegramDataCollector:
             'certificate', 'grade', 'course', 'semester', 'exam',
             'department', 'faculty', 'student', 'university', 'aau'
         ]
+    
+    async def connect(self) -> bool:
+        """Connect to Telegram using Telethon"""
+        if not TELETHON_AVAILABLE:
+            logger.error("Telethon is not installed. Run: pip install telethon")
+            return False
+        
+        if not self.api_id or not self.api_hash:
+            logger.error("Telegram API credentials not set. Set TELEGRAM_API_ID and TELEGRAM_API_HASH environment variables.")
+            return False
+        
+        try:
+            # Create session file in scripts directory
+            session_path = Path(__file__).parent / 'telegram_session'
+            self.client = TelegramClient(str(session_path), int(self.api_id), self.api_hash)
+            await self.client.start()
+            logger.info("✅ Connected to Telegram successfully!")
+            return True
+        except Exception as e:
+            logger.error(f"Failed to connect to Telegram: {e}")
+            return False
+    
+    async def disconnect(self):
+        """Disconnect from Telegram"""
+        if self.client:
+            await self.client.disconnect()
+            logger.info("Disconnected from Telegram")
+    
+    async def scrape_channel(self, channel: str, limit: int = 100, 
+                             days_back: int = 30) -> List[Dict[str, Any]]:
+        """
+        Scrape messages from a Telegram channel
+        
+        Args:
+            channel: Channel username (e.g., '@channel_name') or channel ID
+            limit: Maximum number of messages to fetch
+            days_back: Only fetch messages from the last N days
+        
+        Returns:
+            List of message dictionaries
+        """
+        messages = []
+        cutoff_date = datetime.now() - timedelta(days=days_back)
+        
+        try:
+            logger.info(f"📥 Scraping channel: {channel}")
+            
+            async for message in self.client.iter_messages(channel, limit=limit):
+                # Skip if message is too old
+                if message.date.replace(tzinfo=None) < cutoff_date:
+                    break
+                
+                # Skip non-text messages
+                if not message.text:
+                    continue
+                
+                msg_data = {
+                    "message_id": message.id,
+                    "text": message.text,
+                    "channel": channel,
+                    "date": message.date.isoformat(),
+                    "views": getattr(message, 'views', 0),
+                    "forwards": getattr(message, 'forwards', 0),
+                    "reply_to": message.reply_to_msg_id if message.reply_to else None
+                }
+                messages.append(msg_data)
+            
+            logger.info(f"✅ Scraped {len(messages)} messages from {channel}")
+            
+        except ChannelPrivateError:
+            logger.warning(f"⚠️ Cannot access private channel: {channel}")
+        except FloodWaitError as e:
+            logger.warning(f"⚠️ Rate limited. Need to wait {e.seconds} seconds")
+            await asyncio.sleep(e.seconds)
+        except Exception as e:
+            logger.error(f"❌ Error scraping {channel}: {e}")
+        
+        return messages
+    
+    async def scrape_all_channels(self, limit: int = 100, 
+                                   days_back: int = 30) -> List[Dict[str, Any]]:
+        """Scrape messages from all configured AAU channels"""
+        all_messages = []
+        
+        for channel in self.aau_channels:
+            try:
+                messages = await self.scrape_channel(channel, limit, days_back)
+                all_messages.extend(messages)
+                # Small delay to avoid rate limiting
+                await asyncio.sleep(1)
+            except Exception as e:
+                logger.error(f"Error with channel {channel}: {e}")
+                continue
+        
+        return all_messages
+    
+    async def search_telegram(self, query: str, limit: int = 50) -> List[Dict[str, Any]]:
+        """
+        Search for messages across Telegram (global search)
+        
+        Args:
+            query: Search query (e.g., "AAU admission")
+            limit: Maximum results
+        
+        Returns:
+            List of matching messages
+        """
+        messages = []
+        
+        try:
+            logger.info(f"🔍 Searching Telegram for: {query}")
+            
+            async for message in self.client.iter_messages(None, search=query, limit=limit):
+                if not message.text:
+                    continue
+                
+                # Get channel/chat name
+                chat_name = "unknown"
+                if hasattr(message.chat, 'username') and message.chat.username:
+                    chat_name = f"@{message.chat.username}"
+                elif hasattr(message.chat, 'title'):
+                    chat_name = message.chat.title
+                
+                msg_data = {
+                    "message_id": message.id,
+                    "text": message.text,
+                    "channel": chat_name,
+                    "date": message.date.isoformat(),
+                }
+                messages.append(msg_data)
+            
+            logger.info(f"✅ Found {len(messages)} messages for query: {query}")
+            
+        except Exception as e:
+            logger.error(f"❌ Search error: {e}")
+        
+        return messages
     
     def simulate_telegram_data(self) -> List[Dict[str, Any]]:
         """Simulate Telegram channel data for development/testing"""
@@ -267,13 +421,27 @@ class TelegramDataCollector:
         
         logger.info(f"Saved {len(data)} training samples to {output_path}")
     
-    def collect_and_process_data(self):
-        """Main method to collect and process Telegram data"""
+    def collect_and_process_data(self, use_real_api: bool = True, 
+                                 limit: int = 100, days_back: int = 30):
+        """
+        Main method to collect and process Telegram data
+        
+        Args:
+            use_real_api: If True, connect to real Telegram. If False, use simulated data.
+            limit: Max messages per channel
+            days_back: Only fetch messages from last N days
+        """
         logger.info("Starting Telegram data collection...")
         
-        # For now, use simulated data
-        # In production, you would connect to actual Telegram channels
-        raw_messages = self.simulate_telegram_data()
+        if use_real_api and TELETHON_AVAILABLE:
+            # Use real Telegram API
+            raw_messages = asyncio.get_event_loop().run_until_complete(
+                self._collect_real_data(limit, days_back)
+            )
+        else:
+            # Fallback to simulated data
+            logger.info("Using simulated data (set use_real_api=True for real scraping)")
+            raw_messages = self.simulate_telegram_data()
         
         # Filter relevant messages
         relevant_messages = self.filter_relevant_messages(raw_messages)
@@ -286,6 +454,19 @@ class TelegramDataCollector:
         
         logger.info(f"Processed {len(training_data)} messages from Telegram")
         return training_data
+    
+    async def _collect_real_data(self, limit: int, days_back: int) -> List[Dict[str, Any]]:
+        """Internal method to collect real Telegram data"""
+        connected = await self.connect()
+        if not connected:
+            logger.warning("Could not connect to Telegram, falling back to simulated data")
+            return self.simulate_telegram_data()
+        
+        try:
+            messages = await self.scrape_all_channels(limit, days_back)
+            return messages
+        finally:
+            await self.disconnect()
 
 class TelegramCLI:
     """Command-line interface for Telegram operations"""
@@ -293,13 +474,31 @@ class TelegramCLI:
     def __init__(self):
         self.collector = TelegramDataCollector()
     
-    def run_data_collection(self):
+    def run_data_collection(self, use_real_api: bool = True, limit: int = 100, days_back: int = 30):
         """Run data collection from Telegram"""
         print("🤖 AAU Helpdesk - Telegram Data Collector")
         print("=" * 50)
         
+        if use_real_api and not TELETHON_AVAILABLE:
+            print("⚠️ Telethon not installed. Install with: pip install telethon")
+            print("   Falling back to simulated data...")
+            use_real_api = False
+        
+        if use_real_api and not (self.collector.api_id and self.collector.api_hash):
+            print("⚠️ Telegram API credentials not set.")
+            print("   Set environment variables:")
+            print("   export TELEGRAM_API_ID='your_api_id'")
+            print("   export TELEGRAM_API_HASH='your_api_hash'")
+            print("   Get credentials at: https://my.telegram.org/apps")
+            print("\n   Falling back to simulated data...")
+            use_real_api = False
+        
         try:
-            data = self.collector.collect_and_process_data()
+            data = self.collector.collect_and_process_data(
+                use_real_api=use_real_api,
+                limit=limit,
+                days_back=days_back
+            )
             
             print(f"\n✅ Successfully collected {len(data)} training samples")
             print("\n📊 Intent Distribution:")
@@ -318,6 +517,72 @@ class TelegramCLI:
         except Exception as e:
             print(f"❌ Error during data collection: {e}")
             logger.error(f"Data collection failed: {e}")
+    
+    def run_channel_scrape(self, channel: str, limit: int = 100, days_back: int = 30):
+        """Scrape a specific channel"""
+        print(f"🤖 Scraping channel: {channel}")
+        print("=" * 50)
+        
+        if not TELETHON_AVAILABLE:
+            print("❌ Telethon not installed. Run: pip install telethon")
+            return
+        
+        async def scrape():
+            connected = await self.collector.connect()
+            if not connected:
+                print("❌ Could not connect to Telegram")
+                return []
+            
+            try:
+                messages = await self.collector.scrape_channel(channel, limit, days_back)
+                return messages
+            finally:
+                await self.collector.disconnect()
+        
+        messages = asyncio.get_event_loop().run_until_complete(scrape())
+        
+        if messages:
+            # Process and save
+            training_data = self.collector.process_messages_for_training(messages)
+            filename = f"telegram_{channel.replace('@', '')}_data.json"
+            self.collector.save_training_data(training_data, filename)
+            print(f"\n✅ Scraped {len(messages)} messages")
+            print(f"💾 Saved to: data/raw/{filename}")
+        else:
+            print("❌ No messages collected")
+    
+    def run_search(self, query: str, limit: int = 50):
+        """Search Telegram for messages"""
+        print(f"🔍 Searching Telegram for: {query}")
+        print("=" * 50)
+        
+        if not TELETHON_AVAILABLE:
+            print("❌ Telethon not installed. Run: pip install telethon")
+            return
+        
+        async def search():
+            connected = await self.collector.connect()
+            if not connected:
+                print("❌ Could not connect to Telegram")
+                return []
+            
+            try:
+                messages = await self.collector.search_telegram(query, limit)
+                return messages
+            finally:
+                await self.collector.disconnect()
+        
+        messages = asyncio.get_event_loop().run_until_complete(search())
+        
+        if messages:
+            training_data = self.collector.process_messages_for_training(messages)
+            safe_query = re.sub(r'[^\w\s]', '', query).replace(' ', '_')[:20]
+            filename = f"telegram_search_{safe_query}.json"
+            self.collector.save_training_data(training_data, filename)
+            print(f"\n✅ Found {len(messages)} messages")
+            print(f"💾 Saved to: data/raw/{filename}")
+        else:
+            print("❌ No messages found")
     
     def show_sample_data(self):
         """Show sample collected data"""
@@ -347,24 +612,41 @@ class TelegramCLI:
         print("🤖 AAU Helpdesk - Telegram CLI")
         print("=" * 40)
         print("Commands:")
-        print("  1. collect - Collect data from Telegram")
-        print("  2. sample - Show sample collected data")
-        print("  3. quit - Exit")
+        print("  1. collect     - Collect data from all configured channels")
+        print("  2. scrape      - Scrape a specific channel")
+        print("  3. search      - Search Telegram for messages")
+        print("  4. sample      - Show sample collected data")
+        print("  5. simulate    - Collect simulated data (no API needed)")
+        print("  6. quit        - Exit")
         print()
         
         while True:
             try:
                 command = input("Enter command: ").strip().lower()
                 
-                if command in ['quit', 'exit', 'q']:
+                if command in ['quit', 'exit', 'q', '6']:
                     print("👋 Goodbye!")
                     break
                 elif command in ['collect', '1']:
-                    self.run_data_collection()
-                elif command in ['sample', '2']:
+                    self.run_data_collection(use_real_api=True)
+                elif command in ['scrape', '2']:
+                    channel = input("Enter channel username (e.g., @channel_name): ").strip()
+                    if channel:
+                        self.run_channel_scrape(channel)
+                    else:
+                        print("❌ No channel provided")
+                elif command in ['search', '3']:
+                    query = input("Enter search query: ").strip()
+                    if query:
+                        self.run_search(query)
+                    else:
+                        print("❌ No query provided")
+                elif command in ['sample', '4']:
                     self.show_sample_data()
+                elif command in ['simulate', '5']:
+                    self.run_data_collection(use_real_api=False)
                 else:
-                    print("❌ Unknown command. Try 'collect', 'sample', or 'quit'")
+                    print("❌ Unknown command. Try 'collect', 'scrape', 'search', 'sample', 'simulate', or 'quit'")
                 
                 print()
                 
@@ -377,16 +659,35 @@ class TelegramCLI:
 def main():
     """Main CLI entry point"""
     parser = argparse.ArgumentParser(description='AAU Helpdesk Telegram CLI')
-    parser.add_argument('--collect', action='store_true', help='Collect data from Telegram')
+    parser.add_argument('--collect', action='store_true', help='Collect data from all configured Telegram channels')
+    parser.add_argument('--simulate', action='store_true', help='Use simulated data (no API needed)')
+    parser.add_argument('--scrape', type=str, metavar='CHANNEL', help='Scrape a specific channel (e.g., @channel_name)')
+    parser.add_argument('--search', type=str, metavar='QUERY', help='Search Telegram for messages')
     parser.add_argument('--sample', action='store_true', help='Show sample data')
     parser.add_argument('--interactive', action='store_true', help='Run in interactive mode')
+    parser.add_argument('--limit', type=int, default=100, help='Max messages to fetch per channel (default: 100)')
+    parser.add_argument('--days', type=int, default=30, help='Fetch messages from last N days (default: 30)')
+    parser.add_argument('--api-id', type=str, help='Telegram API ID (or set TELEGRAM_API_ID env var)')
+    parser.add_argument('--api-hash', type=str, help='Telegram API Hash (or set TELEGRAM_API_HASH env var)')
     
     args = parser.parse_args()
+    
+    # Set API credentials if provided via command line
+    if args.api_id:
+        os.environ['TELEGRAM_API_ID'] = args.api_id
+    if args.api_hash:
+        os.environ['TELEGRAM_API_HASH'] = args.api_hash
     
     cli = TelegramCLI()
     
     if args.collect:
-        cli.run_data_collection()
+        cli.run_data_collection(use_real_api=True, limit=args.limit, days_back=args.days)
+    elif args.simulate:
+        cli.run_data_collection(use_real_api=False)
+    elif args.scrape:
+        cli.run_channel_scrape(args.scrape, limit=args.limit, days_back=args.days)
+    elif args.search:
+        cli.run_search(args.search, limit=args.limit)
     elif args.sample:
         cli.show_sample_data()
     elif args.interactive:

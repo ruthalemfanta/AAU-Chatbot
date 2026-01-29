@@ -30,3 +30,15 @@
 2026-01-26 14:44:07,810 - utils - INFO - Chatbot initialized successfully!
 2026-01-26 18:28:37,298 - utils - INFO - Starting AAU Helpdesk Chatbot...
 2026-01-26 18:28:37,300 - utils - INFO - Chatbot initialized successfully!
+2026-01-28 21:59:29,619 - utils - INFO - Loaded 57 samples from Telegram data
+2026-01-28 21:59:29,620 - utils - INFO - Loaded 70 samples from enhanced data
+2026-01-28 21:59:29,620 - utils - INFO - Loaded 75 samples from AAU data
+2026-01-28 21:59:29,620 - utils - INFO - Total training data: 202 samples
+2026-01-28 22:04:43,716 - utils - INFO - Loaded 113 samples from quality Q&A data
+2026-01-28 22:04:43,717 - utils - INFO - Loaded 51 samples from enhanced data
+2026-01-28 22:04:43,717 - utils - INFO - Loaded 75 samples from AAU data
+2026-01-28 22:04:43,717 - utils - INFO - Total training data: 239 samples
+2026-01-28 22:07:19,058 - utils - INFO - Loaded 113 samples from quality Q&A data
+2026-01-28 22:07:19,059 - utils - INFO - Loaded 51 samples from enhanced data
+2026-01-28 22:07:19,059 - utils - INFO - Loaded 75 samples from AAU data
+2026-01-28 22:07:19,059 - utils - INFO - Total training data: 239 samples
