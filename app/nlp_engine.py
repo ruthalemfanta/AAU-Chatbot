@@ -6,7 +6,6 @@ Handles intent recognition and parameter extraction with precision metrics
 import re
 from typing import Dict, List, Tuple, Optional, Any
 
-import pandas as pd
 import spacy
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics import precision_score, recall_score, f1_score
