@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
-interface ChatMessageProps {
+export interface ChatMessageProps {
   message: string;
   isUser: boolean;
   timestamp?: string;
