@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { Bot, User, Info, Newspaper } from "lucide-react";
+import { Bot, User, Info, Newspaper, ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -111,6 +111,7 @@ export function ChatMessage({
   related_news
 }: ChatMessageProps) {
   const [showDebug, setShowDebug] = useState(false);
+  const [isNewsExpanded, setIsNewsExpanded] = useState(false);
 
   const hasDebugInfo = !isUser && (intent || confidence !== undefined || parameters || missing_parameters);
 
@@ -152,23 +153,33 @@ export function ChatMessage({
 
           {related_news && related_news.length > 0 && (
             <div className="mt-4 pt-3 border-t border-primary/20">
-              <div className="flex items-center gap-2 mb-3 text-sm font-bold text-primary">
-                <Newspaper className="w-4 h-4" />
-                <span>Latest Announcements</span>
-              </div>
-              <div className="space-y-3">
-                {related_news.map((news, idx) => (
-                  <div key={idx} className="bg-background/80 rounded-md p-3 text-sm border border-border/50 shadow-sm hover:shadow-md transition-shadow">
-                    <div className="flex justify-between items-center mb-2 pb-2 border-b border-border/30">
-                      <span className="font-semibold text-xs text-primary">{news.channel}</span>
-                      <span className="text-[10px] text-muted-foreground bg-muted px-1.5 py-0.5 rounded">{news.date.split('T')[0]}</span>
+              <button 
+                onClick={() => setIsNewsExpanded(!isNewsExpanded)}
+                className="flex items-center justify-between w-full gap-2 mb-2 text-sm font-bold text-primary hover:text-primary/80 transition-colors focus:outline-none"
+              >
+                <div className="flex items-center gap-2">
+                  <Newspaper className="w-4 h-4" />
+                  <span>Latest Announcements</span>
+                  <Badge variant="secondary" className="ml-1 h-5 px-1.5 text-[10px] min-w-[20px]">{related_news.length}</Badge>
+                </div>
+                {isNewsExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+              </button>
+              
+              {isNewsExpanded && (
+                <div className="space-y-3 mt-3 animate-in fade-in slide-in-from-top-1 duration-200">
+                  {related_news.map((news, idx) => (
+                    <div key={idx} className="bg-background/80 rounded-md p-3 text-sm border border-border/50 shadow-sm hover:shadow-md transition-shadow">
+                      <div className="flex justify-between items-center mb-2 pb-2 border-b border-border/30">
+                        <span className="font-semibold text-xs text-primary">{news.channel}</span>
+                        <span className="text-[10px] text-muted-foreground bg-muted px-1.5 py-0.5 rounded">{news.date.split('T')[0]}</span>
+                      </div>
+                      <div className="text-foreground/90 leading-snug">
+                        {formatMessage(news.text)}
+                      </div>
                     </div>
-                    <div className="text-foreground/90 leading-snug">
-                      {formatMessage(news.text)}
-                    </div>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
+              )}
             </div>
           )}
 
