@@ -20,16 +20,16 @@ class ResponseTemplates:
             'admission_inquiry': {
                 'complete': [
                     "For {department} admissions at AAU, here's what you need to know:\n\n"
-                    "📋 **Requirements:**\n"
+                    "**Requirements:**\n"
                     "- Complete secondary education certificate\n"
                     "- Entrance exam results\n"
                     "- Application form\n\n"
-                    "📅 **Application Period:** Usually opens in June-July\n"
-                    "💰 **Application Fee:** 200 ETB\n\n"
+                    "**Application Period:** Usually opens in June-July\n"
+                    "**Application Fee:** 200 ETB\n\n"
                     "For specific requirements for {department}, please visit the admissions office or check the AAU website.",
                     
                     "Welcome to AAU! For {department} admission information:\n\n"
-                    "✅ **Steps to Apply:**\n"
+                    "**Steps to Apply:**\n"
                     "1. Obtain application form from AAU or online\n"
                     "2. Submit required documents\n"
                     "3. Pay application fee\n"
@@ -45,22 +45,22 @@ class ResponseTemplates:
             'registration_help': {
                 'complete': [
                     "For {semester} {year} registration:\n\n"
-                    "📝 **Registration Steps:**\n"
+                    "**Registration Steps:**\n"
                     "1. Meet with your academic advisor\n"
                     "2. Select courses based on your curriculum\n"
                     "3. Complete online registration\n"
                     "4. Pay semester fees\n"
                     "5. Confirm registration\n\n"
-                    "⏰ **Important:** Registration typically opens 2 weeks before semester start.\n"
-                    "📞 **Need help?** Contact the registrar's office.",
+                    "**Important:** Registration typically opens 2 weeks before semester start.\n"
+                    "**Need help?** Contact the registrar's office.",
                     
                     "Registration for {semester} {year}:\n\n"
-                    "🎯 **Key Points:**\n"
+                    "**Key Points:**\n"
                     "- Check your academic standing\n"
                     "- Ensure all prerequisites are met\n"
                     "- Register for required courses first\n"
                     "- Add electives if space permits\n\n"
-                    "💡 **Tip:** Register early to secure your preferred schedule!"
+                    "**Tip:** Register early to secure your preferred schedule!"
                 ],
                 'partial': [
                     "I can help with registration! Which semester and year are you registering for?",
@@ -71,22 +71,22 @@ class ResponseTemplates:
             'fee_payment': {
                 'complete': [
                     "For fee payment of {fee_amount}:\n\n"
-                    "💳 **Payment Methods:**\n"
+                    "**Payment Methods:**\n"
                     "- Bank transfer to AAU account\n"
                     "- Cash payment at university cashier\n"
                     "- Online payment portal (if available)\n\n"
-                    "🏦 **Bank Details:**\n"
+                    "**Bank Details:**\n"
                     "- Commercial Bank of Ethiopia\n"
                     "- Account: [Contact finance office for details]\n\n"
-                    "📋 **Required:** Student ID and payment receipt\n"
-                    "⚠️ **Deadline:** Check academic calendar for payment deadlines",
+                    "**Required:** Student ID and payment receipt\n"
+                    "**Deadline:** Check academic calendar for payment deadlines",
                     
                     "Payment information for {fee_amount}:\n\n"
-                    "📍 **Payment Locations:**\n"
+                    "**Payment Locations:**\n"
                     "- AAU Finance Office (Main Campus)\n"
                     "- Designated bank branches\n"
                     "- Online portal (when available)\n\n"
-                    "📄 **Bring with you:**\n"
+                    "**Bring with you:**\n"
                     "- Student ID card\n"
                     "- Fee notification slip\n"
                     "- Valid identification\n\n"
@@ -101,23 +101,23 @@ class ResponseTemplates:
             'transcript_request': {
                 'complete': [
                     "To request your {document_type}:\n\n"
-                    "📋 **Required Documents:**\n"
+                    "**Required Documents:**\n"
                     "- Completed application form\n"
                     "- Copy of student ID\n"
                     "- Copy of national ID\n"
                     "- Payment receipt (50 ETB per copy)\n\n"
-                    "⏱️ **Processing Time:** 3-5 working days\n"
-                    "📍 **Submit at:** Registrar's Office, Main Campus\n"
-                    "📞 **Contact:** +251-11-123-4567",
+                    "**Processing Time:** 3-5 working days\n"
+                    "**Submit at:** Registrar's Office, Main Campus\n"
+                    "**Contact:** +251-11-123-4567",
                     
                     "For {document_type} request:\n\n"
-                    "✅ **Process:**\n"
+                    "**Process:**\n"
                     "1. Fill out transcript request form\n"
                     "2. Pay required fee (50 ETB)\n"
                     "3. Submit documents to registrar\n"
                     "4. Collect after 3-5 days\n\n"
-                    "🚀 **Express Service:** Available for urgent requests (additional fee applies)\n"
-                    "📧 **Email:** registrar@aau.edu.et"
+                    "**Express Service:** Available for urgent requests (additional fee applies)\n"
+                    "**Email:** registrar@aau.edu.et"
                 ],
                 'partial': [
                     "I can help with document requests. What type of document do you need (transcript, certificate, etc.)?",
@@ -128,23 +128,23 @@ class ResponseTemplates:
             'grade_inquiry': {
                 'complete': [
                     "For {semester} {year} grade inquiry:\n\n"
-                    "📊 **How to Check Grades:**\n"
+                    "**How to Check Grades:**\n"
                     "- Student portal (online)\n"
                     "- Academic office visit\n"
                     "- Request official grade report\n\n"
-                    "❓ **Grade Issues:**\n"
+                    "**Grade Issues:**\n"
                     "- Contact course instructor first\n"
                     "- Submit grade appeal if necessary\n"
                     "- Follow up with department head\n\n"
-                    "⏰ **Grade Release:** Usually 2 weeks after exams",
+                    "**Grade Release:** Usually 2 weeks after exams",
                     
                     "Grade information for {semester} {year}:\n\n"
-                    "🔍 **Grade Inquiry Steps:**\n"
+                    "**Grade Inquiry Steps:**\n"
                     "1. Check student portal first\n"
                     "2. Contact instructor if grades missing\n"
                     "3. Visit academic office for assistance\n"
                     "4. Submit formal inquiry if needed\n\n"
-                    "📞 **Academic Office:** +251-11-123-4568"
+                    "**Academic Office:** +251-11-123-4568"
                 ],
                 'partial': [
                     "I can help with grade inquiries. Which semester and year are you asking about?",
@@ -155,16 +155,16 @@ class ResponseTemplates:
             'course_information': {
                 'complete': [
                     "Course information for {department}:\n\n"
-                    "📚 **Available Resources:**\n"
+                    "**Available Resources:**\n"
                     "- Course catalog (online/printed)\n"
                     "- Academic advisor consultation\n"
                     "- Department office visit\n\n"
-                    "📋 **Course Details Include:**\n"
+                    "**Course Details Include:**\n"
                     "- Prerequisites and corequisites\n"
                     "- Credit hours\n"
                     "- Course descriptions\n"
                     "- Semester offerings\n\n"
-                    "👨‍🏫 **Contact:** {department} department office"
+                    "**Contact:** {department} department office"
                 ],
                 'partial': [
                     "I can provide course information. Which department or specific course are you interested in?",
@@ -175,16 +175,16 @@ class ResponseTemplates:
             'schedule_inquiry': {
                 'complete': [
                     "Schedule information for {semester} {year}:\n\n"
-                    "📅 **Where to Find Schedules:**\n"
+                    "**Where to Find Schedules:**\n"
                     "- Student portal\n"
                     "- Department notice boards\n"
                     "- Academic office\n\n"
-                    "⏰ **Schedule Includes:**\n"
+                    "**Schedule Includes:**\n"
                     "- Class times and locations\n"
                     "- Instructor information\n"
                     "- Exam schedules\n"
                     "- Important dates\n\n"
-                    "🔄 **Updates:** Check regularly for changes"
+                    "**Updates:** Check regularly for changes"
                 ],
                 'partial': [
                     "I can help with schedule information. Which semester and year are you asking about?",
@@ -195,14 +195,14 @@ class ResponseTemplates:
             'document_request': {
                 'complete': [
                     "For {document_type} request:\n\n"
-                    "📄 **Document Services:**\n"
+                    "**Document Services:**\n"
                     "- Official transcripts\n"
                     "- Degree certificates\n"
                     "- Enrollment verification\n"
                     "- Grade reports\n\n"
-                    "💰 **Fees:** Vary by document type\n"
-                    "⏱️ **Processing:** 3-7 working days\n"
-                    "📍 **Location:** Registrar's Office"
+                    "**Fees:** Vary by document type\n"
+                    "**Processing:** 3-7 working days\n"
+                    "**Location:** Registrar's Office"
                 ],
                 'partial': [
                     "I can help with document requests. What type of document do you need?",
@@ -223,11 +223,11 @@ class ResponseTemplates:
                     "• Schedule details\n\n"
                     "How can I assist you today?",
                     
-                    "AAU Student Services 📚\n\n"
-                    "🏛️ **Main Campus:** Addis Ababa, Ethiopia\n"
-                    "📞 **Phone:** +251-11-123-4567\n"
-                    "📧 **Email:** info@aau.edu.et\n"
-                    "🌐 **Website:** www.aau.edu.et\n\n"
+                    "AAU Student Services \n\n"
+                    "**Main Campus:** Addis Ababa, Ethiopia\n"
+                    "**Phone:** +251-11-123-4567\n"
+                    "**Email:** info@aau.edu.et\n"
+                    "**Website:** www.aau.edu.et\n\n"
                     "What specific information do you need?"
                 ],
                 'partial': [
@@ -238,15 +238,15 @@ class ResponseTemplates:
             
             'technical_support': {
                 'complete': [
-                    "Technical Support 💻\n\n"
-                    "🔧 **Common Issues:**\n"
+                    "Technical Support\n\n"
+                    "**Common Issues:**\n"
                     "- Student portal access\n"
                     "- Email account problems\n"
                     "- WiFi connectivity\n"
                     "- Online learning platforms\n\n"
-                    "📞 **IT Support:** +251-11-123-4569\n"
-                    "📧 **Email:** itsupport@aau.edu.et\n"
-                    "🕒 **Hours:** Mon-Fri, 8:00 AM - 5:00 PM"
+                    "**IT Support:** +251-11-123-4569\n"
+                    "**Email:** itsupport@aau.edu.et\n"
+                    "**Hours:** Mon-Fri, 8:00 AM - 5:00 PM"
                 ],
                 'partial': [
                     "I can help with technical issues. What specific problem are you experiencing?",
