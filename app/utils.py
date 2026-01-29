@@ -64,12 +64,44 @@ class DataLoader:
                     item for item in enhanced_data 
                     if len(item.get('text', '')) > 20 
                     and not item.get('text', '').startswith('#')
-                    and '?' in item.get('text', '') or any(word in item.get('text', '').lower() for word in ['how', 'what', 'where', 'when', 'need', 'want', 'help'])
+                    and ('?' in item.get('text', '') or any(word in item.get('text', '').lower() for word in ['how', 'what', 'where', 'when', 'need', 'want', 'help']))
                 ]
                 all_data.extend(filtered_enhanced)
                 logger.info(f"Loaded {len(filtered_enhanced)} samples from enhanced data")
         except FileNotFoundError:
             logger.info("No enhanced training data found")
+        
+        # Load telegram training data
+        try:
+            with open('data/raw/telegram_training_data.json', 'r', encoding='utf-8') as f:
+                telegram_data = json.load(f)
+                # Strict filtering for telegram data (often noisy/announcements)
+                filtered_telegram = []
+                for item in telegram_data:
+                    text = item.get('text', '')
+                    # Skip if text is too short or too long
+                    if len(text) < 10 or len(text) > 400:
+                        continue
+                    
+                    # specific exclusion for purely hashtag posts
+                    if text.strip().startswith('#') and len(text.split()) < 3:
+                        continue
+
+                    # Exclude known off-topic channels
+                    if item.get('channel') in ['@aau_confessions', '@ethio_confessions', '@ye_university_life']:
+                        continue
+                        
+                    # Skip obituary/announcement/confession keywords
+                    if any(word in text.lower() for word in ['sorrow', 'condolence', 'mourn', 'passed away', 'funeral', 'confession', 'disclaimer', 'patriarchy', 'homosexuality']):
+                        continue
+                    
+                    # Accept it if it's not excluded above
+                    filtered_telegram.append(item)
+                        
+                all_data.extend(filtered_telegram)
+                logger.info(f"Loaded {len(filtered_telegram)} samples from telegram data")
+        except FileNotFoundError:
+            logger.info("No telegram training data found")
         
         # Load other training data sources
         try:

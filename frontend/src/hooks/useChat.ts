@@ -10,6 +10,7 @@ export interface Message {
   confidence?: number;
   parameters?: Record<string, any>;
   missing_parameters?: string[];
+  related_news?: ChatResponse['related_news'];
 }
 
 export function useChat() {
@@ -54,6 +55,7 @@ export function useChat() {
         confidence: response.confidence,
         parameters: response.parameters,
         missing_parameters: response.missing_parameters,
+        related_news: response.related_news,
       };
 
       setMessages((prev) => [...prev, botMessage]);

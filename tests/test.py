@@ -8,6 +8,8 @@ import sys
 from pathlib import Path
 from unittest.mock import Mock, patch
 
+from app.main import get_greeting_response, get_goodbye_response, get_error_response
+
 # Add app directory to path
 sys.path.append(str(Path(__file__).parent.parent / 'app'))
 
@@ -210,19 +212,19 @@ class TestResponseTemplates:
     
     def test_greeting_response(self):
         """Test greeting response"""
-        response = self.templates.get_greeting_response()
+        response = get_greeting_response()
         assert isinstance(response, str)
         assert len(response) > 0
     
     def test_goodbye_response(self):
         """Test goodbye response"""
-        response = self.templates.get_goodbye_response()
+        response = get_goodbye_response()
         assert isinstance(response, str)
         assert len(response) > 0
     
     def test_error_response(self):
         """Test error response"""
-        response = self.templates.get_error_response()
+        response = get_error_response()
         assert isinstance(response, str)
         assert len(response) > 0
 
