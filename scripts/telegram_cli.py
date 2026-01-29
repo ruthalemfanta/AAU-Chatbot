@@ -39,16 +39,17 @@ class TelegramDataCollector:
         # AAU-related channel patterns (add your actual channels)
         self.aau_channels = [
             '@aau_official',
-            # '@aau_students',
-            # '@aau_announcements',
             '@aau2025_UGStudents',
             '@ctbe_student_council',
             '@Hsquareedu',
             '@CNCS_studentCouncil',
             '@PECCAAiT',
-            '@AAiTSiTEnoticeboard'
-            # Add actual AAU Telegram channels here
-            # Example: '@AddisAbabaUniversity', '@AAU_Students_Forum'
+            '@AAiTSiTEnoticeboard',
+            '@febinformation',
+            '@collegeofss',
+            '@aau_stu_union',
+            '@CTBEAAU',
+            '@SchoolofCommerceocs'
         ]
         
         # Keywords for filtering relevant messages
@@ -85,8 +86,8 @@ class TelegramDataCollector:
             await self.client.disconnect()
             logger.info("Disconnected from Telegram")
     
-    async def scrape_channel(self, channel: str, limit: int = 100, 
-                             days_back: int = 30) -> List[Dict[str, Any]]:
+    async def scrape_channel(self, channel: str, limit: int = 50000,
+                             days_back: int = 3650) -> List[Dict[str, Any]]:
         """
         Scrape messages from a Telegram channel
         
@@ -136,8 +137,8 @@ class TelegramDataCollector:
         
         return messages
     
-    async def scrape_all_channels(self, limit: int = 100, 
-                                   days_back: int = 30) -> List[Dict[str, Any]]:
+    async def scrape_all_channels(self, limit: int = 500, 
+                                   days_back: int = 365) -> List[Dict[str, Any]]:
         """Scrape messages from all configured AAU channels"""
         all_messages = []
         
@@ -376,10 +377,27 @@ class TelegramDataCollector:
             parameters['year'] = list(set(years))
         
         # Fee amount extraction
-        fee_pattern = r'\b(\d+(?:,\d{3})*(?:\.\d{2})?)\s*(birr|etb|usd|\$)?\b'
-        fees = re.findall(fee_pattern, text_lower)
-        if fees:
-            parameters['fee_amount'] = list(set([f[0] for f in fees]))
+        # Improved regex to ignore small numbers (dates, pages) and require currency context if small
+        # Looks for numbers > 100 or numbers associated with currency keywords
+        fee_pattern = r'\b(\d+(?:,\d{3})*(?:\.\d{2})?)\s*(birr|etb|usd|\$)\b'
+        fees_with_currency = re.findall(fee_pattern, text_lower)
+        
+        # Also look for large numbers (likely fees) without currency, but avoid years (20XX)
+        raw_numbers = re.findall(r'\b(\d{3,})\b', text)
+        large_fees = []
+        for num in raw_numbers:
+             n = int(num.replace(',', ''))
+             if 100 <= n <= 50000 and not (2010 <= n <= 2030): # Avoid years
+                 large_fees.append(num)
+
+        valid_fees = []
+        if fees_with_currency:
+             valid_fees.extend([f[0] for f in fees_with_currency])
+        if large_fees:
+             valid_fees.extend(large_fees)
+             
+        if valid_fees:
+            parameters['fee_amount'] = list(set(valid_fees))
         
         return parameters
     
@@ -665,8 +683,8 @@ def main():
     parser.add_argument('--search', type=str, metavar='QUERY', help='Search Telegram for messages')
     parser.add_argument('--sample', action='store_true', help='Show sample data')
     parser.add_argument('--interactive', action='store_true', help='Run in interactive mode')
-    parser.add_argument('--limit', type=int, default=100, help='Max messages to fetch per channel (default: 100)')
-    parser.add_argument('--days', type=int, default=30, help='Fetch messages from last N days (default: 30)')
+    parser.add_argument('--limit', type=int, default=500, help='Max messages to fetch per channel (default: 500)')
+    parser.add_argument('--days', type=int, default=365, help='Fetch messages from last N days (default: 365)')
     parser.add_argument('--api-id', type=str, help='Telegram API ID (or set TELEGRAM_API_ID env var)')
     parser.add_argument('--api-hash', type=str, help='Telegram API Hash (or set TELEGRAM_API_HASH env var)')
     
