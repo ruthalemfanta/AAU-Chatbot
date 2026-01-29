@@ -7,11 +7,13 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Dict, List, Any, Optional
 import uvicorn
+import random
 from datetime import datetime
 
 from nlp_engine import AAUNLPEngine
 from templates import ResponseTemplates
 from utils import DataLoader, TextProcessor, config, logger
+from news_retriever import NewsRetriever
 
 # Initialize FastAPI app
 app = FastAPI(
@@ -31,6 +33,7 @@ app.add_middleware(
 
 # Initialize components
 nlp_engine = AAUNLPEngine()
+news_retriever = NewsRetriever()
 response_templates = ResponseTemplates()
 
 # Pydantic models
@@ -46,6 +49,7 @@ class ChatResponse(BaseModel):
     parameters: Dict[str, Any]
     missing_parameters: List[str]
     needs_clarification: bool
+    related_news: Optional[List[Dict[str, Any]]] = None
     timestamp: str
 
 class TrainingRequest(BaseModel):
@@ -116,7 +120,7 @@ async def chat(request: ChatRequest):
         # Handle greetings
         if _is_greeting(cleaned_message):
             return ChatResponse(
-                response=response_templates.get_greeting_response(),
+                response=get_greeting_response(),
                 intent="general_info",
                 confidence=1.0,
                 parameters={},
@@ -128,7 +132,7 @@ async def chat(request: ChatRequest):
         # Handle goodbyes
         if _is_goodbye(cleaned_message):
             return ChatResponse(
-                response=response_templates.get_goodbye_response(),
+                response=get_goodbye_response(),
                 intent="general_info",
                 confidence=1.0,
                 parameters={},
@@ -145,14 +149,24 @@ async def chat(request: ChatRequest):
         # Process with NLP engine (with context)
         result = nlp_engine.process_query(cleaned_message, context)
         
-        # Generate response
-        response_text = response_templates.generate_response(
+        # Generate generic template response
+        template_response = response_templates.generate_response(
             intent=result['intent'],
             parameters=result['parameters'],
             missing_parameters=result['missing_parameters'],
             confidence=result['confidence']
         )
         
+        # News Retrieval (Assignment Feature)
+        # Check if we can find real-time info from Telegram to augment the response
+        related_news_items = None
+        if result['confidence'] > 0.4:
+            related_news_items = news_retriever.find_relevant_news(
+                intent=result['intent'],
+                parameters=result['parameters'],
+                limit=3
+            )
+            
         # Store conversation context (merge with previous parameters)
         if request.session_id:
             # Merge current parameters with previous ones
@@ -166,7 +180,7 @@ async def chat(request: ChatRequest):
                 'last_parameters': merged_parameters,
                 'all_parameters': merged_parameters,  # Keep all collected parameters
                 'conversation_history': conversation_context.get(request.session_id, {}).get('conversation_history', []) + [
-                    {'user': cleaned_message, 'bot': response_text, 'timestamp': datetime.now().isoformat()}
+                    {'user': cleaned_message, 'bot': template_response, 'timestamp': datetime.now().isoformat()}
                 ],
                 'timestamp': datetime.now().isoformat()
             }
@@ -175,7 +189,7 @@ async def chat(request: ChatRequest):
         if config.get('log_conversations', True):
             conversation_log = {
                 'user_message': request.message,
-                'bot_response': response_text,
+                'bot_response': template_response,
                 'intent': result['intent'],
                 'confidence': result['confidence'],
                 'parameters': result['parameters'],
@@ -186,19 +200,20 @@ async def chat(request: ChatRequest):
             logger.info(f"Conversation: {conversation_log}")
         
         return ChatResponse(
-            response=response_text,
+            response=template_response,
             intent=result['intent'],
             confidence=result['confidence'],
             parameters=result['parameters'],
             missing_parameters=result['missing_parameters'],
             needs_clarification=result['needs_clarification'],
+            related_news=related_news_items,
             timestamp=datetime.now().isoformat()
         )
         
     except Exception as e:
         logger.error(f"Error processing chat request: {e}")
         return ChatResponse(
-            response=response_templates.get_error_response(),
+            response=get_error_response(),
             intent="error",
             confidence=0.0,
             parameters={},
@@ -313,6 +328,36 @@ def _is_goodbye(text: str) -> bool:
     goodbyes = ['bye', 'goodbye', 'see you', 'farewell', 'take care', 'thanks', 'thank you']
     text_lower = text.lower()
     return any(goodbye in text_lower for goodbye in goodbyes)
+
+def get_greeting_response() -> str:
+    """Get a random greeting response"""
+    responses = [
+        "Hello! Welcome to AAU Helpdesk. How can I assist you today?",
+        "Hi there! I'm here to help with your AAU-related questions.",
+        "Greetings! What can I help you with regarding Addis Ababa University?",
+        "Good day! How may I be of service to you today?"
+    ]
+    return random.choice(responses)
+
+def get_goodbye_response() -> str:
+    """Get a random goodbye response"""
+    responses = [
+        "Goodbye! Feel free to return if you have more questions.",
+        "Have a great day! Contact us again if you need any help.",
+        "Bye! Best of luck with your studies at AAU.",
+        "Farewell! We're here 24/7 if you need assistance."
+    ]
+    return random.choice(responses)
+
+def get_error_response() -> str:
+    """Get a random error response"""
+    responses = [
+        "I apologize, but I encountered an error processing your request. Please try again.",
+        "Something went wrong on my end. Could you please rephrase your question?",
+        "I'm having trouble understanding that right now. Please try again later.",
+        "An unexpected error occurred. Our team has been notified."
+    ]
+    return random.choice(responses)
 
 if __name__ == "__main__":
     uvicorn.run(
