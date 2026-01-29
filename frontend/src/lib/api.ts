@@ -14,6 +14,12 @@ export interface ChatResponse {
   parameters: Record<string, any>;
   missing_parameters: string[];
   needs_clarification: boolean;
+  related_news?: Array<{
+    text: string;
+    channel: string;
+    date: string;
+    message_id: number;
+  }>;
   timestamp: string;
 }
 
