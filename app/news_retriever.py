@@ -6,9 +6,89 @@ Searches scraped Telegram data for relevant real-time information
 import json
 import logging
 from typing import List, Dict, Optional, Any
-from datetime import datetime
 
 logger = logging.getLogger(__name__)
+
+
+def _is_informative(text: str) -> bool:
+    """
+    Check if text is informative content (not a question or non-useful content)
+    Returns True if the content should be included
+    """
+    text_lower = text.lower().strip()
+
+    # Filter out questions (not informative, user is asking for help)
+    question_patterns = [
+        text_lower.endswith('?'),
+        text_lower.startswith('how do i'),
+        text_lower.startswith('how can i'),
+        text_lower.startswith('where can i'),
+        text_lower.startswith('what is the'),
+        text_lower.startswith('when is'),
+        text_lower.startswith('can someone'),
+        text_lower.startswith('does anyone'),
+        text_lower.startswith('is there'),
+        text_lower.startswith('please help'),
+        text_lower.startswith('i need help'),
+        text_lower.startswith('help me'),
+        'anyone know' in text_lower,
+        'can you help' in text_lower,
+        'pls help' in text_lower,
+    ]
+    if any(question_patterns):
+        return False
+
+    # Filter out very short non-informative messages
+    if len(text_lower) < 50:
+        return False
+
+    # Filter out messages that are mostly hashtags
+    words = text_lower.split()
+    hashtag_count = sum(1 for w in words if w.startswith('#'))
+    if len(words) > 0 and hashtag_count / len(words) > 0.5:
+        return False
+
+    # Filter out messages that are mostly emojis or special characters
+    alpha_chars = sum(1 for c in text if c.isalpha())
+    if len(text) > 0 and alpha_chars / len(text) < 0.3:
+        return False
+
+    # Filter out forwarded user questions/requests
+    non_informative_phrases = [
+        'i want to know',
+        'i would like to',
+        'can i get',
+        'i am looking for',
+        'i\'m looking for',
+        'how to get',
+        'how to apply',
+        'need information about',
+        'need info about',
+        'tell me about',
+        'what are the requirements',
+        'what documents do i need',
+    ]
+    if any(phrase in text_lower for phrase in non_informative_phrases):
+        # Check if it's actually an announcement answering these questions
+        informative_indicators = [
+            'we are pleased to announce',
+            'announcement',
+            'notice',
+            'deadline',
+            'hereby',
+            'informed that',
+            'please be informed',
+            'application is open',
+            'registration is open',
+            'results are out',
+            'schedule',
+            'calendar',
+        ]
+        if not any(indicator in text_lower for indicator in informative_indicators):
+            return False
+
+    return True
+
 
 class NewsRetriever:
     """Retriever for scraped telegram news and announcements"""
@@ -30,52 +110,73 @@ class NewsRetriever:
         except Exception as e:
             logger.error(f"Error loading news data: {e}")
             return []
-            
-    def find_relevant_news(self, intent: str, parameters: Dict[str, Any], limit: int = 1) -> List[Dict[str, Any]]:
+
+    def find_relevant_news(self, intent: str, parameters: Dict[str, Any], limit: int = 3) -> List[Dict[str, Any]]:
         """
         Find news items relevant to the intent and parameters
         Returns the most recent matches first
         """
         matches = []
         
-        # Filter by intent first (if the news item categorizes it)
-        # Note: Our telegram scraper assigns intents, so we can use that!
-        candidates = [item for item in self.news_data if item.get('intent') == intent]
+        # Intent-related keywords for text matching
+        intent_keywords = {
+            'admission_inquiry': ['admission', 'apply', 'application', 'enroll', 'entrance', 'exam', 'requirement', 'eligibility', 'accepted', 'acceptance'],
+            'registration_help': ['registration', 'register', 'course registration', 'add drop', 'enrollment'],
+            'fee_payment': ['fee', 'payment', 'tuition', 'cost', 'scholarship', 'financial', 'bank', 'pay'],
+            'transcript_request': ['transcript', 'academic record', 'grade report', 'official document'],
+            'grade_inquiry': ['grade', 'result', 'gpa', 'score', 'exam result', 'marks', 'assessment'],
+            'course_information': ['course', 'class', 'subject', 'curriculum', 'syllabus', 'program', 'module'],
+            'schedule_inquiry': ['schedule', 'timetable', 'calendar', 'academic calendar', 'semester', 'date', 'deadline'],
+            'document_request': ['document', 'certificate', 'letter', 'verification', 'official'],
+            'technical_support': ['portal', 'system', 'website', 'login', 'password', 'technical', 'error'],
+            'general_info': ['university', 'campus', 'aau', 'announcement', 'news', 'event']
+        }
         
-        # If no candidates match intent directly, look at all 'general_info' too
-        if not candidates:
-            candidates = [item for item in self.news_data if item.get('intent') == 'general_info']
-            
-        # Score each candidate
+        # Get keywords for the detected intent
+        keywords_for_intent = intent_keywords.get(intent, [])
+        
+        # Score each news item
         scored_candidates = []
-        for item in candidates:
+        for item in self.news_data:
             score = 0
-            text = item.get('text', '').lower()
+            text = item.get('text', '')
+            text_lower = text.lower()
+            item_intent = item.get('intent', '')
+            
+            # Skip non-informative content (questions, short posts, hashtag-only, etc.)
+            if not _is_informative(text):
+                continue
+            
+            # Boost score for exact intent match
+            if item_intent == intent:
+                score += 5
+            
+            # Boost score for intent-related keywords in text
+            for keyword in keywords_for_intent:
+                if keyword in text_lower:
+                    score += 2
             
             # Boost score for parameter matches
-            # e.g. if user asks about "engineering", boost posts containing "engineering"
             if parameters:
                 for key, values in parameters.items():
                     if not values:
                         continue
                     for value in values:
-                        if str(value).lower() in text:
-                            score += 2 # Strong match
+                        if str(value).lower() in text_lower:
+                            score += 3  # Strong match for parameter
             
-            # Boost score for recency
-            try:
-                date_str = item.get('date')
-                if date_str:
-                    # Parse ISO format roughly
-                    date_obj = datetime.fromisoformat(date_str.replace('Z', '+00:00'))
-                    # More recent = higher score (simple implication)
-                    # We'll just sort by date at the end, but score helps filter relevance
-            except:
-                pass
-                
-            if score > 0 or (not parameters and len(text) > 20):
-                 # If we have matches, or if it's a general query, keep it
-                 scored_candidates.append((score, item))
+            # Also check item's own parameters for matches
+            item_params = item.get('parameters', {})
+            if parameters and item_params:
+                for key, values in parameters.items():
+                    if key in item_params:
+                        item_values = item_params.get(key, [])
+                        for value in values:
+                            if str(value).lower() in [str(v).lower() for v in item_values]:
+                                score += 4  # Very strong match
+            
+            if score > 0:
+                scored_candidates.append((score, item))
         
         # Sort: Primary by score (desc), Secondary by date (desc)
         scored_candidates.sort(key=lambda x: (x[0], x[1].get('date', '')), reverse=True)

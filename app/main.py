@@ -50,8 +50,6 @@ class ChatResponse(BaseModel):
     missing_parameters: List[str]
     needs_clarification: bool
     out_of_domain: Optional[Dict[str, Any]] = None
-    timestamp: str
-    needs_clarification: bool
     related_news: Optional[List[Dict[str, Any]]] = None
     timestamp: str
 
@@ -213,6 +211,7 @@ async def chat(request: ChatRequest):
             missing_parameters=result['missing_parameters'],
             needs_clarification=result['needs_clarification'],
             out_of_domain=out_of_domain_info,
+            related_news=related_news_items,
             timestamp=datetime.now().isoformat()
         )
         
