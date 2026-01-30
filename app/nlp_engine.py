@@ -124,7 +124,9 @@ class IntentClassifier:
             'hospital_services_inquiry',
             'book_center_inquiry',
             'radio_station_inquiry',
-            'museum_services_inquiry'
+            'museum_services_inquiry',
+            'student_portal_inquiry',
+            
         ]
         self.is_trained = False
     
@@ -752,7 +754,8 @@ class AAUNLPEngine:
             'hospital_services_inquiry': [],
             'book_center_inquiry': [],
             'radio_station_inquiry': [],
-            'museum_services_inquiry': []
+            'museum_services_inquiry': [],
+            'student_portal_inquiry': [],
         }
         
         return required_params.get(intent, [])

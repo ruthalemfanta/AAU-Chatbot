@@ -1082,13 +1082,64 @@ def _initialize_templates() -> Dict[str, Dict[str, List[str]]]:
             ]
         },
 
+        'student_portal_inquiry': {
+            'complete': [
+                "**AAU Student Portal Services**\n\n"
+                "**Portal Access:**\n"
+                "• Website: [Student Portal URL]\n"
+                "• Login with your Student ID and password\n"
+                "• Available 24/7 for most services\n\n"
+                "**Available Services:**\n"
+                "• Check grades and academic records\n"
+                "• Course registration and schedule\n"
+                "• Fee payment status and history\n"
+                "• Request official documents\n"
+                "• Update personal information\n"
+                "• Academic calendar and announcements\n\n"
+                "**Grade Services:**\n"
+                "• View semester grades\n"
+                "• Download grade reports\n"
+                "• Check GPA calculations\n"
+                "• Academic standing status\n\n"
+                "**Registration Services:**\n"
+                "• Course registration (during registration periods)\n"
+                "• Add/Drop courses\n"
+                "• View class schedules\n"
+                "• Check course prerequisites\n\n"
+                "**Document Requests:**\n"
+                "• Official transcripts\n"
+                "• Grade reports\n"
+                "• Enrollment verification\n"
+                "• Student ID replacement\n\n"
+                "**Grade Changes:**\n"
+                "• Grade appeals must be submitted through academic office\n"
+                "• Contact your instructor first for grade inquiries\n"
+                "• Follow official grade appeal process\n"
+                "• Deadline: Usually within 2 weeks of grade posting\n\n"
+                "**Technical Support:**\n"
+                "• Password reset: Contact IT Services\n"
+                "• Login issues: Visit Student Services\n"
+                "• Portal problems: IT Help Desk\n"
+                "• Phone: [IT Support Number]\n\n"
+                "**Important Notes:**\n"
+                "• Keep your login credentials secure\n"
+                "• Portal maintenance: Sundays 2-6 AM\n"
+                "• Grade changes require academic office approval\n"
+                "• Registration periods are announced in advance"
+            ],
+            'partial': [
+                "The student portal provides access to grades, registration, and academic services. What specific portal service do you need help with?",
+                "You can check grades, register for courses, and request documents through the student portal. Which service interests you?",
+                "The AAU student portal offers comprehensive academic services. Do you need help with grades, registration, or document requests?"
+            ]
+        },
+
         'out_of_domain': {
             'complete': [
                 "I'm not sure about that question. For AAU-related information, please check our website at www.aau.edu.et or follow our official Telegram channel @aau_official for the latest updates.",
                 "I don't have information about that topic. You can find more AAU-related information on our website (www.aau.edu.et) or our Telegram channel @aau_official.",
                 "That's outside my area of expertise. For AAU services and information, visit www.aau.edu.et or check our Telegram @aau_official.",
-                "I'm not able to help with that. For university-related questions, please visit www.aau.edu.et or follow @aau_official on Telegram.",
-                "I don't have information about that. For AAU-specific questions, check www.aau.edu.et or our official Telegram channel @aau_official."
+                "I'm not able to help with that. For university-related questions, please visit www.aau.edu.et or follow @aau_official on Telegram."
             ],
             'partial': [
                 "I'm not sure about that. For AAU information, please check www.aau.edu.et or @aau_official on Telegram.",

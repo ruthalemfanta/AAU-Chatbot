@@ -1340,4 +1340,2744 @@
     "intent": "international_student_fees",
     "parameters": {}
   }
+  ,  {
+    "text": "check grades online",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "my grades portal",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "student portal login",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "portal password forgot",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "online registration courses",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "register classes online",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "grade change request",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "appeal grade online",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "my academic record",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "download transcript portal",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "portal not loading",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "student system access",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "online student account",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "check my gpa online",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "view semester results",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "course drop online",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "add course portal",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "schedule view online",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "payment status check",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "update my info portal",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "portal maintenance when",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "student portal help",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "online academic services",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "digital student services",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "web portal student",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "undergraduate admission requirements",
+    "intent": "undergraduate_admission",
+    "parameters": {}
+  },
+  {
+    "text": "admission criteria undergraduate",
+    "intent": "undergraduate_admission",
+    "parameters": {}
+  },
+  {
+    "text": "undergrad application process",
+    "intent": "undergraduate_admission",
+    "parameters": {}
+  },
+  {
+    "text": "bachelor degree admission",
+    "intent": "undergraduate_admission",
+    "parameters": {}
+  },
+  {
+    "text": "first degree application",
+    "intent": "undergraduate_admission",
+    "parameters": {}
+  },
+  {
+    "text": "undergraduate entry requirements",
+    "intent": "undergraduate_admission",
+    "parameters": {}
+  },
+  {
+    "text": "apply undergraduate program",
+    "intent": "undergraduate_admission",
+    "parameters": {}
+  },
+  {
+    "text": "undergrad admission deadline",
+    "intent": "undergraduate_admission",
+    "parameters": {}
+  },
+  {
+    "text": "admission requirements first degree",
+    "intent": "undergraduate_admission",
+    "parameters": {}
+  },
+  {
+    "text": "undergraduate program application",
+    "intent": "undergraduate_admission",
+    "parameters": {}
+  },
+  {
+    "text": "cutoff point undergraduate",
+    "intent": "undergraduate_admission",
+    "parameters": {}
+  },
+  {
+    "text": "minimum grade undergraduate",
+    "intent": "undergraduate_admission",
+    "parameters": {}
+  },
+  {
+    "text": "masters program admission",
+    "intent": "graduate_admission",
+    "parameters": {}
+  },
+  {
+    "text": "graduate school application",
+    "intent": "graduate_admission",
+    "parameters": {}
+  },
+  {
+    "text": "phd admission requirements",
+    "intent": "graduate_admission",
+    "parameters": {}
+  },
+  {
+    "text": "postgraduate admission",
+    "intent": "graduate_admission",
+    "parameters": {}
+  },
+  {
+    "text": "graduate program requirements",
+    "intent": "graduate_admission",
+    "parameters": {}
+  },
+  {
+    "text": "masters degree application",
+    "intent": "graduate_admission",
+    "parameters": {}
+  },
+  {
+    "text": "doctoral program admission",
+    "intent": "graduate_admission",
+    "parameters": {}
+  },
+  {
+    "text": "graduate studies application",
+    "intent": "graduate_admission",
+    "parameters": {}
+  },
+  {
+    "text": "second degree admission",
+    "intent": "graduate_admission",
+    "parameters": {}
+  },
+  {
+    "text": "postgrad application process",
+    "intent": "graduate_admission",
+    "parameters": {}
+  },
+  {
+    "text": "graduate admission criteria",
+    "intent": "graduate_admission",
+    "parameters": {}
+  },
+  {
+    "text": "masters admission deadline",
+    "intent": "graduate_admission",
+    "parameters": {}
+  },
+  {
+    "text": "gat exam registration",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "graduate aptitude test info",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "gat test preparation",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "gat exam results",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "gat exam fee",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "gat exam syllabus",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "gat exam format",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "gat exam duration",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "gat exam requirements",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "graduate admission test schedule",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "gat exam application",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "gat test centers",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "international student application",
+    "intent": "international_admission",
+    "parameters": {}
+  },
+  {
+    "text": "foreign student admission",
+    "intent": "international_admission",
+    "parameters": {}
+  },
+  {
+    "text": "non-ethiopian student admission",
+    "intent": "international_admission",
+    "parameters": {}
+  },
+  {
+    "text": "overseas student application",
+    "intent": "international_admission",
+    "parameters": {}
+  },
+  {
+    "text": "international admission requirements",
+    "intent": "international_admission",
+    "parameters": {}
+  },
+  {
+    "text": "foreign national admission",
+    "intent": "international_admission",
+    "parameters": {}
+  },
+  {
+    "text": "refugee student admission",
+    "intent": "international_admission",
+    "parameters": {}
+  },
+    {
+      "text": "igad student admission",
+      "intent": "international_admission",
+      "parameters": {}
+    },
+  {
+    "text": "east african student admission",
+    "intent": "international_admission",
+    "parameters": {}
+  },
+  {
+    "text": "international student documents",
+    "intent": "international_admission",
+    "parameters": {}
+  },
+  {
+    "text": "foreign student requirements",
+    "intent": "international_admission",
+    "parameters": {}
+  },
+  {
+    "text": "international admission process",
+    "intent": "international_admission",
+    "parameters": {}
+  },
+  {
+    "text": "tuition fees undergraduate",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "undergraduate program costs",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "bachelor degree fees",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "first degree costs",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "undergrad tuition cost",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "undergraduate fee structure",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "cost per ects undergraduate",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "undergraduate payment plan",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "undergrad semester fees",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "undergraduate annual fees",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "bachelor program tuition",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "undergraduate study costs",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "graduate program fees",
+    "intent": "graduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "masters program costs",
+    "intent": "graduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "phd program fees",
+    "intent": "graduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "postgraduate tuition",
+    "intent": "graduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "graduate school costs",
+    "intent": "graduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "masters degree fees",
+    "intent": "graduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "doctoral program costs",
+    "intent": "graduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "graduate studies fees",
+    "intent": "graduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "postgrad program costs",
+    "intent": "graduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "second degree fees",
+    "intent": "graduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "graduate fee structure",
+    "intent": "graduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "thesis fees graduate",
+    "intent": "graduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "foreign student tuition",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "international student costs",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "non-ethiopian fees",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "overseas student fees",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "international tuition rates",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "foreign national fees",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "refugee student fees",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "igad student fees",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "east african fees",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "international fee rates",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "foreign student costs",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "international payment usd",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "fee payment options",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "how to pay tuition",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "payment methods accepted",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "fee payment process",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "online fee payment",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "bank payment fees",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "telebirr fee payment",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "cash payment fees",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "finance office payment",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "fee payment location",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "payment receipt",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "installment payment",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "course catalog access",
+    "intent": "course_catalog_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "available courses list",
+    "intent": "course_catalog_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "course offerings",
+    "intent": "course_catalog_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "program curriculum",
+    "intent": "course_catalog_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "course descriptions",
+    "intent": "course_catalog_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "subject catalog",
+    "intent": "course_catalog_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "course list",
+    "intent": "course_catalog_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "academic catalog",
+    "intent": "course_catalog_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "course information",
+    "intent": "course_catalog_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "program courses",
+    "intent": "course_catalog_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "curriculum guide",
+    "intent": "course_catalog_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "course syllabus",
+    "intent": "course_catalog_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "course prerequisites",
+    "intent": "prerequisite_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "prerequisite requirements",
+    "intent": "prerequisite_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "required courses before",
+    "intent": "prerequisite_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "prerequisite check",
+    "intent": "prerequisite_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "course requirements",
+    "intent": "prerequisite_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "prerequisite waiver",
+    "intent": "prerequisite_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "prerequisite exemption",
+    "intent": "prerequisite_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "course dependencies",
+    "intent": "prerequisite_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "prerequisite courses",
+    "intent": "prerequisite_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "required prerequisites",
+    "intent": "prerequisite_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "prerequisite information",
+    "intent": "prerequisite_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "course sequence",
+    "intent": "prerequisite_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "academic calendar",
+    "intent": "academic_calendar_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "semester dates",
+    "intent": "academic_calendar_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "academic year schedule",
+    "intent": "academic_calendar_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "semester calendar",
+    "intent": "academic_calendar_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "academic schedule",
+    "intent": "academic_calendar_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "university calendar",
+    "intent": "academic_calendar_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "semester timeline",
+    "intent": "academic_calendar_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "academic year dates",
+    "intent": "academic_calendar_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "semester start date",
+    "intent": "academic_calendar_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "semester end date",
+    "intent": "academic_calendar_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "holiday calendar",
+    "intent": "academic_calendar_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "break schedule",
+    "intent": "academic_calendar_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "exam schedule",
+    "intent": "exam_schedule_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "examination timetable",
+    "intent": "exam_schedule_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "exam dates",
+    "intent": "exam_schedule_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "final exam schedule",
+    "intent": "exam_schedule_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "exam timetable",
+    "intent": "exam_schedule_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "examination calendar",
+    "intent": "exam_schedule_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "exam venue",
+    "intent": "exam_schedule_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "exam location",
+    "intent": "exam_schedule_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "exam time",
+    "intent": "exam_schedule_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "examination period",
+    "intent": "exam_schedule_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "test schedule",
+    "intent": "exam_schedule_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "midterm exam schedule",
+    "intent": "exam_schedule_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "grade report request",
+    "intent": "grade_report_request",
+    "parameters": {}
+  },
+  {
+    "text": "academic transcript",
+    "intent": "grade_report_request",
+    "parameters": {}
+  },
+  {
+    "text": "semester grades",
+    "intent": "grade_report_request",
+    "parameters": {}
+  },
+  {
+    "text": "grade certificate",
+    "intent": "grade_report_request",
+    "parameters": {}
+  },
+  {
+    "text": "academic record",
+    "intent": "grade_report_request",
+    "parameters": {}
+  },
+  {
+    "text": "grade statement",
+    "intent": "grade_report_request",
+    "parameters": {}
+  },
+  {
+    "text": "official grades",
+    "intent": "grade_report_request",
+    "parameters": {}
+  },
+  {
+    "text": "cumulative grade report",
+    "intent": "grade_report_request",
+    "parameters": {}
+  },
+  {
+    "text": "gpa report",
+    "intent": "grade_report_request",
+    "parameters": {}
+  },
+  {
+    "text": "academic performance report",
+    "intent": "grade_report_request",
+    "parameters": {}
+  },
+  {
+    "text": "grade history",
+    "intent": "grade_report_request",
+    "parameters": {}
+  },
+  {
+    "text": "semester report card",
+    "intent": "grade_report_request",
+    "parameters": {}
+  },
+  {
+    "text": "wat r the campuses in aau",
+    "intent": "campus_location_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "were is the main campus located",
+    "intent": "campus_location_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "campuses of addis ababa university",
+    "intent": "campus_location_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "aau campus locations plz",
+    "intent": "campus_location_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "show me all campuses",
+    "intent": "campus_location_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "i want 2 know about campuses",
+    "intent": "campus_location_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "how many campus does aau have",
+    "intent": "campus_location_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "aau has how many campuses?",
+    "intent": "campus_location_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "tell me campuses",
+    "intent": "campus_location_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "list of aau campuses",
+    "intent": "campus_location_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "how do i pay fee",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "payment method for fees",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "were can i pay my fee",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "fee payment options at aau",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "how 2 pay tuition",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "pay fees how?",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "ways to pay university fees",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "fee payment process",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "can i pay online",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "telebirr payment accepted?",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "bank transfer for fees",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "cash payment allowed?",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "undergraduate fees how much",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "tuition cost undergraduate",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "how much is undergrad fees",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "cost of studying undergraduate",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "undergrad program costs",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "bachelor degree fees",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "first degree fees",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "undergraduate tuition fee structure",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "fees for undergrad students",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "what does undergrad cost",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "undergrad fee per ects",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "how much per credit hour",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "gat exam when",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "when will gat exam be held",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "gat exam schedule plz",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "graduate aptitude test date",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "when is gat test",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "gat exam timing",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "gat exam venue were",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "were is gat exam held",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "gat exam location",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "gat exam place",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "gat exam time and date",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "graduate admission test info",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "when is registration",
+    "intent": "registration_help",
+    "parameters": {}
+  },
+  {
+    "text": "registration period when",
+    "intent": "registration_help",
+    "parameters": {}
+  },
+  {
+    "text": "course registration time",
+    "intent": "registration_help",
+    "parameters": {}
+  },
+  {
+    "text": "how 2 register for courses",
+    "intent": "registration_help",
+    "parameters": {}
+  },
+  {
+    "text": "registration process",
+    "intent": "registration_help",
+    "parameters": {}
+  },
+  {
+    "text": "register for classes how",
+    "intent": "registration_help",
+    "parameters": {}
+  },
+  {
+    "text": "course registration deadline",
+    "intent": "registration_help",
+    "parameters": {}
+  },
+  {
+    "text": "registration help needed",
+    "intent": "registration_help",
+    "parameters": {}
+  },
+  {
+    "text": "how do i register",
+    "intent": "registration_help",
+    "parameters": {}
+  },
+  {
+    "text": "student registration process",
+    "intent": "registration_help",
+    "parameters": {}
+  },
+  {
+    "text": "registration opens when",
+    "intent": "registration_help",
+    "parameters": {}
+  },
+  {
+    "text": "late registration possible?",
+    "intent": "registration_help",
+    "parameters": {}
+  },
+  {
+    "text": "apply to cs program",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "computer science admission how",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "cs program application",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "how 2 apply cs",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "computer science undergraduate admission",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "cs degree application",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "apply for computer science degree",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "comp sci admission requirements",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "how to get into cs program",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "cs program entry requirements",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "computer science cutoff point",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "cs admission criteria",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "engineering admission how",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["engineering"]}
+  },
+  {
+    "text": "apply 4 engineering",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["engineering"]}
+  },
+  {
+    "text": "engineering program application",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["engineering"]}
+  },
+  {
+    "text": "how 2 join engineering",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["engineering"]}
+  },
+  {
+    "text": "engineering degree admission",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["engineering"]}
+  },
+  {
+    "text": "engineering cutoff point",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["engineering"]}
+  },
+  {
+    "text": "engineering admission requirements",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["engineering"]}
+  },
+  {
+    "text": "medicine admission requirements",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["medicine"]}
+  },
+  {
+    "text": "medical school application",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["medicine"]}
+  },
+  {
+    "text": "how 2 apply medicine",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["medicine"]}
+  },
+  {
+    "text": "med school admission",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["medicine"]}
+  },
+  {
+    "text": "medicine program entry",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["medicine"]}
+  },
+  {
+    "text": "medical school cutoff",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["medicine"]}
+  },
+  {
+    "text": "medicine admission criteria",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["medicine"]}
+  },
+  {
+    "text": "business program admission",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["business"]}
+  },
+  {
+    "text": "apply for business degree",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["business"]}
+  },
+  {
+    "text": "business school application",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["business"]}
+  },
+  {
+    "text": "how 2 join business program",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["business"]}
+  },
+  {
+    "text": "biz program admission",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["business"]}
+  },
+  {
+    "text": "business administration admission",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["business"]}
+  },
+  {
+    "text": "law school admission",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["law"]}
+  },
+  {
+    "text": "apply for law degree",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["law"]}
+  },
+  {
+    "text": "law program application",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["law"]}
+  },
+  {
+    "text": "how 2 study law",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["law"]}
+  },
+  {
+    "text": "legal studies admission",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["law"]}
+  },
+  {
+    "text": "law school requirements",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["law"]}
+  },
+  {
+    "text": "international student fees how much",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "foreign student fees",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "international students pay how much",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "fees for international students",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "foreign students tuition cost",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "international fee structure",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "non-ethiopian student fees",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "overseas student costs",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "international tuition fees",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "foreign national fees",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "non-resident student fees",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "international student costs",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "international student engineering fees",
+    "intent": "international_student_fees",
+    "parameters": {"department": ["engineering"]}
+  },
+  {
+    "text": "foreign student medicine cost",
+    "intent": "international_student_fees",
+    "parameters": {"department": ["medicine"]}
+  },
+  {
+    "text": "international cs program fees",
+    "intent": "international_student_fees",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "foreign student business fees",
+    "intent": "international_student_fees",
+    "parameters": {"department": ["business"]}
+  },
+  {
+    "text": "international law student costs",
+    "intent": "international_student_fees",
+    "parameters": {"department": ["law"]}
+  },
+  {
+    "text": "how much do international students pay for engineering",
+    "intent": "international_student_fees",
+    "parameters": {"department": ["engineering"]}
+  },
+  {
+    "text": "foreign student medicine tuition",
+    "intent": "international_student_fees",
+    "parameters": {"department": ["medicine"]}
+  },
+  {
+    "text": "international student cs fees",
+    "intent": "international_student_fees",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "sefere selam were is it",
+    "intent": "campus_location_inquiry",
+    "parameters": {"campus": ["sefere selam"]}
+  },
+  {
+    "text": "sefere selam campus location",
+    "intent": "campus_location_inquiry",
+    "parameters": {"campus": ["sefere selam"]}
+  },
+  {
+    "text": "were is sefere selam campus",
+    "intent": "campus_location_inquiry",
+    "parameters": {"campus": ["sefere selam"]}
+  },
+  {
+    "text": "sefere selam directions",
+    "intent": "campus_location_inquiry",
+    "parameters": {"campus": ["sefere selam"]}
+  },
+  {
+    "text": "how 2 get to sefere selam",
+    "intent": "campus_location_inquiry",
+    "parameters": {"campus": ["sefere selam"]}
+  },
+  {
+    "text": "sefere selam campus address",
+    "intent": "campus_location_inquiry",
+    "parameters": {"campus": ["sefere selam"]}
+  },
+  {
+    "text": "what is at sefere selam",
+    "intent": "campus_location_inquiry",
+    "parameters": {"campus": ["sefere selam"]}
+  },
+  {
+    "text": "sefere selam facilities",
+    "intent": "campus_location_inquiry",
+    "parameters": {"campus": ["sefere selam"]}
+  },
+  {
+    "text": "about sefere selam campus",
+    "intent": "campus_location_inquiry",
+    "parameters": {"campus": ["sefere selam"]}
+  },
+  {
+    "text": "sefere selam info",
+    "intent": "campus_location_inquiry",
+    "parameters": {"campus": ["sefere selam"]}
+  },
+  {
+    "text": "sefere selam medical campus",
+    "intent": "campus_location_inquiry",
+    "parameters": {"campus": ["sefere selam"]}
+  },
+  {
+    "text": "help with aau",
+    "intent": "general_info",
+    "parameters": {}
+  },
+  {
+    "text": "aau information",
+    "intent": "general_info",
+    "parameters": {}
+  },
+  {
+    "text": "about addis ababa university",
+    "intent": "general_info",
+    "parameters": {}
+  },
+  {
+    "text": "aau general info",
+    "intent": "general_info",
+    "parameters": {}
+  },
+  {
+    "text": "tell me about aau",
+    "intent": "general_info",
+    "parameters": {}
+  },
+  {
+    "text": "what is aau",
+    "intent": "general_info",
+    "parameters": {}
+  },
+  {
+    "text": "aau overview",
+    "intent": "general_info",
+    "parameters": {}
+  },
+  {
+    "text": "addis ababa university info",
+    "intent": "general_info",
+    "parameters": {}
+  },
+  {
+    "text": "aau services",
+    "intent": "general_info",
+    "parameters": {}
+  },
+  {
+    "text": "university information",
+    "intent": "general_info",
+    "parameters": {}
+  },
+  {
+    "text": "aau history",
+    "intent": "general_info",
+    "parameters": {}
+  },
+  {
+    "text": "about the university",
+    "intent": "general_info",
+    "parameters": {}
+  },
+  {
+    "text": "engineering fees how much",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["engineering"]}
+  },
+  {
+    "text": "engineering program cost",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["engineering"]}
+  },
+  {
+    "text": "engineering degree fees",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["engineering"]}
+  },
+  {
+    "text": "cost of engineering studies",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["engineering"]}
+  },
+  {
+    "text": "engineering tuition cost",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["engineering"]}
+  },
+  {
+    "text": "how much for engineering degree",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["engineering"]}
+  },
+  {
+    "text": "engineering program fees",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["engineering"]}
+  },
+  {
+    "text": "medicine fees how much",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["medicine"]}
+  },
+  {
+    "text": "medical school fees",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["medicine"]}
+  },
+  {
+    "text": "medicine program cost",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["medicine"]}
+  },
+  {
+    "text": "med school tuition",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["medicine"]}
+  },
+  {
+    "text": "medicine degree fees",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["medicine"]}
+  },
+  {
+    "text": "medical program tuition",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["medicine"]}
+  },
+  {
+    "text": "cs fees how much",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "computer science fees",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "cs program cost",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "computer science tuition",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "comp sci degree fees",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "cs degree cost",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "business fees how much",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["business"]}
+  },
+  {
+    "text": "business program cost",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["business"]}
+  },
+  {
+    "text": "business degree fees",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["business"]}
+  },
+  {
+    "text": "biz program tuition",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["business"]}
+  },
+  {
+    "text": "business school fees",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["business"]}
+  },
+  {
+    "text": "business administration fees",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["business"]}
+  },
+  {
+    "text": "law fees how much",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["law"]}
+  },
+  {
+    "text": "law program cost",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["law"]}
+  },
+  {
+    "text": "law degree fees",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["law"]}
+  },
+  {
+    "text": "legal studies tuition",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["law"]}
+  },
+  {
+    "text": "law school fees",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["law"]}
+  },
+  {
+    "text": "masters program fees",
+    "intent": "graduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "graduate program costs",
+    "intent": "graduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "phd program fees",
+    "intent": "graduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "graduate school tuition",
+    "intent": "graduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "masters degree cost",
+    "intent": "graduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "doctoral program fees",
+    "intent": "graduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "postgraduate fees",
+    "intent": "graduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "graduate studies cost",
+    "intent": "graduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "masters in engineering fees",
+    "intent": "graduate_fee_inquiry",
+    "parameters": {"department": ["engineering"]}
+  },
+  {
+    "text": "phd in computer science cost",
+    "intent": "graduate_fee_inquiry",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "masters in business fees",
+    "intent": "graduate_fee_inquiry",
+    "parameters": {"department": ["business"]}
+  },
+  {
+    "text": "graduate medicine program cost",
+    "intent": "graduate_fee_inquiry",
+    "parameters": {"department": ["medicine"]}
+  },
+  {
+    "text": "how do i check my grades",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "where can i see my grades",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "student portal access",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "how to login to student portal",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "cant access student portal",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "student portal login problem",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "how do i register for courses",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "course registration online",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "how to change my grades",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "grade change process",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "how do i appeal my grade",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "grade appeal process",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "student portal services",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "what can i do on student portal",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "online student services",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "how to check my gpa",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "view my academic record",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "download grade report",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "how to add courses",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "drop courses online",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "course add drop",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "check my class schedule",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "view my schedule online",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "student portal password reset",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "forgot my portal password",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "portal login help",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "student portal not working",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "portal technical issues",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "how to request transcript online",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "online document request",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "check fee payment status",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "view payment history",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "update personal information",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "change my contact details",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "academic calendar online",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "check announcements",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "student portal announcements",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "can u tell me how to check my grades?",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "is there a way to see my results online?",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "what do i do if i forgot my portal password?",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "can i register for courses through the internet?",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "is it possible to change my grade if i think its wrong?",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "what should i do if my portal isnt working?",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "can i download my transcript from the student portal?",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "is there an online system for students?",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "how do i access my student account online?",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "what can i do on the student website?",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "can i check my payment status online?",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "is it possible to update my contact info through the portal?",
+    "intent": "student_portal_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "what are the requirements to get into aau?",
+    "intent": "undergraduate_admission",
+    "parameters": {}
+  },
+  {
+    "text": "can you tell me how to apply for undergraduate?",
+    "intent": "undergraduate_admission",
+    "parameters": {}
+  },
+  {
+    "text": "what do i need to study at aau?",
+    "intent": "undergraduate_admission",
+    "parameters": {}
+  },
+  {
+    "text": "is it hard to get into addis ababa university?",
+    "intent": "undergraduate_admission",
+    "parameters": {}
+  },
+  {
+    "text": "what grade do i need for admission?",
+    "intent": "undergraduate_admission",
+    "parameters": {}
+  },
+  {
+    "text": "can i apply for computer science at aau?",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "is engineering available at aau?",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["engineering"]}
+  },
+  {
+    "text": "can i study medicine at addis ababa university?",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["medicine"]}
+  },
+  {
+    "text": "what about business programs at aau?",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["business"]}
+  },
+  {
+    "text": "do you have law school at aau?",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["law"]}
+  },
+  {
+    "text": "can i do my masters at aau?",
+    "intent": "graduate_admission",
+    "parameters": {}
+  },
+  {
+    "text": "what are the requirements for phd?",
+    "intent": "graduate_admission",
+    "parameters": {}
+  },
+  {
+    "text": "is it possible to do graduate studies at aau?",
+    "intent": "graduate_admission",
+    "parameters": {}
+  },
+  {
+    "text": "can i apply for masters in engineering?",
+    "intent": "graduate_admission",
+    "parameters": {"department": ["engineering"]}
+  },
+  {
+    "text": "do you offer phd in computer science?",
+    "intent": "graduate_admission",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "what about masters in business?",
+    "intent": "graduate_admission",
+    "parameters": {"department": ["business"]}
+  },
+  {
+    "text": "can i do postgraduate in medicine?",
+    "intent": "graduate_admission",
+    "parameters": {"department": ["medicine"]}
+  },
+  {
+    "text": "is there a doctoral program in law?",
+    "intent": "graduate_admission",
+    "parameters": {"department": ["law"]}
+  },
+  {
+    "text": "when do i need to take the gat exam?",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "what is this gat exam about?",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "do i have to take gat for masters?",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "can you tell me about the graduate aptitude test?",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "where will the gat exam be held?",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "what time does the gat exam start?",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "how long is the gat exam?",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "what should i study for gat?",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "can international students apply to aau?",
+    "intent": "international_admission",
+    "parameters": {}
+  },
+  {
+    "text": "what if im not from ethiopia?",
+    "intent": "international_admission",
+    "parameters": {}
+  },
+  {
+    "text": "can foreign students study at aau?",
+    "intent": "international_admission",
+    "parameters": {}
+  },
+  {
+    "text": "what are the requirements for international students?",
+    "intent": "international_admission",
+    "parameters": {}
+  },
+  {
+    "text": "can refugees apply to aau?",
+    "intent": "international_admission",
+    "parameters": {}
+  },
+  {
+    "text": "what about students from kenya?",
+    "intent": "international_admission",
+    "parameters": {}
+  },
+  {
+    "text": "can someone from nigeria study at aau?",
+    "intent": "international_admission",
+    "parameters": {}
+  },
+  {
+    "text": "what documents do international students need?",
+    "intent": "international_admission",
+    "parameters": {}
+  },
+  {
+    "text": "how much does it cost to study at aau?",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "what are the fees like at aau?",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "can you tell me about the costs?",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "is aau expensive?",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "what do i have to pay for undergraduate?",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "how much for engineering degree?",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["engineering"]}
+  },
+  {
+    "text": "what does medicine cost at aau?",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["medicine"]}
+  },
+  {
+    "text": "how expensive is computer science?",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "what about business program fees?",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["business"]}
+  },
+  {
+    "text": "how much for law school?",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["law"]}
+  },
+  {
+    "text": "what do graduate students pay?",
+    "intent": "graduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "how much for masters degree?",
+    "intent": "graduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "what does phd cost?",
+    "intent": "graduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "are graduate programs expensive?",
+    "intent": "graduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "what do postgraduate students pay?",
+    "intent": "graduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "how much for masters in engineering?",
+    "intent": "graduate_fee_inquiry",
+    "parameters": {"department": ["engineering"]}
+  },
+  {
+    "text": "what does phd in cs cost?",
+    "intent": "graduate_fee_inquiry",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "how expensive is masters in business?",
+    "intent": "graduate_fee_inquiry",
+    "parameters": {"department": ["business"]}
+  },
+  {
+    "text": "what do international students pay?",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "how much for foreign students?",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "what are the costs for non-ethiopians?",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "do international students pay more?",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "what about fees for refugees?",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "how much do igad students pay?",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "what are the rates for foreign students?",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "do international students pay in usd?",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "how can i pay my fees?",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "what payment options do you have?",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "can i pay online?",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "do you accept telebirr?",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "where can i pay my tuition?",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "can i pay in installments?",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "what banks can i use?",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "can i pay with cash?",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "what courses are available?",
+    "intent": "course_catalog_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "can you show me the course list?",
+    "intent": "course_catalog_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "what subjects can i study?",
+    "intent": "course_catalog_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "do you have a course catalog?",
+    "intent": "course_catalog_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "what courses are offered in engineering?",
+    "intent": "course_catalog_inquiry",
+    "parameters": {"department": ["engineering"]}
+  },
+  {
+    "text": "what can i study in computer science?",
+    "intent": "course_catalog_inquiry",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "what courses are in business program?",
+    "intent": "course_catalog_inquiry",
+    "parameters": {"department": ["business"]}
+  },
+  {
+    "text": "what do i need before taking this course?",
+    "intent": "prerequisite_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "are there any prerequisites?",
+    "intent": "prerequisite_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "what courses should i take first?",
+    "intent": "prerequisite_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "can i skip prerequisites?",
+    "intent": "prerequisite_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "what are the requirements for this course?",
+    "intent": "prerequisite_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "do i meet the prerequisites?",
+    "intent": "prerequisite_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "when does the semester start?",
+    "intent": "academic_calendar_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "what are the important dates?",
+    "intent": "academic_calendar_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "when is the academic year?",
+    "intent": "academic_calendar_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "can you tell me the semester dates?",
+    "intent": "academic_calendar_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "when are the holidays?",
+    "intent": "academic_calendar_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "what is the academic calendar for 2026?",
+    "intent": "academic_calendar_inquiry",
+    "parameters": {"year": ["2026"]}
+  },
+  {
+    "text": "when are my exams?",
+    "intent": "exam_schedule_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "can you tell me the exam schedule?",
+    "intent": "exam_schedule_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "where will my exam be?",
+    "intent": "exam_schedule_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "what time is my exam?",
+    "intent": "exam_schedule_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "when are final exams?",
+    "intent": "exam_schedule_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "can i get my exam timetable?",
+    "intent": "exam_schedule_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "can i get my grade report?",
+    "intent": "grade_report_request",
+    "parameters": {}
+  },
+  {
+    "text": "how do i get my grades?",
+    "intent": "grade_report_request",
+    "parameters": {}
+  },
+  {
+    "text": "can you give me my academic record?",
+    "intent": "grade_report_request",
+    "parameters": {}
+  },
+  {
+    "text": "where can i get my transcript?",
+    "intent": "grade_report_request",
+    "parameters": {}
+  },
+  {
+    "text": "how much does a grade report cost?",
+    "intent": "grade_report_request",
+    "parameters": {}
+  },
+  {
+    "text": "can i get an official transcript?",
+    "intent": "official_transcript_request",
+    "parameters": {"document_type": ["transcript"]}
+  },
+  {
+    "text": "how do i request my transcript?",
+    "intent": "official_transcript_request",
+    "parameters": {"document_type": ["transcript"]}
+  },
+  {
+    "text": "what do i need for transcript request?",
+    "intent": "official_transcript_request",
+    "parameters": {}
+  },
+  {
+    "text": "how long does transcript take?",
+    "intent": "official_transcript_request",
+    "parameters": {}
+  },
+  {
+    "text": "can i get my degree certificate?",
+    "intent": "certificate_request",
+    "parameters": {"document_type": ["degree certificate"]}
+  },
+  {
+    "text": "how do i get my graduation certificate?",
+    "intent": "certificate_request",
+    "parameters": {"document_type": ["graduation certificate"]}
+  },
+  {
+    "text": "what certificates can i request?",
+    "intent": "certificate_request",
+    "parameters": {}
+  },
+  {
+    "text": "can i get enrollment verification?",
+    "intent": "certificate_request",
+    "parameters": {"document_type": ["enrollment verification"]}
+  },
+  {
+    "text": "i lost my student id, what should i do?",
+    "intent": "student_id_services",
+    "parameters": {}
+  },
+  {
+    "text": "can i get a new student id?",
+    "intent": "student_id_services",
+    "parameters": {}
+  },
+  {
+    "text": "my student id is damaged, can you help?",
+    "intent": "student_id_services",
+    "parameters": {}
+  },
+  {
+    "text": "how much for student id replacement?",
+    "intent": "student_id_services",
+    "parameters": {}
+  },
+  {
+    "text": "where are the campuses?",
+    "intent": "campus_location_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "can you tell me about aau campuses?",
+    "intent": "campus_location_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "how many campuses does aau have?",
+    "intent": "campus_location_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "where is the main campus?",
+    "intent": "campus_location_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "can you tell me about sefere selam?",
+    "intent": "campus_location_inquiry",
+    "parameters": {"campus": ["sefere selam"]}
+  },
+  {
+    "text": "where is sefere selam campus?",
+    "intent": "campus_location_inquiry",
+    "parameters": {"campus": ["sefere selam"]}
+  },
+  {
+    "text": "how do i get to science campus?",
+    "intent": "campus_location_inquiry",
+    "parameters": {"campus": ["science campus"]}
+  },
+  {
+    "text": "when is registration open?",
+    "intent": "registration_help",
+    "parameters": {}
+  },
+  {
+    "text": "how do i register for courses?",
+    "intent": "registration_help",
+    "parameters": {}
+  },
+  {
+    "text": "can you help me with registration?",
+    "intent": "registration_help",
+    "parameters": {}
+  },
+  {
+    "text": "what is the registration process?",
+    "intent": "registration_help",
+    "parameters": {}
+  },
+  {
+    "text": "when can i register for classes?",
+    "intent": "registration_help",
+    "parameters": {}
+  },
+  {
+    "text": "is there a registration deadline?",
+    "intent": "registration_help",
+    "parameters": {}
+  },
+  {
+    "text": "can you tell me about aau?",
+    "intent": "general_info",
+    "parameters": {}
+  },
+  {
+    "text": "what is addis ababa university?",
+    "intent": "general_info",
+    "parameters": {}
+  },
+  {
+    "text": "can you give me information about aau?",
+    "intent": "general_info",
+    "parameters": {}
+  },
+  {
+    "text": "what services does aau offer?",
+    "intent": "general_info",
+    "parameters": {}
+  },
+  {
+    "text": "tell me about the university",
+    "intent": "general_info",
+    "parameters": {}
+  },
+  {
+    "text": "what can aau help me with?",
+    "intent": "general_info",
+    "parameters": {}
+  },
+  {
+    "text": "whats the weather like today?",
+    "intent": "out_of_domain",
+    "parameters": {}
+  },
+  {
+    "text": "can you help me cook dinner?",
+    "intent": "out_of_domain",
+    "parameters": {}
+  },
+  {
+    "text": "what movies are playing?",
+    "intent": "out_of_domain",
+    "parameters": {}
+  },
+  {
+    "text": "how do i fix my car?",
+    "intent": "out_of_domain",
+    "parameters": {}
+  },
+  {
+    "text": "what time is it?",
+    "intent": "out_of_domain",
+    "parameters": {}
+  },
+  {
+    "text": "can you tell me a joke?",
+    "intent": "out_of_domain",
+    "parameters": {}
+  },
+  {
+    "text": "whats the capital of france?",
+    "intent": "out_of_domain",
+    "parameters": {}
+  },
+  {
+    "text": "how do i lose weight?",
+    "intent": "out_of_domain",
+    "parameters": {}
+  }
 ]
