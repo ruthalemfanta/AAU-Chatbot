@@ -7,10 +7,12 @@ import re
 from typing import Dict, List, Tuple, Optional, Any
 
 import spacy
-from sklearn.feature_extraction.text import TfidfVectorizer
+import torch
+from transformers import DistilBertTokenizer, DistilBertForSequenceClassification, Trainer, TrainingArguments
+from torch.utils.data import Dataset
+import numpy as np
 from sklearn.metrics import precision_score, recall_score, f1_score
-from sklearn.naive_bayes import MultinomialNB
-from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import LabelEncoder
 
 # Import ML parameter extractor
 try:
@@ -23,14 +25,48 @@ except ImportError:
 # Removed out-of-domain detector - using simple confidence-based fallback instead
 
 
+class IntentDataset(Dataset):
+    """Dataset class for DistilBERT training"""
+    
+    def __init__(self, texts, labels, tokenizer, max_length=128):
+        self.texts = texts
+        self.labels = labels
+        self.tokenizer = tokenizer
+        self.max_length = max_length
+    
+    def __len__(self):
+        return len(self.texts)
+    
+    def __getitem__(self, idx):
+        text = str(self.texts[idx])
+        label = self.labels[idx]
+        
+        encoding = self.tokenizer(
+            text,
+            truncation=True,
+            padding='max_length',
+            max_length=self.max_length,
+            return_tensors='pt'
+        )
+        
+        return {
+            'input_ids': encoding['input_ids'].flatten(),
+            'attention_mask': encoding['attention_mask'].flatten(),
+            'labels': torch.tensor(label, dtype=torch.long)
+        }
+
+
 class IntentClassifier:
-    """Intent classification using scikit-learn pipeline"""
+    """Intent classification using DistilBERT"""
     
     def __init__(self):
-        self.pipeline = Pipeline([
-            ('tfidf', TfidfVectorizer(max_features=1000, stop_words='english')),
-            ('classifier', MultinomialNB())
-        ])
+        self.model_name = 'distilbert-base-uncased'
+        self.tokenizer = DistilBertTokenizer.from_pretrained(self.model_name)
+        self.model = None
+        self.label_encoder = LabelEncoder()
+        self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+        print(f"Using device: {self.device}")
+        
         self.intent_labels = [
             # Original intents (for backward compatibility)
             'admission_inquiry',
@@ -93,20 +129,121 @@ class IntentClassifier:
         self.is_trained = False
     
     def train(self, texts: List[str], labels: List[str]):
-        """Train the intent classifier"""
-        self.pipeline.fit(texts, labels)
+        """Train the DistilBERT intent classifier"""
+        print("🔧 Training DistilBERT intent classifier...")
+        
+        # Encode labels
+        encoded_labels = self.label_encoder.fit_transform(labels)
+        num_labels = len(self.label_encoder.classes_)
+        
+        # Initialize model
+        self.model = DistilBertForSequenceClassification.from_pretrained(
+            self.model_name,
+            num_labels=num_labels
+        ).to(self.device)
+        
+        # Create dataset
+        dataset = IntentDataset(texts, encoded_labels, self.tokenizer)
+        
+        # Improved training arguments for better performance
+        training_args = TrainingArguments(
+            output_dir='./results',
+            num_train_epochs=5,  # More epochs
+            per_device_train_batch_size=8,  # Smaller batch size for better gradients
+            per_device_eval_batch_size=8,
+            warmup_steps=100,  # Fewer warmup steps
+            weight_decay=0.01,
+            learning_rate=2e-5,  # Better learning rate for DistilBERT
+            logging_steps=10,
+            save_strategy='no'  # Don't save checkpoints
+        )
+        
+        # Create trainer
+        trainer = Trainer(
+            model=self.model,
+            args=training_args,
+            train_dataset=dataset
+        )
+        
+        # Train the model
+        trainer.train()
+        
+        # Save the trained model and label encoder
+        self.save_model()
+        
         self.is_trained = True
+        print("✅ DistilBERT training completed!")
+    
+    def save_model(self, model_dir='./trained_model'):
+        """Save the trained model and label encoder"""
+        import os
+        import pickle
+        
+        os.makedirs(model_dir, exist_ok=True)
+        
+        # Save the model and tokenizer
+        self.model.save_pretrained(model_dir)
+        self.tokenizer.save_pretrained(model_dir)
+        
+        # Save the label encoder
+        with open(f'{model_dir}/label_encoder.pkl', 'wb') as f:
+            pickle.dump(self.label_encoder, f)
+        
+        print(f"✅ Model saved to {model_dir}")
+    
+    def load_model(self, model_dir='./trained_model'):
+        """Load a previously trained model"""
+        import os
+        import pickle
+        
+        if not os.path.exists(model_dir):
+            print(f"❌ No trained model found at {model_dir}")
+            return False
+        
+        try:
+            # Load the model and tokenizer
+            self.model = DistilBertForSequenceClassification.from_pretrained(model_dir).to(self.device)
+            self.tokenizer = DistilBertTokenizer.from_pretrained(model_dir)
+            
+            # Load the label encoder
+            with open(f'{model_dir}/label_encoder.pkl', 'rb') as f:
+                self.label_encoder = pickle.load(f)
+            
+            self.is_trained = True
+            print(f"✅ Model loaded from {model_dir}")
+            return True
+        except Exception as e:
+            print(f"❌ Error loading model: {e}")
+            return False
     
     def predict(self, text: str) -> Tuple[str, float]:
         """Predict intent with confidence score"""
         if not self.is_trained:
             return 'general_info', 0.5
         
-        prediction = self.pipeline.predict([text])[0]
-        probabilities = self.pipeline.predict_proba([text])[0]
-        confidence = max(probabilities)
+        # Tokenize input
+        inputs = self.tokenizer(
+            text,
+            truncation=True,
+            padding='max_length',
+            max_length=128,
+            return_tensors='pt'
+        ).to(self.device)
         
-        return prediction, confidence
+        # Get prediction
+        self.model.eval()
+        with torch.no_grad():
+            outputs = self.model(**inputs)
+            logits = outputs.logits
+            probabilities = torch.softmax(logits, dim=-1)
+            
+            predicted_class_id = torch.argmax(probabilities, dim=-1).item()
+            confidence = probabilities[0][predicted_class_id].item()
+            
+            # Decode label
+            predicted_label = self.label_encoder.inverse_transform([predicted_class_id])[0]
+            
+        return predicted_label, confidence
 
 class ParameterExtractor:
     """Extract parameters using NER and rule-based methods"""
@@ -622,6 +759,12 @@ class AAUNLPEngine:
     
     def train_intent_classifier(self, training_data: List[Dict[str, str]]):
         """Train the intent classifier with labeled data"""
+        # Try to load existing model first
+        if self.intent_classifier.load_model():
+            print("🔄 Using previously trained DistilBERT model")
+            return
+        
+        # If no existing model, train from scratch
         texts = [item['text'] for item in training_data]
         labels = [item['intent'] for item in training_data]
         

@@ -7,3 +7,20 @@ aau_chatbot_env
 data/raw/telegram_training_data.json
 
 venv
+
+# Trained model files (too large for git)
+trained_model/
+results/
+logs/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# OS files
+.DS_Store
+Thumbs.db

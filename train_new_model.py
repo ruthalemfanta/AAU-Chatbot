@@ -55,11 +55,6 @@ def train_and_test_model():
         # Campus and services
         ("Where is the main campus?", "campus_location_inquiry"),
         ("What library services are available?", "library_services_inquiry"),
-        
-        # Out of domain
-        ("What's the weather today?", "out_of_domain"),
-        ("Can you help me cook food?", "out_of_domain"),
-        ("What's the capital of France?", "out_of_domain"),
     ]
     
     print(f"\n🧪 Testing Trained Model:")
