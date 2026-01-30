@@ -229,6 +229,30 @@ def _initialize_templates() -> Dict[str, Dict[str, List[str]]]:
             ]
         },
 
+        'unclear': {
+            'complete': [
+                "I'm sorry, I didn't quite understand that. 🤔\n\n"
+                "I can help you with AAU-related topics like:\n"
+                "• Admission inquiries\n"
+                "• Course registration\n"
+                "• Fee payment\n"
+                "• Transcripts & documents\n"
+                "• Grades & schedules\n\n"
+                "Could you please rephrase your question?",
+
+                "I'm not sure I understood your message.\n\n"
+                "Try asking about specific AAU services like:\n"
+                "• \"How do I register for courses?\"\n"
+                "• \"What are the admission requirements?\"\n"
+                "• \"How can I request a transcript?\"\n\n"
+                "How can I help you?"
+            ],
+            'partial': [
+                "I didn't understand that. Could you please ask about a specific AAU service?",
+                "Sorry, I couldn't understand your request. What AAU-related help do you need?"
+            ]
+        },
+
         'technical_support': {
             'complete': [
                 "Technical Support\n\n"
@@ -312,6 +336,8 @@ def _initialize_out_of_domain_templates() -> Dict[str, str]:
         'personal': "I'm an AI assistant designed to help with AAU university services. I don't have personal information to share.",
         
         'math_problem': "I don't solve general math problems. If you need help with AAU mathematics courses or academic requirements, I can help with that!",
+        
+        'unclear': "I'm sorry, I didn't quite understand that message. 🤔",
         
         'general': "I don't have information about that topic."
     }

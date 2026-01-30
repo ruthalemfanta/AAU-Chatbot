@@ -695,3 +695,76 @@
 2026-01-30 13:29:07,284 - watchfiles.main - INFO - 7 changes detected
 2026-01-30 13:33:46,557 - watchfiles.main - INFO - 3 changes detected
 2026-01-30 14:03:08,277 - watchfiles.main - INFO - 7 changes detected
+2026-01-30 14:03:15,266 - watchfiles.main - INFO - 41 changes detected
+2026-01-30 14:03:33,328 - watchfiles.main - INFO - 3 changes detected
+2026-01-30 14:03:44,279 - watchfiles.main - INFO - 4 changes detected
+2026-01-30 14:13:49,351 - watchfiles.main - INFO - 3 changes detected
+2026-01-30 14:19:43,250 - watchfiles.main - INFO - 3 changes detected
+2026-01-30 14:21:05,001 - utils - INFO - Conversation: {'user_message': 'ji', 'bot_response': 'Welcome to AAU Helpdesk! 🎓\n\nI can help you with:\n• Admission inquiries\n• Registration assistance\n• Fee payment information\n• Document requests\n• Grade inquiries\n• Course information\n• Schedule details\n\nHow can I assist you today?', 'intent': np.str_('general_info'), 'confidence': np.float64(0.41469194312796204), 'parameters': {}, 'user_id': None, 'session_id': 'session-1769767854781', 'out_of_domain': None}
+2026-01-30 14:21:15,091 - watchfiles.main - INFO - 3 changes detected
+2026-01-30 14:21:48,171 - utils - INFO - Conversation: {'user_message': 'wagwan', 'bot_response': 'AAU Student Services \n\n**Main Campus:** Addis Ababa, Ethiopia\n**Phone:** +251-11-123-4567\n**Email:** info@aau.edu.et\n**Website:** www.aau.edu.et\n\nWhat specific information do you need?', 'intent': np.str_('general_info'), 'confidence': np.float64(0.41469194312796204), 'parameters': {}, 'user_id': None, 'session_id': 'session-1769767854781', 'out_of_domain': None}
+2026-01-30 14:23:53,261 - watchfiles.main - INFO - 2 changes detected
+2026-01-30 14:23:53,773 - watchfiles.main - INFO - 1 change detected
+2026-01-30 14:23:56,272 - news_retriever - INFO - Loaded 1397 news items for retrieval
+2026-01-30 14:23:56,352 - watchfiles.main - INFO - 1 change detected
+2026-01-30 14:23:56,525 - news_retriever - INFO - Loaded 1397 news items for retrieval
+2026-01-30 14:23:56,529 - utils - INFO - Starting AAU Helpdesk Chatbot...
+2026-01-30 14:23:56,529 - utils - INFO - Loaded 113 samples from quality Q&A data
+2026-01-30 14:23:56,530 - utils - INFO - Loaded 44 samples from enhanced data
+2026-01-30 14:23:56,543 - utils - INFO - Loaded 612 samples from telegram data
+2026-01-30 14:23:56,544 - utils - INFO - Loaded 75 samples from AAU data
+2026-01-30 14:23:56,544 - utils - INFO - Total training data: 844 samples
+2026-01-30 14:23:56,557 - utils - INFO - Chatbot initialized successfully!
+2026-01-30 14:25:25,849 - watchfiles.main - INFO - 1 change detected
+2026-01-30 14:25:26,439 - watchfiles.main - INFO - 1 change detected
+2026-01-30 14:25:29,077 - news_retriever - INFO - Loaded 1397 news items for retrieval
+2026-01-30 14:25:29,188 - watchfiles.main - INFO - 1 change detected
+2026-01-30 14:25:29,320 - news_retriever - INFO - Loaded 1397 news items for retrieval
+2026-01-30 14:25:29,324 - utils - INFO - Starting AAU Helpdesk Chatbot...
+2026-01-30 14:25:29,325 - utils - INFO - Loaded 113 samples from quality Q&A data
+2026-01-30 14:25:29,327 - utils - INFO - Loaded 44 samples from enhanced data
+2026-01-30 14:25:29,341 - utils - INFO - Loaded 612 samples from telegram data
+2026-01-30 14:25:29,342 - utils - INFO - Loaded 75 samples from AAU data
+2026-01-30 14:25:29,342 - utils - INFO - Total training data: 844 samples
+2026-01-30 14:25:29,355 - utils - INFO - Chatbot initialized successfully!
+2026-01-30 14:26:28,303 - watchfiles.main - INFO - 1 change detected
+2026-01-30 14:26:28,813 - watchfiles.main - INFO - 1 change detected
+2026-01-30 14:26:31,700 - news_retriever - INFO - Loaded 1397 news items for retrieval
+2026-01-30 14:26:31,797 - watchfiles.main - INFO - 1 change detected
+2026-01-30 14:26:31,964 - news_retriever - INFO - Loaded 1397 news items for retrieval
+2026-01-30 14:26:31,968 - utils - INFO - Starting AAU Helpdesk Chatbot...
+2026-01-30 14:26:31,969 - utils - INFO - Loaded 113 samples from quality Q&A data
+2026-01-30 14:26:31,970 - utils - INFO - Loaded 44 samples from enhanced data
+2026-01-30 14:26:31,985 - utils - INFO - Loaded 612 samples from telegram data
+2026-01-30 14:26:31,985 - utils - INFO - Loaded 75 samples from AAU data
+2026-01-30 14:26:31,985 - utils - INFO - Total training data: 844 samples
+2026-01-30 14:26:31,999 - utils - INFO - Chatbot initialized successfully!
+2026-01-30 14:40:53,293 - watchfiles.main - INFO - 2 changes detected
+2026-01-30 14:40:53,879 - watchfiles.main - INFO - 1 change detected
+2026-01-30 14:40:54,350 - watchfiles.main - INFO - 1 change detected
+2026-01-30 14:40:58,193 - news_retriever - INFO - Loaded 1397 news items for retrieval
+2026-01-30 14:40:58,277 - watchfiles.main - INFO - 1 change detected
+2026-01-30 14:40:58,461 - news_retriever - INFO - Loaded 1397 news items for retrieval
+2026-01-30 14:40:58,465 - utils - INFO - Starting AAU Helpdesk Chatbot...
+2026-01-30 14:40:58,465 - utils - INFO - Loaded 113 samples from quality Q&A data
+2026-01-30 14:40:58,466 - utils - INFO - Loaded 44 samples from enhanced data
+2026-01-30 14:40:58,480 - utils - INFO - Loaded 612 samples from telegram data
+2026-01-30 14:40:58,481 - utils - INFO - Loaded 75 samples from AAU data
+2026-01-30 14:40:58,481 - utils - INFO - Total training data: 844 samples
+2026-01-30 14:40:58,495 - utils - INFO - Chatbot initialized successfully!
+2026-01-30 14:41:01,761 - utils - INFO - Conversation: {'user_message': 'wagwan', 'bot_response': "I'm sorry, I didn't quite understand that message. 🤔\n\nI'm specifically designed to help with AAU (Addis Ababa University) services and I don't have information about that topic.\n\nI can help you with:\n• Admission inquiries and requirements\n• Course registration assistance\n• Fee payment information\n• Transcript and document requests\n• Grade inquiries and academic records\n• University schedules and contacts\n• Department information\n• Technical support for student services\n\nHow can I assist you with AAU services today?", 'intent': 'out_of_domain', 'confidence': np.float64(0.41469194312796204), 'parameters': {}, 'user_id': None, 'session_id': 'session-1769767854781', 'out_of_domain': {'is_out_of_domain': True, 'confidence_score': 0.75, 'detected_topic': 'unclear', 'reason': 'unrecognized_short_message'}}
+2026-01-30 14:49:14,241 - watchfiles.main - INFO - 3 changes detected
+2026-01-30 15:01:46,117 - watchfiles.main - INFO - 3 changes detected
+2026-01-30 15:15:10,262 - watchfiles.main - INFO - 3 changes detected
+2026-01-30 15:34:57,633 - news_retriever - INFO - Loaded 1397 news items for retrieval
+2026-01-30 15:35:00,199 - news_retriever - INFO - Loaded 1397 news items for retrieval
+2026-01-30 15:35:00,288 - watchfiles.main - INFO - 1 change detected
+2026-01-30 15:35:00,461 - news_retriever - INFO - Loaded 1397 news items for retrieval
+2026-01-30 15:35:00,466 - utils - INFO - Starting AAU Helpdesk Chatbot...
+2026-01-30 15:35:00,469 - utils - INFO - Loaded 113 samples from quality Q&A data
+2026-01-30 15:35:00,471 - utils - INFO - Loaded 44 samples from enhanced data
+2026-01-30 15:35:00,485 - utils - INFO - Loaded 612 samples from telegram data
+2026-01-30 15:35:00,487 - utils - INFO - Loaded 75 samples from AAU data
+2026-01-30 15:35:00,487 - utils - INFO - Total training data: 844 samples
+2026-01-30 15:35:00,533 - utils - INFO - Chatbot initialized successfully!
+2026-01-30 19:08:14,028 - watchfiles.main - INFO - 2 changes detected

@@ -150,18 +150,29 @@ class OutOfDomainDetector:
         """
         text_clean = text.strip()
         
+        # Check 1: Get initial checks ready
+        has_keywords = self.has_domain_keywords(text)
+        matches_patterns = self.detect_out_of_domain_patterns(text)
+        words = text_clean.split()
+        
         # Quick checks for obvious cases
         if len(text_clean) < 3:
             return {
-                'is_out_of_domain': False,
-                'confidence_score': 0.0,
-                'detected_topic': None,
+                'is_out_of_domain': True,
+                'confidence_score': 0.8,
+                'detected_topic': 'unclear',
                 'reason': 'text_too_short'
             }
         
-        # Check 1: Very low intent confidence + no domain keywords
-        has_keywords = self.has_domain_keywords(text)
-        matches_patterns = self.detect_out_of_domain_patterns(text)
+        # Check for gibberish/slang/unrecognizable single words
+        # If it's a short message (1-2 words) with no domain keywords and low confidence
+        if len(words) <= 2 and not has_keywords and confidence < 0.5:
+            return {
+                'is_out_of_domain': True,
+                'confidence_score': 0.75,
+                'detected_topic': 'unclear',
+                'reason': 'unrecognized_short_message'
+            }
         
         # Strong indicators of out-of-domain
         if matches_patterns:
@@ -174,12 +185,12 @@ class OutOfDomainDetector:
             }
         
         # Low confidence + no domain keywords = likely out of domain
-        if confidence < 0.15 and not has_keywords:
+        if confidence < 0.4 and not has_keywords:
             topic = self.classify_topic(text)
             return {
                 'is_out_of_domain': True,
                 'confidence_score': 0.7,
-                'detected_topic': topic,
+                'detected_topic': topic if topic != 'general' else 'unclear',
                 'reason': 'low_confidence_no_keywords'
             }
         
