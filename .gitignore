@@ -3,3 +3,5 @@ aau_chatbot_env
 .env
 
 .idea
+
+data/raw/telegram_training_data.json
