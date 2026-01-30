@@ -1,0 +1,69 @@
+AAU WEB SCRAPER USAGE GUIDE
+============================
+
+INSTALLATION
+------------
+pip install selenium webdriver-manager schedule beautifulsoup4
+
+RUNNING THE SCRAPER
+-------------------
+
+1. Run Once (scrape now and exit):
+   python run_scraper.py
+
+2. Run Continuously (scrape every 24 hours):
+   python run_scraper.py continuous
+
+OUTPUT FILES
+------------
+All scraped data is saved in: data/raw/categories/
+
+Files by category:
+- aau_admission.json      - Admission information
+- aau_registration.json   - Registration details
+- aau_fees.json          - Fee and payment info
+- aau_documents.json     - Document requests
+- aau_grades.json        - Grade and exam info
+- aau_courses.json       - Course and program info
+- aau_events.json        - University events
+- aau_news.json          - News and announcements
+- aau_research.json      - Research and publications
+- aau_library.json       - Library services
+- aau_general.json       - General information
+
+FEATURES
+--------
+- Scrapes up to 1000 pages from www.aau.edu.et
+- Automatically categorizes content
+- Incremental updates (only adds new content)
+- Handles JavaScript-rendered pages
+- Respects website with 3-second delays
+- Comprehensive logging in aau_chatbot.log
+
+STATISTICS
+----------
+Last run scraped 87 pages:
+- Admission: 7 pages
+- Registration: 1 page
+- Fees: 2 pages
+- Grades: 8 pages
+- Courses: 2 pages
+- Events: 1 page
+- News: 8 pages
+- Research: 4 pages
+- Library: 6 pages
+- General: 48 pages
+
+CONTINUOUS MODE
+---------------
+When running in continuous mode, the scraper will:
+1. Run immediately on start
+2. Wait 24 hours
+3. Run again
+4. Repeat indefinitely
+
+To stop continuous mode: Press Ctrl+C
+
+LOGS
+----
+All activity is logged to: aau_chatbot.log

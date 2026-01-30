@@ -1,318 +1,339 @@
-"""
-Web Scraper for AAU Helpdesk Data Collection
-Scrapes AAU website and related sources for training data
-"""
-
-import requests
-from bs4 import BeautifulSoup
 import json
 import time
 import logging
-from typing import List, Dict, Any
-from urllib.parse import urljoin, urlparse
-import re
+from typing import List, Dict, Any, Set
 from pathlib import Path
+from collections import deque
+from urllib.parse import urljoin, urlparse, urldefrag
+import re
+from datetime import datetime
+import schedule
 
-logging.basicConfig(level=logging.INFO)
+try:
+    from selenium import webdriver
+    from selenium.webdriver.chrome.options import Options
+    from selenium.webdriver.common.by import By
+    from selenium.webdriver.support.ui import WebDriverWait
+    from selenium.webdriver.support import expected_conditions as EC
+    from selenium.common.exceptions import TimeoutException
+    from bs4 import BeautifulSoup
+    SELENIUM_AVAILABLE = True
+except ImportError:
+    SELENIUM_AVAILABLE = False
+    print("ERROR: Selenium not installed. Install with: pip install selenium webdriver-manager")
+    exit(1)
+
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler('aau_chatbot.log'),
+        logging.StreamHandler()
+    ]
+)
 logger = logging.getLogger(__name__)
 
 class AAUWebScraper:
-    """Web scraper for AAU website and related sources"""
     
     def __init__(self):
-        self.base_urls = [
-            "http://www.aau.edu.et",  # Main AAU website
-            # Add more AAU-related URLs as needed
-        ]
-        self.session = requests.Session()
-        self.session.headers.update({
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
-        })
-        self.scraped_data = []
-        self.delay = 1  # Delay between requests to be respectful
-    
-    def scrape_aau_pages(self) -> List[Dict[str, Any]]:
-        """Scrape AAU website pages for relevant information"""
-        scraped_content = []
-        
-        # Define target pages and their expected intents
-        target_pages = {
-            '/admission': 'admission_inquiry',
-            '/registration': 'registration_help',
-            '/fees': 'fee_payment',
-            '/academic-services': 'document_request',
-            '/student-services': 'general_info',
-            '/departments': 'course_information'
+        self.base_url = "https://www.aau.edu.et"
+        self.domain = urlparse(self.base_url).netloc
+        self.visited_urls: Set[str] = set()
+        self.to_visit: deque = deque()
+        self.scraped_by_category: Dict[str, List[Dict[str, Any]]] = {
+            'admission': [],
+            'registration': [],
+            'fees': [],
+            'documents': [],
+            'grades': [],
+            'courses': [],
+            'events': [],
+            'news': [],
+            'research': [],
+            'library': [],
+            'general': []
         }
+        self.delay = 3
+        self.max_pages = 1000
+        self.driver = None
         
-        for base_url in self.base_urls:
-            for page_path, intent in target_pages.items():
-                try:
-                    url = urljoin(base_url, page_path)
-                    content = self._scrape_page(url, intent)
-                    if content:
-                        scraped_content.extend(content)
-                    
-                    time.sleep(self.delay)
-                    
-                except Exception as e:
-                    logger.error(f"Error scraping {url}: {e}")
-                    continue
+    def setup_driver(self):
+        chrome_options = Options()
+        chrome_options.add_argument('--headless')
+        chrome_options.add_argument('--no-sandbox')
+        chrome_options.add_argument('--disable-dev-shm-usage')
+        chrome_options.add_argument('--disable-gpu')
+        chrome_options.add_argument('--window-size=1920,1080')
+        chrome_options.add_argument('user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36')
         
-        return scraped_content
-    
-    def _scrape_page(self, url: str, intent: str) -> List[Dict[str, Any]]:
-        """Scrape a single page and extract relevant content"""
         try:
-            response = self.session.get(url, timeout=10)
-            response.raise_for_status()
-            
-            soup = BeautifulSoup(response.content, 'html.parser')
-            
-            # Remove script and style elements
-            for script in soup(["script", "style"]):
-                script.decompose()
-            
-            # Extract text content
-            text_content = soup.get_text()
-            
-            # Clean and process text
-            lines = (line.strip() for line in text_content.splitlines())
-            chunks = (phrase.strip() for line in lines for phrase in line.split("  "))
-            text = ' '.join(chunk for chunk in chunks if chunk)
-            
-            # Generate training samples from the content
-            samples = self._generate_training_samples(text, intent, url)
-            
-            logger.info(f"Scraped {len(samples)} samples from {url}")
-            return samples
-            
-        except requests.RequestException as e:
-            logger.error(f"Request error for {url}: {e}")
-            return []
+            self.driver = webdriver.Chrome(options=chrome_options)
+            logger.info("WebDriver initialized")
         except Exception as e:
-            logger.error(f"Parsing error for {url}: {e}")
-            return []
+            logger.error(f"Failed to initialize WebDriver: {e}")
+            raise
     
-    def _generate_training_samples(self, text: str, intent: str, source_url: str) -> List[Dict[str, Any]]:
-        """Generate training samples from scraped text"""
-        samples = []
+    def close_driver(self):
+        if self.driver:
+            self.driver.quit()
+    
+    def normalize_url(self, url: str) -> str:
+        url, _ = urldefrag(url)
+        url = url.rstrip('/')
+        return url
+    
+    def is_valid_url(self, url: str) -> bool:
+        parsed = urlparse(url)
         
-        # Split text into sentences
-        sentences = re.split(r'[.!?]+', text)
+        if parsed.netloc and parsed.netloc != self.domain:
+            return False
         
-        # Intent-specific keyword patterns
-        intent_patterns = {
-            'admission_inquiry': [
-                r'admission|apply|application|entrance|requirement|eligibility',
-                r'how to apply|application process|admission criteria'
-            ],
-            'registration_help': [
-                r'registration|register|enroll|course selection|semester',
-                r'how to register|registration process|course enrollment'
-            ],
-            'fee_payment': [
-                r'fee|payment|tuition|cost|price|birr|ETB',
-                r'how much|payment method|fee structure'
-            ],
-            'document_request': [
-                r'transcript|certificate|document|diploma|grade report',
-                r'request document|official transcript|academic record'
-            ],
-            'course_information': [
-                r'course|curriculum|program|department|faculty|school',
-                r'course description|program details|department information'
-            ],
-            'general_info': [
-                r'university|AAU|Addis Ababa University|contact|information',
-                r'about university|general information|contact details'
-            ]
-        }
+        skip_extensions = ['.pdf', '.jpg', '.jpeg', '.png', '.gif', '.zip', '.doc', '.docx', 
+                          '.xls', '.xlsx', '.ppt', '.pptx', '.mp4', '.mp3', '.avi']
+        if any(url.lower().endswith(ext) for ext in skip_extensions):
+            return False
         
-        patterns = intent_patterns.get(intent, [])
+        skip_patterns = ['mailto:', 'tel:', 'javascript:', 'wp-content/uploads', 'wp-admin']
+        if any(pattern in url.lower() for pattern in skip_patterns):
+            return False
         
-        for sentence in sentences:
-            sentence = sentence.strip()
-            if len(sentence) < 20 or len(sentence) > 200:  # Filter by length
-                continue
+        return True
+    
+    def crawl_page(self, url: str) -> Dict[str, Any]:
+        try:
+            logger.info(f"Loading: {url}")
+            self.driver.get(url)
+            time.sleep(self.delay)
             
-            # Check if sentence matches intent patterns
-            if any(re.search(pattern, sentence, re.IGNORECASE) for pattern in patterns):
-                # Extract parameters from sentence
-                parameters = self._extract_parameters_from_text(sentence)
-                
-                sample = {
-                    'text': sentence,
-                    'intent': intent,
-                    'parameters': parameters,
-                    'source': source_url,
-                    'scraped_at': time.strftime('%Y-%m-%d %H:%M:%S')
-                }
-                samples.append(sample)
-        
-        return samples[:10]  # Limit samples per page
+            try:
+                WebDriverWait(self.driver, 10).until(
+                    EC.presence_of_element_located((By.TAG_NAME, "body"))
+                )
+            except TimeoutException:
+                logger.warning(f"Timeout: {url}")
+            
+            page_source = self.driver.page_source
+            soup = BeautifulSoup(page_source, 'html.parser')
+            
+            page_data = self._extract_page_content(soup, url)
+            links = self._extract_links(soup, url)
+            
+            return {'page_data': page_data, 'links': links}
+            
+        except Exception as e:
+            logger.error(f"Error crawling {url}: {e}")
+            return {'page_data': None, 'links': []}
     
-    def _extract_parameters_from_text(self, text: str) -> Dict[str, List[str]]:
-        """Extract parameters from text using regex patterns"""
-        parameters = {}
+    def _extract_page_content(self, soup: BeautifulSoup, url: str) -> Dict[str, Any]:
+        for element in soup(['script', 'style', 'nav', 'footer', 'header', 'iframe']):
+            element.decompose()
         
-        # Department patterns
-        dept_pattern = r'\b(computer science|engineering|medicine|law|business|economics|psychology|biology|chemistry|physics|mathematics|english|amharic)\b'
-        departments = re.findall(dept_pattern, text, re.IGNORECASE)
-        if departments:
-            parameters['department'] = list(set(departments))
+        title = soup.find('title')
+        title_text = title.get_text().strip() if title else ''
         
-        # Document type patterns
-        doc_pattern = r'\b(transcript|certificate|diploma|degree|grade report|academic record)\b'
-        documents = re.findall(doc_pattern, text, re.IGNORECASE)
-        if documents:
-            parameters['document_type'] = list(set(documents))
+        headings = []
+        for heading_tag in ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']:
+            for heading in soup.find_all(heading_tag):
+                heading_text = heading.get_text().strip()
+                if heading_text and len(heading_text) > 3:
+                    headings.append({'level': heading_tag, 'text': heading_text})
         
-        # Year patterns
-        year_pattern = r'\b(20\d{2})\b'
-        years = re.findall(year_pattern, text)
-        if years:
-            parameters['year'] = list(set(years))
+        paragraphs = []
+        for p in soup.find_all('p'):
+            p_text = p.get_text().strip()
+            if p_text and len(p_text) > 20:
+                paragraphs.append(p_text)
         
-        # Semester patterns
-        semester_pattern = r'\b(first|second|third|1st|2nd|3rd|fall|spring|summer)\s*(semester|sem)?\b'
-        semesters = re.findall(semester_pattern, text, re.IGNORECASE)
-        if semesters:
-            parameters['semester'] = list(set([s[0] for s in semesters]))
+        lists = []
+        for ul in soup.find_all(['ul', 'ol']):
+            list_items = [li.get_text().strip() for li in ul.find_all('li') if li.get_text().strip()]
+            if list_items:
+                lists.extend(list_items)
         
-        # Fee amount patterns
-        fee_pattern = r'\b(\d+(?:,\d{3})*(?:\.\d{2})?)\s*(birr|etb|usd|\$)?\b'
-        fees = re.findall(fee_pattern, text, re.IGNORECASE)
-        if fees:
-            parameters['fee_amount'] = list(set([f[0] for f in fees]))
+        divs = []
+        for div in soup.find_all('div', class_=re.compile('content|article|post|entry')):
+            div_text = div.get_text().strip()
+            if div_text and len(div_text) > 50:
+                divs.append(div_text[:1000])
         
-        return parameters
+        text_content = soup.get_text()
+        lines = (line.strip() for line in text_content.splitlines())
+        chunks = (phrase.strip() for line in lines for phrase in line.split("  "))
+        clean_text = ' '.join(chunk for chunk in chunks if chunk)
+        
+        return {
+            'url': url,
+            'title': title_text,
+            'headings': headings,
+            'paragraphs': paragraphs,
+            'lists': lists,
+            'divs': divs,
+            'full_text': clean_text[:10000],
+            'scraped_at': datetime.now().isoformat()
+        }
     
-    def generate_synthetic_data(self) -> List[Dict[str, Any]]:
-        """Generate synthetic training data for AAU helpdesk"""
-        synthetic_samples = []
+    def _extract_links(self, soup: BeautifulSoup, current_url: str) -> List[str]:
+        links = []
+        for link in soup.find_all('a', href=True):
+            href = link['href']
+            absolute_url = urljoin(current_url, href)
+            normalized_url = self.normalize_url(absolute_url)
+            
+            if self.is_valid_url(normalized_url) and normalized_url not in self.visited_urls:
+                links.append(normalized_url)
         
-        # Templates for generating synthetic queries
-        templates = {
-            'admission_inquiry': [
-                "I want to apply for {department} admission at AAU",
-                "What are the requirements for {department} program?",
-                "How do I apply to {department} at Addis Ababa University?",
-                "When is the application deadline for {department}?",
-                "What documents do I need for {department} admission?"
-            ],
-            'registration_help': [
-                "How do I register for {semester} semester {year}?",
-                "I need help with course registration for {semester} {year}",
-                "What is the registration process for {semester} semester?",
-                "When does registration open for {semester} {year}?",
-                "I want to register for courses in {semester} semester"
-            ],
-            'fee_payment': [
-                "I need to pay {fee_amount} birr for tuition",
-                "How do I pay university fees of {fee_amount}?",
-                "What are the payment methods for {fee_amount} ETB?",
-                "Where can I pay my {fee_amount} birr semester fee?",
-                "I want to pay {fee_amount} for registration"
-            ],
-            'transcript_request': [
-                "I need my {document_type} from {department}",
-                "How do I request a {document_type}?",
-                "Can I get my {document_type} urgently?",
-                "What is the process for {document_type} request?",
-                "I want to request my official {document_type}"
-            ],
-            'grade_inquiry': [
-                "What are my grades for {semester} semester {year}?",
-                "I want to check my {semester} {year} results",
-                "How do I access my grades for {semester} semester?",
-                "When will {semester} {year} grades be released?",
-                "I need my grade report for {semester} {year}"
+        return list(set(links))
+    
+    def classify_category(self, url: str, page_data: Dict[str, Any]) -> str:
+        url_lower = url.lower()
+        title_lower = page_data['title'].lower()
+        text_lower = page_data['full_text'].lower()[:500]
+        
+        if any(kw in url_lower or kw in title_lower for kw in ['admission', 'apply', 'application', 'entrance']):
+            return 'admission'
+        elif any(kw in url_lower or kw in title_lower for kw in ['registration', 'register', 'enroll']):
+            return 'registration'
+        elif any(kw in url_lower or kw in title_lower for kw in ['fee', 'payment', 'tuition', 'cost']):
+            return 'fees'
+        elif any(kw in url_lower or kw in title_lower for kw in ['transcript', 'certificate', 'document', 'diploma']):
+            return 'documents'
+        elif any(kw in url_lower or kw in title_lower for kw in ['grade', 'result', 'score', 'gpa', 'exam']):
+            return 'grades'
+        elif any(kw in url_lower or kw in title_lower for kw in ['course', 'curriculum', 'program', 'department', 'faculty']):
+            return 'courses'
+        elif any(kw in url_lower or kw in title_lower for kw in ['event', 'calendar', 'schedule']):
+            return 'events'
+        elif any(kw in url_lower or kw in title_lower for kw in ['news', 'announcement', 'update']):
+            return 'news'
+        elif any(kw in url_lower or kw in title_lower for kw in ['research', 'publication', 'journal']):
+            return 'research'
+        elif any(kw in url_lower or kw in title_lower for kw in ['library', 'book', 'resource']):
+            return 'library'
+        else:
+            return 'general'
+    
+    def crawl_website(self):
+        logger.info(f"Starting crawl of {self.base_url}")
+        
+        self.setup_driver()
+        
+        try:
+            self.to_visit.append(self.base_url)
+            
+            common_pages = [
+                '/', '/about', '/admission', '/admissions', '/academics', '/programs',
+                '/departments', '/colleges', '/faculties', '/registration', '/student-services',
+                '/academic-services', '/fees', '/tuition', '/library', '/research', '/contact',
+                '/news', '/events', '/undergraduate', '/graduate', '/postgraduate', '/campus'
             ]
+            
+            for page in common_pages:
+                full_url = urljoin(self.base_url, page)
+                if full_url not in self.visited_urls:
+                    self.to_visit.append(full_url)
+            
+            while self.to_visit and len(self.visited_urls) < self.max_pages:
+                current_url = self.to_visit.popleft()
+                
+                if current_url in self.visited_urls:
+                    continue
+                
+                logger.info(f"[{len(self.visited_urls) + 1}/{self.max_pages}]: {current_url}")
+                
+                result = self.crawl_page(current_url)
+                self.visited_urls.add(current_url)
+                
+                if result['page_data']:
+                    category = self.classify_category(current_url, result['page_data'])
+                    self.scraped_by_category[category].append(result['page_data'])
+                    logger.info(f"Categorized as: {category}")
+                
+                for link in result['links']:
+                    if link not in self.visited_urls and link not in self.to_visit:
+                        self.to_visit.append(link)
+                
+                logger.info(f"Queue: {len(self.to_visit)}, Visited: {len(self.visited_urls)}")
+            
+            logger.info(f"Crawling completed. Visited {len(self.visited_urls)} pages")
+            
+        finally:
+            self.close_driver()
+    
+    def save_by_category(self):
+        output_dir = Path('data/raw/categories')
+        output_dir.mkdir(parents=True, exist_ok=True)
+        
+        for category, data in self.scraped_by_category.items():
+            if data:
+                filename = f'aau_{category}.json'
+                filepath = output_dir / filename
+                
+                existing_data = []
+                if filepath.exists():
+                    try:
+                        with open(filepath, 'r', encoding='utf-8') as f:
+                            existing_data = json.load(f)
+                    except:
+                        pass
+                
+                existing_urls = {item['url'] for item in existing_data if 'url' in item}
+                new_data = [item for item in data if item['url'] not in existing_urls]
+                
+                combined_data = existing_data + new_data
+                
+                with open(filepath, 'w', encoding='utf-8') as f:
+                    json.dump(combined_data, f, indent=2, ensure_ascii=False)
+                
+                logger.info(f"Saved {len(combined_data)} items ({len(new_data)} new) to {filename}")
+    
+    def save_stats(self):
+        stats = {
+            'total_pages_visited': len(self.visited_urls),
+            'pages_by_category': {cat: len(data) for cat, data in self.scraped_by_category.items()},
+            'visited_urls': list(self.visited_urls),
+            'crawl_completed_at': datetime.now().isoformat(),
+            'base_url': self.base_url
         }
         
-        # Parameter values
-        departments = ['computer science', 'engineering', 'medicine', 'law', 'business', 'economics']
-        semesters = ['first', 'second', 'third', 'fall', 'spring']
-        years = ['2023', '2024', '2025']
-        documents = ['transcript', 'certificate', 'diploma', 'grade report']
-        fees = ['5000', '7500', '10000', '2500', '3000']
-        
-        # Generate samples
-        for intent, template_list in templates.items():
-            for template in template_list:
-                # Generate multiple variations
-                for _ in range(3):
-                    params = {}
-                    text = template
-                    
-                    if '{department}' in template:
-                        dept = departments[len(synthetic_samples) % len(departments)]
-                        text = text.replace('{department}', dept)
-                        params['department'] = [dept]
-                    
-                    if '{semester}' in template:
-                        sem = semesters[len(synthetic_samples) % len(semesters)]
-                        text = text.replace('{semester}', sem)
-                        params['semester'] = [sem]
-                    
-                    if '{year}' in template:
-                        year = years[len(synthetic_samples) % len(years)]
-                        text = text.replace('{year}', year)
-                        params['year'] = [year]
-                    
-                    if '{document_type}' in template:
-                        doc = documents[len(synthetic_samples) % len(documents)]
-                        text = text.replace('{document_type}', doc)
-                        params['document_type'] = [doc]
-                    
-                    if '{fee_amount}' in template:
-                        fee = fees[len(synthetic_samples) % len(fees)]
-                        text = text.replace('{fee_amount}', fee)
-                        params['fee_amount'] = [fee]
-                    
-                    synthetic_samples.append({
-                        'text': text,
-                        'intent': intent,
-                        'parameters': params,
-                        'source': 'synthetic',
-                        'generated_at': time.strftime('%Y-%m-%d %H:%M:%S')
-                    })
-        
-        return synthetic_samples
-    
-    def save_data(self, data: List[Dict[str, Any]], filename: str):
-        """Save scraped data to JSON file"""
-        output_path = Path('data/raw') / filename
-        output_path.parent.mkdir(parents=True, exist_ok=True)
-        
+        output_path = Path('data/raw/crawl_statistics.json')
         with open(output_path, 'w', encoding='utf-8') as f:
-            json.dump(data, f, indent=2, ensure_ascii=False)
+            json.dump(stats, f, indent=2, ensure_ascii=False)
         
-        logger.info(f"Saved {len(data)} samples to {output_path}")
+        logger.info(f"Saved statistics")
     
     def run_scraping(self):
-        """Run the complete scraping process"""
-        logger.info("Starting AAU data scraping...")
+        logger.info("=" * 80)
+        logger.info(f"AAU Website Scraping - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+        logger.info("=" * 80)
         
-        # Scrape web pages
-        web_data = self.scrape_aau_pages()
+        self.crawl_website()
+        self.save_by_category()
+        self.save_stats()
         
-        # Generate synthetic data
-        synthetic_data = self.generate_synthetic_data()
-        
-        # Combine all data
-        all_data = web_data + synthetic_data
-        
-        # Save data
-        self.save_data(all_data, 'aau_training_data.json')
-        self.save_data(web_data, 'aau_web_scraped.json')
-        self.save_data(synthetic_data, 'aau_synthetic_data.json')
-        
-        logger.info(f"Scraping completed. Total samples: {len(all_data)}")
-        return all_data
+        logger.info("=" * 80)
+        logger.info("SCRAPING COMPLETED")
+        for category, data in self.scraped_by_category.items():
+            if data:
+                logger.info(f"  {category}: {len(data)} pages")
+        logger.info("=" * 80)
+
+def run_periodic_scraping():
+    scraper = AAUWebScraper()
+    scraper.run_scraping()
 
 if __name__ == "__main__":
-    scraper = AAUWebScraper()
-    data = scraper.run_scraping()
-    print(f"Collected {len(data)} training samples")
+    import sys
+    
+    if len(sys.argv) > 1 and sys.argv[1] == '--continuous':
+        logger.info("Starting continuous scraping mode")
+        logger.info("Scraping every 24 hours")
+        
+        run_periodic_scraping()
+        
+        schedule.every(24).hours.do(run_periodic_scraping)
+        
+        while True:
+            schedule.run_pending()
+            time.sleep(3600)
+    else:
+        run_periodic_scraping()
