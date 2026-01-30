@@ -174,6 +174,7 @@ class AAUWebScraper:
     
     def _extract_links(self, soup: BeautifulSoup, current_url: str) -> List[str]:
         links = []
+        
         for link in soup.find_all('a', href=True):
             href = link['href']
             absolute_url = urljoin(current_url, href)
@@ -181,6 +182,42 @@ class AAUWebScraper:
             
             if self.is_valid_url(normalized_url) and normalized_url not in self.visited_urls:
                 links.append(normalized_url)
+        
+        for button in soup.find_all(['button', 'div', 'span'], attrs={'onclick': True}):
+            onclick = button.get('onclick', '')
+            url_match = re.search(r'["\']([^"\']+)["\']', onclick)
+            if url_match:
+                href = url_match.group(1)
+                absolute_url = urljoin(current_url, href)
+                normalized_url = self.normalize_url(absolute_url)
+                if self.is_valid_url(normalized_url) and normalized_url not in self.visited_urls:
+                    links.append(normalized_url)
+        
+        for area in soup.find_all('area', href=True):
+            href = area['href']
+            absolute_url = urljoin(current_url, href)
+            normalized_url = self.normalize_url(absolute_url)
+            if self.is_valid_url(normalized_url) and normalized_url not in self.visited_urls:
+                links.append(normalized_url)
+        
+        try:
+            js_links = self.driver.execute_script("""
+                var links = [];
+                var elements = document.querySelectorAll('[href], [data-href], [data-url]');
+                elements.forEach(function(el) {
+                    var href = el.getAttribute('href') || el.getAttribute('data-href') || el.getAttribute('data-url');
+                    if (href) links.push(href);
+                });
+                return links;
+            """)
+            for href in js_links:
+                if href and not href.startswith('javascript:'):
+                    absolute_url = urljoin(current_url, href)
+                    normalized_url = self.normalize_url(absolute_url)
+                    if self.is_valid_url(normalized_url) and normalized_url not in self.visited_urls:
+                        links.append(normalized_url)
+        except:
+            pass
         
         return list(set(links))
     
@@ -224,13 +261,22 @@ class AAUWebScraper:
                 '/', '/about', '/admission', '/admissions', '/academics', '/programs',
                 '/departments', '/colleges', '/faculties', '/registration', '/student-services',
                 '/academic-services', '/fees', '/tuition', '/library', '/research', '/contact',
-                '/news', '/events', '/undergraduate', '/graduate', '/postgraduate', '/campus'
+                '/news', '/events', '/undergraduate', '/graduate', '/postgraduate', '/campus',
+                '/announcements', '/publications', '/gallery', '/services', '/partners', '/staffs',
+                '/statistics', '/studentsCorner', '/alumni', '/campus_life', '/staff-profile'
             ]
             
             for page in common_pages:
                 full_url = urljoin(self.base_url, page)
                 if full_url not in self.visited_urls:
                     self.to_visit.append(full_url)
+            
+            page_patterns = [
+                '/pages/Admission/', '/pages/Library/', '/pages/AAU-Services/',
+                '/pages/Research/', '/pages/Academic/', '/pages/Student/',
+                '/news/detail?title=', '/announcements/detail?title=',
+                '/gallery/', '/publications/'
+            ]
             
             while self.to_visit and len(self.visited_urls) < self.max_pages:
                 current_url = self.to_visit.popleft()
@@ -251,6 +297,15 @@ class AAUWebScraper:
                 for link in result['links']:
                     if link not in self.visited_urls and link not in self.to_visit:
                         self.to_visit.append(link)
+                
+                if len(self.to_visit) < 5 and len(self.visited_urls) < self.max_pages:
+                    for pattern in page_patterns:
+                        if pattern in current_url:
+                            base_pattern = current_url.split(pattern)[0] + pattern
+                            for i in range(1, 20):
+                                test_url = f"{base_pattern}{i}"
+                                if test_url not in self.visited_urls and test_url not in self.to_visit:
+                                    self.to_visit.append(test_url)
                 
                 logger.info(f"Queue: {len(self.to_visit)}, Visited: {len(self.visited_urls)}")
             

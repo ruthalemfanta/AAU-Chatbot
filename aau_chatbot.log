@@ -394,3 +394,984 @@
 2026-01-30 11:22:31,684 - INFO -   library: 6 pages
 2026-01-30 11:22:31,684 - INFO -   general: 48 pages
 2026-01-30 11:22:31,684 - INFO - ================================================================================
+2026-01-30 11:29:14,308 - INFO - Running scraper once
+2026-01-30 11:29:14,309 - INFO - ================================================================================
+2026-01-30 11:29:14,309 - INFO - AAU Website Scraping - 2026-01-30 11:29:14
+2026-01-30 11:29:14,309 - INFO - ================================================================================
+2026-01-30 11:29:14,309 - INFO - Starting crawl of https://www.aau.edu.et
+2026-01-30 11:29:14,995 - INFO - WebDriver initialized
+2026-01-30 11:29:14,996 - INFO - [1/1000]: https://www.aau.edu.et
+2026-01-30 11:29:14,996 - INFO - Loading: https://www.aau.edu.et
+2026-01-30 11:29:19,787 - INFO - Categorized as: general
+2026-01-30 11:29:19,787 - INFO - Queue: 60, Visited: 1
+2026-01-30 11:29:19,787 - INFO - [2/1000]: https://www.aau.edu.et/
+2026-01-30 11:29:19,787 - INFO - Loading: https://www.aau.edu.et/
+2026-01-30 11:29:23,060 - INFO - Categorized as: general
+2026-01-30 11:29:23,060 - INFO - Queue: 59, Visited: 2
+2026-01-30 11:29:23,060 - INFO - [3/1000]: https://www.aau.edu.et/about
+2026-01-30 11:29:23,060 - INFO - Loading: https://www.aau.edu.et/about
+2026-01-30 11:29:26,249 - INFO - Categorized as: general
+2026-01-30 11:29:26,249 - INFO - Queue: 58, Visited: 3
+2026-01-30 11:29:26,249 - INFO - [4/1000]: https://www.aau.edu.et/admission
+2026-01-30 11:29:26,249 - INFO - Loading: https://www.aau.edu.et/admission
+2026-01-30 11:29:29,478 - INFO - Categorized as: admission
+2026-01-30 11:29:29,478 - INFO - Queue: 62, Visited: 4
+2026-01-30 11:29:29,478 - INFO - [5/1000]: https://www.aau.edu.et/admissions
+2026-01-30 11:29:29,478 - INFO - Loading: https://www.aau.edu.et/admissions
+2026-01-30 11:29:32,637 - INFO - Categorized as: admission
+2026-01-30 11:29:32,637 - INFO - Queue: 61, Visited: 5
+2026-01-30 11:29:32,637 - INFO - [6/1000]: https://www.aau.edu.et/academics
+2026-01-30 11:29:32,638 - INFO - Loading: https://www.aau.edu.et/academics
+2026-01-30 11:29:35,786 - INFO - Categorized as: general
+2026-01-30 11:29:35,786 - INFO - Queue: 60, Visited: 6
+2026-01-30 11:29:35,786 - INFO - [7/1000]: https://www.aau.edu.et/programs
+2026-01-30 11:29:35,786 - INFO - Loading: https://www.aau.edu.et/programs
+2026-01-30 11:29:38,915 - INFO - Categorized as: courses
+2026-01-30 11:29:38,915 - INFO - Queue: 59, Visited: 7
+2026-01-30 11:29:38,915 - INFO - [8/1000]: https://www.aau.edu.et/departments
+2026-01-30 11:29:38,915 - INFO - Loading: https://www.aau.edu.et/departments
+2026-01-30 11:29:42,616 - INFO - Categorized as: courses
+2026-01-30 11:29:42,616 - INFO - Queue: 58, Visited: 8
+2026-01-30 11:29:42,616 - INFO - [9/1000]: https://www.aau.edu.et/colleges
+2026-01-30 11:29:42,616 - INFO - Loading: https://www.aau.edu.et/colleges
+2026-01-30 11:29:46,415 - INFO - Categorized as: general
+2026-01-30 11:29:46,415 - INFO - Queue: 57, Visited: 9
+2026-01-30 11:29:46,416 - INFO - [10/1000]: https://www.aau.edu.et/faculties
+2026-01-30 11:29:46,416 - INFO - Loading: https://www.aau.edu.et/faculties
+2026-01-30 11:29:49,677 - INFO - Categorized as: general
+2026-01-30 11:29:49,677 - INFO - Queue: 56, Visited: 10
+2026-01-30 11:29:49,677 - INFO - [11/1000]: https://www.aau.edu.et/registration
+2026-01-30 11:29:49,677 - INFO - Loading: https://www.aau.edu.et/registration
+2026-01-30 11:29:52,976 - INFO - Categorized as: registration
+2026-01-30 11:29:52,977 - INFO - Queue: 55, Visited: 11
+2026-01-30 11:29:52,977 - INFO - [12/1000]: https://www.aau.edu.et/student-services
+2026-01-30 11:29:52,977 - INFO - Loading: https://www.aau.edu.et/student-services
+2026-01-30 11:29:56,174 - INFO - Categorized as: general
+2026-01-30 11:29:56,174 - INFO - Queue: 54, Visited: 12
+2026-01-30 11:29:56,175 - INFO - [13/1000]: https://www.aau.edu.et/academic-services
+2026-01-30 11:29:56,175 - INFO - Loading: https://www.aau.edu.et/academic-services
+2026-01-30 11:29:59,341 - INFO - Categorized as: general
+2026-01-30 11:29:59,341 - INFO - Queue: 53, Visited: 13
+2026-01-30 11:29:59,341 - INFO - [14/1000]: https://www.aau.edu.et/fees
+2026-01-30 11:29:59,341 - INFO - Loading: https://www.aau.edu.et/fees
+2026-01-30 11:30:02,486 - INFO - Categorized as: fees
+2026-01-30 11:30:02,486 - INFO - Queue: 52, Visited: 14
+2026-01-30 11:30:02,486 - INFO - [15/1000]: https://www.aau.edu.et/tuition
+2026-01-30 11:30:02,486 - INFO - Loading: https://www.aau.edu.et/tuition
+2026-01-30 11:30:05,717 - INFO - Categorized as: fees
+2026-01-30 11:30:05,717 - INFO - Queue: 51, Visited: 15
+2026-01-30 11:30:05,717 - INFO - [16/1000]: https://www.aau.edu.et/library
+2026-01-30 11:30:05,717 - INFO - Loading: https://www.aau.edu.et/library
+2026-01-30 11:30:08,881 - INFO - Categorized as: library
+2026-01-30 11:30:08,881 - INFO - Queue: 51, Visited: 16
+2026-01-30 11:30:08,881 - INFO - [17/1000]: https://www.aau.edu.et/research
+2026-01-30 11:30:08,882 - INFO - Loading: https://www.aau.edu.et/research
+2026-01-30 11:30:12,078 - INFO - Categorized as: research
+2026-01-30 11:30:12,078 - INFO - Queue: 50, Visited: 17
+2026-01-30 11:30:12,078 - INFO - [18/1000]: https://www.aau.edu.et/contact
+2026-01-30 11:30:12,078 - INFO - Loading: https://www.aau.edu.et/contact
+2026-01-30 11:30:15,494 - INFO - Categorized as: general
+2026-01-30 11:30:15,494 - INFO - Queue: 49, Visited: 18
+2026-01-30 11:30:15,495 - INFO - [19/1000]: https://www.aau.edu.et/news
+2026-01-30 11:30:15,495 - INFO - Loading: https://www.aau.edu.et/news
+2026-01-30 11:30:18,693 - INFO - Categorized as: news
+2026-01-30 11:30:18,693 - INFO - Queue: 48, Visited: 19
+2026-01-30 11:30:18,693 - INFO - [20/1000]: https://www.aau.edu.et/events
+2026-01-30 11:30:18,693 - INFO - Loading: https://www.aau.edu.et/events
+2026-01-30 11:30:21,884 - INFO - Categorized as: events
+2026-01-30 11:30:21,885 - INFO - Queue: 47, Visited: 20
+2026-01-30 11:30:21,885 - INFO - [21/1000]: https://www.aau.edu.et/undergraduate
+2026-01-30 11:30:21,885 - INFO - Loading: https://www.aau.edu.et/undergraduate
+2026-01-30 11:30:25,058 - INFO - Categorized as: general
+2026-01-30 11:30:25,058 - INFO - Queue: 46, Visited: 21
+2026-01-30 11:30:25,058 - INFO - [22/1000]: https://www.aau.edu.et/graduate
+2026-01-30 11:30:25,058 - INFO - Loading: https://www.aau.edu.et/graduate
+2026-01-30 11:30:28,298 - INFO - Categorized as: general
+2026-01-30 11:30:28,298 - INFO - Queue: 45, Visited: 22
+2026-01-30 11:30:28,298 - INFO - [23/1000]: https://www.aau.edu.et/postgraduate
+2026-01-30 11:30:28,299 - INFO - Loading: https://www.aau.edu.et/postgraduate
+2026-01-30 11:30:31,479 - INFO - Categorized as: general
+2026-01-30 11:30:31,479 - INFO - Queue: 44, Visited: 23
+2026-01-30 11:30:31,479 - INFO - [24/1000]: https://www.aau.edu.et/campus
+2026-01-30 11:30:31,480 - INFO - Loading: https://www.aau.edu.et/campus
+2026-01-30 11:30:34,748 - INFO - Categorized as: general
+2026-01-30 11:30:34,748 - INFO - Queue: 43, Visited: 24
+2026-01-30 11:30:34,748 - INFO - [25/1000]: https://www.aau.edu.et/announcements
+2026-01-30 11:30:34,748 - INFO - Loading: https://www.aau.edu.et/announcements
+2026-01-30 11:30:37,949 - INFO - Categorized as: news
+2026-01-30 11:30:37,949 - INFO - Queue: 42, Visited: 25
+2026-01-30 11:30:37,949 - INFO - [26/1000]: https://www.aau.edu.et/publications
+2026-01-30 11:30:37,950 - INFO - Loading: https://www.aau.edu.et/publications
+2026-01-30 11:30:41,150 - INFO - Categorized as: research
+2026-01-30 11:30:41,151 - INFO - Queue: 41, Visited: 26
+2026-01-30 11:30:41,151 - INFO - [27/1000]: https://www.aau.edu.et/gallery
+2026-01-30 11:30:41,152 - INFO - Loading: https://www.aau.edu.et/gallery
+2026-01-30 11:30:45,595 - INFO - Categorized as: general
+2026-01-30 11:30:45,596 - INFO - Queue: 40, Visited: 27
+2026-01-30 11:30:45,596 - INFO - [28/1000]: https://www.aau.edu.et/services
+2026-01-30 11:30:45,596 - INFO - Loading: https://www.aau.edu.et/services
+2026-01-30 11:30:48,847 - INFO - Categorized as: general
+2026-01-30 11:30:48,847 - INFO - Queue: 47, Visited: 28
+2026-01-30 11:30:48,847 - INFO - [29/1000]: https://www.aau.edu.et/partners
+2026-01-30 11:30:48,847 - INFO - Loading: https://www.aau.edu.et/partners
+2026-01-30 11:30:52,075 - INFO - Categorized as: general
+2026-01-30 11:30:52,075 - INFO - Queue: 46, Visited: 29
+2026-01-30 11:30:52,075 - INFO - [30/1000]: https://www.aau.edu.et/staffs
+2026-01-30 11:30:52,075 - INFO - Loading: https://www.aau.edu.et/staffs
+2026-01-30 11:30:55,276 - INFO - Categorized as: general
+2026-01-30 11:30:55,276 - INFO - Queue: 45, Visited: 30
+2026-01-30 11:30:55,276 - INFO - [31/1000]: https://www.aau.edu.et/statistics
+2026-01-30 11:30:55,276 - INFO - Loading: https://www.aau.edu.et/statistics
+2026-01-30 11:30:58,714 - INFO - Categorized as: general
+2026-01-30 11:30:58,715 - INFO - Queue: 44, Visited: 31
+2026-01-30 11:30:58,715 - INFO - [32/1000]: https://www.aau.edu.et/studentsCorner
+2026-01-30 11:30:58,715 - INFO - Loading: https://www.aau.edu.et/studentsCorner
+2026-01-30 11:31:01,996 - INFO - Categorized as: general
+2026-01-30 11:31:01,996 - INFO - Queue: 43, Visited: 32
+2026-01-30 11:31:01,997 - INFO - [33/1000]: https://www.aau.edu.et/alumni
+2026-01-30 11:31:01,997 - INFO - Loading: https://www.aau.edu.et/alumni
+2026-01-30 11:31:05,934 - INFO - Categorized as: general
+2026-01-30 11:31:05,935 - INFO - Queue: 42, Visited: 33
+2026-01-30 11:31:05,935 - INFO - [34/1000]: https://www.aau.edu.et/campus_life
+2026-01-30 11:31:05,935 - INFO - Loading: https://www.aau.edu.et/campus_life
+2026-01-30 11:31:09,187 - INFO - Categorized as: general
+2026-01-30 11:31:09,187 - INFO - Queue: 41, Visited: 34
+2026-01-30 11:31:09,187 - INFO - [35/1000]: https://www.aau.edu.et/staff-profile
+2026-01-30 11:31:09,188 - INFO - Loading: https://www.aau.edu.et/staff-profile
+2026-01-30 11:31:12,793 - INFO - Categorized as: general
+2026-01-30 11:31:12,793 - INFO - Queue: 70, Visited: 35
+2026-01-30 11:31:12,793 - INFO - [36/1000]: https://www.aau.edu.et/AAU-leadership
+2026-01-30 11:31:12,793 - INFO - Loading: https://www.aau.edu.et/AAU-leadership
+2026-01-30 11:31:15,973 - INFO - Categorized as: general
+2026-01-30 11:31:15,973 - INFO - Queue: 77, Visited: 36
+2026-01-30 11:31:15,973 - INFO - [37/1000]: https://www.aau.edu.et/announcements/detail?title=GAT~Exam~Schedule~(Monday~January~05,~2026~Morning~and~Afternoon~Session)
+2026-01-30 11:31:15,974 - INFO - Loading: https://www.aau.edu.et/announcements/detail?title=GAT~Exam~Schedule~(Monday~January~05,~2026~Morning~and~Afternoon~Session)
+2026-01-30 11:31:19,380 - INFO - Categorized as: grades
+2026-01-30 11:31:19,380 - INFO - Queue: 78, Visited: 37
+2026-01-30 11:31:19,380 - INFO - [38/1000]: https://www.aau.edu.et/announcements/detail?title=final~examination~schedule~for~the~course~Inclusiveness~(for~2nd~year~Students)
+2026-01-30 11:31:19,380 - INFO - Loading: https://www.aau.edu.et/announcements/detail?title=final~examination~schedule~for~the~course~Inclusiveness~(for~2nd~year~Students)
+2026-01-30 11:31:22,560 - INFO - Categorized as: grades
+2026-01-30 11:31:22,560 - INFO - Queue: 77, Visited: 38
+2026-01-30 11:31:22,561 - INFO - [39/1000]: https://www.aau.edu.et/images/blue2.svg
+2026-01-30 11:31:22,561 - INFO - Loading: https://www.aau.edu.et/images/blue2.svg
+2026-01-30 11:31:35,853 - WARNING - Timeout: https://www.aau.edu.et/images/blue2.svg
+2026-01-30 11:31:35,866 - INFO - Categorized as: general
+2026-01-30 11:31:35,866 - INFO - Queue: 76, Visited: 39
+2026-01-30 11:31:35,867 - INFO - [40/1000]: https://www.aau.edu.et/images/gray1.svg
+2026-01-30 11:31:35,867 - INFO - Loading: https://www.aau.edu.et/images/gray1.svg
+2026-01-30 11:31:49,293 - WARNING - Timeout: https://www.aau.edu.et/images/gray1.svg
+2026-01-30 11:31:49,312 - INFO - Categorized as: general
+2026-01-30 11:31:49,312 - INFO - Queue: 75, Visited: 40
+2026-01-30 11:31:49,312 - INFO - [41/1000]: https://www.aau.edu.et/news/detail?title=Addis~Ababa~University~Ranks~First~Among~East~African~Universities
+2026-01-30 11:31:49,313 - INFO - Loading: https://www.aau.edu.et/news/detail?title=Addis~Ababa~University~Ranks~First~Among~East~African~Universities
+2026-01-30 11:31:52,619 - INFO - Categorized as: news
+2026-01-30 11:31:52,620 - INFO - Queue: 75, Visited: 41
+2026-01-30 11:31:52,620 - INFO - [42/1000]: https://www.aau.edu.et/gallery/OTHERS
+2026-01-30 11:31:52,620 - INFO - Loading: https://www.aau.edu.et/gallery/OTHERS
+2026-01-30 11:31:55,951 - INFO - Categorized as: general
+2026-01-30 11:31:55,951 - INFO - Queue: 74, Visited: 42
+2026-01-30 11:31:55,951 - INFO - [43/1000]: https://www.aau.edu.et/documents
+2026-01-30 11:31:55,952 - INFO - Loading: https://www.aau.edu.et/documents
+2026-01-30 11:31:59,163 - INFO - Categorized as: documents
+2026-01-30 11:31:59,163 - INFO - Queue: 73, Visited: 43
+2026-01-30 11:31:59,163 - INFO - [44/1000]: https://www.aau.edu.et/announcements/detail?title=First-Year~Students~Final~online~exam~Schedule
+2026-01-30 11:31:59,163 - INFO - Loading: https://www.aau.edu.et/announcements/detail?title=First-Year~Students~Final~online~exam~Schedule
+2026-01-30 11:32:02,380 - INFO - Categorized as: grades
+2026-01-30 11:32:02,380 - INFO - Queue: 72, Visited: 44
+2026-01-30 11:32:02,381 - INFO - [45/1000]: https://www.aau.edu.et/news/detail?title=Institute~of~Ethiopian~Studies~Hosts~Symposium~on~Ethiopian~Islamic~Manuscript~Traditions
+2026-01-30 11:32:02,381 - INFO - Loading: https://www.aau.edu.et/news/detail?title=Institute~of~Ethiopian~Studies~Hosts~Symposium~on~Ethiopian~Islamic~Manuscript~Traditions
+2026-01-30 11:32:05,578 - INFO - Categorized as: news
+2026-01-30 11:32:05,579 - INFO - Queue: 71, Visited: 45
+2026-01-30 11:32:05,579 - INFO - [46/1000]: https://www.aau.edu.et/gallery/STUDENT_LIFE
+2026-01-30 11:32:05,579 - INFO - Loading: https://www.aau.edu.et/gallery/STUDENT_LIFE
+2026-01-30 11:32:08,872 - INFO - Categorized as: general
+2026-01-30 11:32:08,872 - INFO - Queue: 70, Visited: 46
+2026-01-30 11:32:08,872 - INFO - [47/1000]: https://www.aau.edu.et/_next/static/media/028c0d39d2e8f589-s.p.woff2
+2026-01-30 11:32:08,872 - INFO - Loading: https://www.aau.edu.et/_next/static/media/028c0d39d2e8f589-s.p.woff2
+2026-01-30 11:32:11,916 - INFO - Categorized as: general
+2026-01-30 11:32:11,917 - INFO - Queue: 69, Visited: 47
+2026-01-30 11:32:11,917 - INFO - [48/1000]: https://www.aau.edu.et/_next/static/chunks/webpack-e60a5c12366df2cd.js
+2026-01-30 11:32:11,917 - INFO - Loading: https://www.aau.edu.et/_next/static/chunks/webpack-e60a5c12366df2cd.js
+2026-01-30 11:32:14,965 - INFO - Categorized as: general
+2026-01-30 11:32:14,965 - INFO - Queue: 68, Visited: 48
+2026-01-30 11:32:14,965 - INFO - [49/1000]: https://www.aau.edu.et/announcements/detail?title=Submission~of~Updated~Grade~12~Examination~Results
+2026-01-30 11:32:14,965 - INFO - Loading: https://www.aau.edu.et/announcements/detail?title=Submission~of~Updated~Grade~12~Examination~Results
+2026-01-30 11:32:18,672 - INFO - Categorized as: grades
+2026-01-30 11:32:18,672 - INFO - Queue: 67, Visited: 49
+2026-01-30 11:32:18,672 - INFO - [50/1000]: https://www.aau.edu.et/contactus
+2026-01-30 11:32:18,673 - INFO - Loading: https://www.aau.edu.et/contactus
+2026-01-30 11:32:21,886 - INFO - Categorized as: general
+2026-01-30 11:32:21,886 - INFO - Queue: 66, Visited: 50
+2026-01-30 11:32:21,886 - INFO - [51/1000]: https://www.aau.edu.et/aau-at-a-glance
+2026-01-30 11:32:21,886 - INFO - Loading: https://www.aau.edu.et/aau-at-a-glance
+2026-01-30 11:32:27,262 - INFO - Categorized as: general
+2026-01-30 11:32:27,263 - INFO - Queue: 65, Visited: 51
+2026-01-30 11:32:27,263 - INFO - [52/1000]: https://www.aau.edu.et/A-to-Z_listing
+2026-01-30 11:32:27,263 - INFO - Loading: https://www.aau.edu.et/A-to-Z_listing
+2026-01-30 11:32:30,421 - INFO - Categorized as: general
+2026-01-30 11:32:30,421 - INFO - Queue: 64, Visited: 52
+2026-01-30 11:32:30,421 - INFO - [53/1000]: https://www.aau.edu.et/archives
+2026-01-30 11:32:30,421 - INFO - Loading: https://www.aau.edu.et/archives
+2026-01-30 11:32:33,662 - INFO - Categorized as: general
+2026-01-30 11:32:33,663 - INFO - Queue: 63, Visited: 53
+2026-01-30 11:32:33,663 - INFO - [54/1000]: https://www.aau.edu.et/emergencyservices
+2026-01-30 11:32:33,663 - INFO - Loading: https://www.aau.edu.et/emergencyservices
+2026-01-30 11:32:36,851 - INFO - Categorized as: general
+2026-01-30 11:32:36,851 - INFO - Queue: 62, Visited: 54
+2026-01-30 11:32:36,852 - INFO - [55/1000]: https://www.aau.edu.et/_next/static/css/661e90584160d7c0.css
+2026-01-30 11:32:36,852 - INFO - Loading: https://www.aau.edu.et/_next/static/css/661e90584160d7c0.css
+2026-01-30 11:32:39,901 - INFO - Categorized as: general
+2026-01-30 11:32:39,902 - INFO - Queue: 61, Visited: 55
+2026-01-30 11:32:39,902 - INFO - [56/1000]: https://www.aau.edu.et/presidents
+2026-01-30 11:32:39,902 - INFO - Loading: https://www.aau.edu.et/presidents
+2026-01-30 11:32:43,594 - INFO - Categorized as: general
+2026-01-30 11:32:43,594 - INFO - Queue: 60, Visited: 56
+2026-01-30 11:32:43,594 - INFO - [57/1000]: https://www.aau.edu.et/_next/static/css/95a3dc6dc85067ca.css
+2026-01-30 11:32:43,594 - INFO - Loading: https://www.aau.edu.et/_next/static/css/95a3dc6dc85067ca.css
+2026-01-30 11:32:46,653 - INFO - Categorized as: general
+2026-01-30 11:32:46,653 - INFO - Queue: 59, Visited: 57
+2026-01-30 11:32:46,653 - INFO - [58/1000]: https://www.aau.edu.et/_next/static/css/6e09fc4a51e39a40.css
+2026-01-30 11:32:46,653 - INFO - Loading: https://www.aau.edu.et/_next/static/css/6e09fc4a51e39a40.css
+2026-01-30 11:32:49,721 - INFO - Categorized as: general
+2026-01-30 11:32:49,721 - INFO - Queue: 58, Visited: 58
+2026-01-30 11:32:49,721 - INFO - [59/1000]: https://www.aau.edu.et/history
+2026-01-30 11:32:49,722 - INFO - Loading: https://www.aau.edu.et/history
+2026-01-30 11:32:52,956 - INFO - Categorized as: general
+2026-01-30 11:32:52,956 - INFO - Queue: 57, Visited: 59
+2026-01-30 11:32:52,956 - INFO - [60/1000]: https://www.aau.edu.et/news/detail?title=Public~Lecture~at~AAU~Highlights~Contributions~of~Prof.~Sven~Rubenson~to~Ethiopian~History
+2026-01-30 11:32:52,956 - INFO - Loading: https://www.aau.edu.et/news/detail?title=Public~Lecture~at~AAU~Highlights~Contributions~of~Prof.~Sven~Rubenson~to~Ethiopian~History
+2026-01-30 11:32:56,145 - INFO - Categorized as: news
+2026-01-30 11:32:56,145 - INFO - Queue: 56, Visited: 60
+2026-01-30 11:32:56,146 - INFO - [61/1000]: https://www.aau.edu.et/announcements/detail?title=AAU~Connect~Volume~10~–~75~Years~of~Excellence
+2026-01-30 11:32:56,146 - INFO - Loading: https://www.aau.edu.et/announcements/detail?title=AAU~Connect~Volume~10~–~75~Years~of~Excellence
+2026-01-30 11:32:59,380 - INFO - Categorized as: news
+2026-01-30 11:32:59,381 - INFO - Queue: 55, Visited: 61
+2026-01-30 11:32:59,381 - INFO - [62/1000]: https://www.aau.edu.et/pages/Admission/detail?title=Admission
+2026-01-30 11:32:59,381 - INFO - Loading: https://www.aau.edu.et/pages/Admission/detail?title=Admission
+2026-01-30 11:33:02,731 - INFO - Categorized as: admission
+2026-01-30 11:33:02,732 - INFO - Queue: 57, Visited: 62
+2026-01-30 11:33:02,732 - INFO - [63/1000]: https://www.aau.edu.et/pages/Admission/detail?title=Tuition~and~Service~Fees
+2026-01-30 11:33:02,732 - INFO - Loading: https://www.aau.edu.et/pages/Admission/detail?title=Tuition~and~Service~Fees
+2026-01-30 11:33:06,063 - INFO - Categorized as: admission
+2026-01-30 11:33:06,064 - INFO - Queue: 56, Visited: 63
+2026-01-30 11:33:06,064 - INFO - [64/1000]: https://www.aau.edu.et/pages/Admission/detail?title=Academic~Cases
+2026-01-30 11:33:06,064 - INFO - Loading: https://www.aau.edu.et/pages/Admission/detail?title=Academic~Cases
+2026-01-30 11:33:09,254 - INFO - Categorized as: admission
+2026-01-30 11:33:09,254 - INFO - Queue: 55, Visited: 64
+2026-01-30 11:33:09,254 - INFO - [65/1000]: https://www.aau.edu.et/pages/Admission/detail?title=Services
+2026-01-30 11:33:09,255 - INFO - Loading: https://www.aau.edu.et/pages/Admission/detail?title=Services
+2026-01-30 11:33:12,437 - INFO - Categorized as: admission
+2026-01-30 11:33:12,437 - INFO - Queue: 54, Visited: 65
+2026-01-30 11:33:12,438 - INFO - [66/1000]: https://www.aau.edu.et/pages/Admission/detail?title=Contacts
+2026-01-30 11:33:12,438 - INFO - Loading: https://www.aau.edu.et/pages/Admission/detail?title=Contacts
+2026-01-30 11:33:15,621 - INFO - Categorized as: admission
+2026-01-30 11:33:15,622 - INFO - Queue: 53, Visited: 66
+2026-01-30 11:33:15,622 - INFO - [67/1000]: https://www.aau.edu.et/pages/Library/detail?title=Branch~Libraries
+2026-01-30 11:33:15,622 - INFO - Loading: https://www.aau.edu.et/pages/Library/detail?title=Branch~Libraries
+2026-01-30 11:33:18,818 - INFO - Categorized as: library
+2026-01-30 11:33:18,818 - INFO - Queue: 54, Visited: 67
+2026-01-30 11:33:18,819 - INFO - [68/1000]: https://www.aau.edu.et/pages/AAU-Services/detail?title=AAU~Startups
+2026-01-30 11:33:18,819 - INFO - Loading: https://www.aau.edu.et/pages/AAU-Services/detail?title=AAU~Startups
+2026-01-30 11:33:22,057 - INFO - Categorized as: general
+2026-01-30 11:33:22,057 - INFO - Queue: 55, Visited: 68
+2026-01-30 11:33:22,057 - INFO - [69/1000]: https://www.aau.edu.et/pages/AAU-Services/detail?title=ICT
+2026-01-30 11:33:22,057 - INFO - Loading: https://www.aau.edu.et/pages/AAU-Services/detail?title=ICT
+2026-01-30 11:33:25,295 - INFO - Categorized as: general
+2026-01-30 11:33:25,295 - INFO - Queue: 55, Visited: 69
+2026-01-30 11:33:25,296 - INFO - [70/1000]: https://www.aau.edu.et/pages/AAU-Services/detail?title=Tikur~Anbessa~Specialized~Hospital~(TASH)~
+2026-01-30 11:33:25,296 - INFO - Loading: https://www.aau.edu.et/pages/AAU-Services/detail?title=Tikur~Anbessa~Specialized~Hospital~(TASH)~
+2026-01-30 11:33:29,089 - INFO - Categorized as: general
+2026-01-30 11:33:29,090 - INFO - Queue: 54, Visited: 70
+2026-01-30 11:33:29,090 - INFO - [71/1000]: https://www.aau.edu.et/pages/AAU-Services/detail?title=Book~Center
+2026-01-30 11:33:29,090 - INFO - Loading: https://www.aau.edu.et/pages/AAU-Services/detail?title=Book~Center
+2026-01-30 11:33:32,343 - INFO - Categorized as: library
+2026-01-30 11:33:32,344 - INFO - Queue: 53, Visited: 71
+2026-01-30 11:33:32,344 - INFO - [72/1000]: https://www.aau.edu.et/pages/AAU-Services/detail?title=AAU~Museums
+2026-01-30 11:33:32,344 - INFO - Loading: https://www.aau.edu.et/pages/AAU-Services/detail?title=AAU~Museums
+2026-01-30 11:33:35,562 - INFO - Categorized as: general
+2026-01-30 11:33:35,562 - INFO - Queue: 52, Visited: 72
+2026-01-30 11:33:35,563 - INFO - [73/1000]: https://www.aau.edu.et/pages/AAU-Services/detail?title=AAU~Community~Radio
+2026-01-30 11:33:35,563 - INFO - Loading: https://www.aau.edu.et/pages/AAU-Services/detail?title=AAU~Community~Radio
+2026-01-30 11:33:39,760 - INFO - Categorized as: general
+2026-01-30 11:33:39,760 - INFO - Queue: 51, Visited: 73
+2026-01-30 11:33:39,761 - INFO - [74/1000]: https://www.aau.edu.et/pages/AAU-Services/detail?title=Sports~and~Recreation
+2026-01-30 11:33:39,761 - INFO - Loading: https://www.aau.edu.et/pages/AAU-Services/detail?title=Sports~and~Recreation
+2026-01-30 11:33:43,169 - INFO - Categorized as: general
+2026-01-30 11:33:43,170 - INFO - Queue: 50, Visited: 74
+2026-01-30 11:33:43,170 - INFO - [75/1000]: https://www.aau.edu.et/pages/AAU-Services/detail?title=Ashenafi~Kebede~Performance~Arts~Center~
+2026-01-30 11:33:43,170 - INFO - Loading: https://www.aau.edu.et/pages/AAU-Services/detail?title=Ashenafi~Kebede~Performance~Arts~Center~
+2026-01-30 11:33:46,373 - INFO - Categorized as: general
+2026-01-30 11:33:46,373 - INFO - Queue: 49, Visited: 75
+2026-01-30 11:33:46,373 - INFO - [76/1000]: https://www.aau.edu.et/staff-profile/164d0530-111a-4605-9905-c0fcb990c536
+2026-01-30 11:33:46,374 - INFO - Loading: https://www.aau.edu.et/staff-profile/164d0530-111a-4605-9905-c0fcb990c536
+2026-01-30 11:33:49,595 - INFO - Categorized as: general
+2026-01-30 11:33:49,596 - INFO - Queue: 48, Visited: 76
+2026-01-30 11:33:49,596 - INFO - [77/1000]: https://www.aau.edu.et/staff-profile/03824378-6c12-4055-b29c-68958b6ede62
+2026-01-30 11:33:49,596 - INFO - Loading: https://www.aau.edu.et/staff-profile/03824378-6c12-4055-b29c-68958b6ede62
+2026-01-30 11:33:52,843 - INFO - Categorized as: general
+2026-01-30 11:33:52,843 - INFO - Queue: 47, Visited: 77
+2026-01-30 11:33:52,844 - INFO - [78/1000]: https://www.aau.edu.et/staff-profile/e6773210-2a42-41d0-83c0-024dcf71444b
+2026-01-30 11:33:52,844 - INFO - Loading: https://www.aau.edu.et/staff-profile/e6773210-2a42-41d0-83c0-024dcf71444b
+2026-01-30 11:33:56,014 - INFO - Categorized as: general
+2026-01-30 11:33:56,014 - INFO - Queue: 46, Visited: 78
+2026-01-30 11:33:56,014 - INFO - [79/1000]: https://www.aau.edu.et/staff-profile/670d1ebd-b21a-4c7f-b0ee-af710f8c1979
+2026-01-30 11:33:56,015 - INFO - Loading: https://www.aau.edu.et/staff-profile/670d1ebd-b21a-4c7f-b0ee-af710f8c1979
+2026-01-30 11:33:59,291 - INFO - Categorized as: general
+2026-01-30 11:33:59,291 - INFO - Queue: 45, Visited: 79
+2026-01-30 11:33:59,292 - INFO - [80/1000]: https://www.aau.edu.et/staff-profile/c1e87486-3afc-4a0d-aaae-d66668ef5ac9
+2026-01-30 11:33:59,292 - INFO - Loading: https://www.aau.edu.et/staff-profile/c1e87486-3afc-4a0d-aaae-d66668ef5ac9
+2026-01-30 11:34:02,479 - INFO - Categorized as: general
+2026-01-30 11:34:02,479 - INFO - Queue: 44, Visited: 80
+2026-01-30 11:34:02,479 - INFO - [81/1000]: https://www.aau.edu.et/staff-profile/2f00e37b-8c36-4725-94ff-796848b09a61
+2026-01-30 11:34:02,480 - INFO - Loading: https://www.aau.edu.et/staff-profile/2f00e37b-8c36-4725-94ff-796848b09a61
+2026-01-30 11:34:05,662 - INFO - Categorized as: general
+2026-01-30 11:34:05,662 - INFO - Queue: 43, Visited: 81
+2026-01-30 11:34:05,662 - INFO - [82/1000]: https://www.aau.edu.et/staff-profile/e17a4435-8f46-4ccc-b9fd-dee60174738d
+2026-01-30 11:34:05,663 - INFO - Loading: https://www.aau.edu.et/staff-profile/e17a4435-8f46-4ccc-b9fd-dee60174738d
+2026-01-30 11:34:08,977 - INFO - Categorized as: general
+2026-01-30 11:34:08,977 - INFO - Queue: 42, Visited: 82
+2026-01-30 11:34:08,977 - INFO - [83/1000]: https://www.aau.edu.et/staff-profile/e7ba69b4-3db1-4960-995a-a55b8d4afa84
+2026-01-30 11:34:08,978 - INFO - Loading: https://www.aau.edu.et/staff-profile/e7ba69b4-3db1-4960-995a-a55b8d4afa84
+2026-01-30 11:34:12,161 - INFO - Categorized as: general
+2026-01-30 11:34:12,162 - INFO - Queue: 41, Visited: 83
+2026-01-30 11:34:12,162 - INFO - [84/1000]: https://www.aau.edu.et/staff-profile/7657d2b8-2fbc-438c-8479-eec27ba113d5
+2026-01-30 11:34:12,162 - INFO - Loading: https://www.aau.edu.et/staff-profile/7657d2b8-2fbc-438c-8479-eec27ba113d5
+2026-01-30 11:34:16,448 - INFO - Categorized as: general
+2026-01-30 11:34:16,448 - INFO - Queue: 40, Visited: 84
+2026-01-30 11:34:16,448 - INFO - [85/1000]: https://www.aau.edu.et/staff-profile/e35e8fa4-62d0-43db-884f-d4dda73f942e
+2026-01-30 11:34:16,448 - INFO - Loading: https://www.aau.edu.et/staff-profile/e35e8fa4-62d0-43db-884f-d4dda73f942e
+2026-01-30 11:34:19,655 - INFO - Categorized as: general
+2026-01-30 11:34:19,655 - INFO - Queue: 39, Visited: 85
+2026-01-30 11:34:19,656 - INFO - [86/1000]: https://www.aau.edu.et/staff-profile/201785ec-137b-46e5-b4b8-287eb754edbc
+2026-01-30 11:34:19,656 - INFO - Loading: https://www.aau.edu.et/staff-profile/201785ec-137b-46e5-b4b8-287eb754edbc
+2026-01-30 11:34:22,836 - INFO - Categorized as: general
+2026-01-30 11:34:22,836 - INFO - Queue: 38, Visited: 86
+2026-01-30 11:34:22,836 - INFO - [87/1000]: https://www.aau.edu.et/staff-profile/59563380-a20a-483e-82dc-9a77daca7e28
+2026-01-30 11:34:22,836 - INFO - Loading: https://www.aau.edu.et/staff-profile/59563380-a20a-483e-82dc-9a77daca7e28
+2026-01-30 11:34:26,013 - INFO - Categorized as: general
+2026-01-30 11:34:26,014 - INFO - Queue: 37, Visited: 87
+2026-01-30 11:34:26,014 - INFO - [88/1000]: https://www.aau.edu.et/staff-profile/9d597624-f942-410d-b24d-50c5bcef161a
+2026-01-30 11:34:26,014 - INFO - Loading: https://www.aau.edu.et/staff-profile/9d597624-f942-410d-b24d-50c5bcef161a
+2026-01-30 11:34:29,385 - INFO - Categorized as: general
+2026-01-30 11:34:29,385 - INFO - Queue: 36, Visited: 88
+2026-01-30 11:34:29,386 - INFO - [89/1000]: https://www.aau.edu.et/staff-profile/705aa994-9058-4d99-9a01-732c3ed65b74
+2026-01-30 11:34:29,386 - INFO - Loading: https://www.aau.edu.et/staff-profile/705aa994-9058-4d99-9a01-732c3ed65b74
+2026-01-30 11:34:32,583 - INFO - Categorized as: general
+2026-01-30 11:34:32,583 - INFO - Queue: 35, Visited: 89
+2026-01-30 11:34:32,584 - INFO - [90/1000]: https://www.aau.edu.et/staff-profile/ab367b96-63bc-4b11-90b4-599374079ad2
+2026-01-30 11:34:32,584 - INFO - Loading: https://www.aau.edu.et/staff-profile/ab367b96-63bc-4b11-90b4-599374079ad2
+2026-01-30 11:34:35,788 - INFO - Categorized as: general
+2026-01-30 11:34:35,788 - INFO - Queue: 34, Visited: 90
+2026-01-30 11:34:35,788 - INFO - [91/1000]: https://www.aau.edu.et/staff-profile/b0444b8f-b469-454f-8e32-1c882367ddd5
+2026-01-30 11:34:35,788 - INFO - Loading: https://www.aau.edu.et/staff-profile/b0444b8f-b469-454f-8e32-1c882367ddd5
+2026-01-30 11:34:39,002 - INFO - Categorized as: general
+2026-01-30 11:34:39,003 - INFO - Queue: 33, Visited: 91
+2026-01-30 11:34:39,003 - INFO - [92/1000]: https://www.aau.edu.et/staff-profile/77f4638b-5bbc-4dd1-8be0-87fc8336b421
+2026-01-30 11:34:39,003 - INFO - Loading: https://www.aau.edu.et/staff-profile/77f4638b-5bbc-4dd1-8be0-87fc8336b421
+2026-01-30 11:34:42,245 - INFO - Categorized as: general
+2026-01-30 11:34:42,245 - INFO - Queue: 32, Visited: 92
+2026-01-30 11:34:42,245 - INFO - [93/1000]: https://www.aau.edu.et/staff-profile/0e25a0d7-85ff-4c60-8b9e-973b73120e52
+2026-01-30 11:34:42,246 - INFO - Loading: https://www.aau.edu.et/staff-profile/0e25a0d7-85ff-4c60-8b9e-973b73120e52
+2026-01-30 11:34:45,776 - INFO - Categorized as: general
+2026-01-30 11:34:45,776 - INFO - Queue: 31, Visited: 93
+2026-01-30 11:34:45,776 - INFO - [94/1000]: https://www.aau.edu.et/staff-profile/64cfc3aa-9cb1-441a-9d39-0f876d4de715
+2026-01-30 11:34:45,776 - INFO - Loading: https://www.aau.edu.et/staff-profile/64cfc3aa-9cb1-441a-9d39-0f876d4de715
+2026-01-30 11:34:48,969 - INFO - Categorized as: general
+2026-01-30 11:34:48,970 - INFO - Queue: 30, Visited: 94
+2026-01-30 11:34:48,970 - INFO - [95/1000]: https://www.aau.edu.et/staff-profile/65f575d8-ddd2-465f-8daa-081a97c04002
+2026-01-30 11:34:48,970 - INFO - Loading: https://www.aau.edu.et/staff-profile/65f575d8-ddd2-465f-8daa-081a97c04002
+2026-01-30 11:34:52,355 - INFO - Categorized as: general
+2026-01-30 11:34:52,355 - INFO - Queue: 29, Visited: 95
+2026-01-30 11:34:52,355 - INFO - [96/1000]: https://www.aau.edu.et/staff-profile/d4f5e5aa-96a9-4ecc-a553-8b4fefbe1bc2
+2026-01-30 11:34:52,356 - INFO - Loading: https://www.aau.edu.et/staff-profile/d4f5e5aa-96a9-4ecc-a553-8b4fefbe1bc2
+2026-01-30 11:34:55,571 - INFO - Categorized as: general
+2026-01-30 11:34:55,571 - INFO - Queue: 28, Visited: 96
+2026-01-30 11:34:55,572 - INFO - [97/1000]: https://www.aau.edu.et/staff-profile/09d82c0e-f76f-411a-b93d-be9a7844a47c
+2026-01-30 11:34:55,572 - INFO - Loading: https://www.aau.edu.et/staff-profile/09d82c0e-f76f-411a-b93d-be9a7844a47c
+2026-01-30 11:34:58,794 - INFO - Categorized as: general
+2026-01-30 11:34:58,795 - INFO - Queue: 27, Visited: 97
+2026-01-30 11:34:58,795 - INFO - [98/1000]: https://www.aau.edu.et/staff-profile/7dcb1f69-2b9f-435a-be3b-c3398fc0a6ac
+2026-01-30 11:34:58,795 - INFO - Loading: https://www.aau.edu.et/staff-profile/7dcb1f69-2b9f-435a-be3b-c3398fc0a6ac
+2026-01-30 11:35:02,000 - INFO - Categorized as: general
+2026-01-30 11:35:02,000 - INFO - Queue: 26, Visited: 98
+2026-01-30 11:35:02,000 - INFO - [99/1000]: https://www.aau.edu.et/staff-profile/0325783a-8499-4e4a-9043-d09853fc3a99
+2026-01-30 11:35:02,001 - INFO - Loading: https://www.aau.edu.et/staff-profile/0325783a-8499-4e4a-9043-d09853fc3a99
+2026-01-30 11:35:05,175 - INFO - Categorized as: general
+2026-01-30 11:35:05,175 - INFO - Queue: 25, Visited: 99
+2026-01-30 11:35:05,175 - INFO - [100/1000]: https://www.aau.edu.et/staff-profile/dad78682-5ee7-4ae9-9a4c-6c311907246e
+2026-01-30 11:35:05,175 - INFO - Loading: https://www.aau.edu.et/staff-profile/dad78682-5ee7-4ae9-9a4c-6c311907246e
+2026-01-30 11:35:08,421 - INFO - Categorized as: general
+2026-01-30 11:35:08,422 - INFO - Queue: 24, Visited: 100
+2026-01-30 11:35:08,422 - INFO - [101/1000]: https://www.aau.edu.et/staff-profile/7b68d37d-b222-4a75-a216-35f23d9af372
+2026-01-30 11:35:08,422 - INFO - Loading: https://www.aau.edu.et/staff-profile/7b68d37d-b222-4a75-a216-35f23d9af372
+2026-01-30 11:35:11,602 - INFO - Categorized as: general
+2026-01-30 11:35:11,602 - INFO - Queue: 23, Visited: 101
+2026-01-30 11:35:11,603 - INFO - [102/1000]: https://www.aau.edu.et/staff-profile/82559c32-a976-4d33-891e-33b119c08e45
+2026-01-30 11:35:11,603 - INFO - Loading: https://www.aau.edu.et/staff-profile/82559c32-a976-4d33-891e-33b119c08e45
+2026-01-30 11:35:14,831 - INFO - Categorized as: general
+2026-01-30 11:35:14,831 - INFO - Queue: 22, Visited: 102
+2026-01-30 11:35:14,832 - INFO - [103/1000]: https://www.aau.edu.et/staff-profile/cc7b2e4b-200b-4f7c-842f-fb83383678fe
+2026-01-30 11:35:14,832 - INFO - Loading: https://www.aau.edu.et/staff-profile/cc7b2e4b-200b-4f7c-842f-fb83383678fe
+2026-01-30 11:35:18,104 - INFO - Categorized as: general
+2026-01-30 11:35:18,105 - INFO - Queue: 21, Visited: 103
+2026-01-30 11:35:18,105 - INFO - [104/1000]: https://www.aau.edu.et/staff-profile/f93008e2-b445-482c-be62-aacabb43ccd0
+2026-01-30 11:35:18,105 - INFO - Loading: https://www.aau.edu.et/staff-profile/f93008e2-b445-482c-be62-aacabb43ccd0
+2026-01-30 11:35:21,371 - INFO - Categorized as: general
+2026-01-30 11:35:21,371 - INFO - Queue: 20, Visited: 104
+2026-01-30 11:35:21,372 - INFO - [105/1000]: https://www.aau.edu.et/staff-profile/9c3f74e4-6b8b-4d6b-b5f1-7c59d41f9161
+2026-01-30 11:35:21,372 - INFO - Loading: https://www.aau.edu.et/staff-profile/9c3f74e4-6b8b-4d6b-b5f1-7c59d41f9161
+2026-01-30 11:35:24,756 - INFO - Categorized as: general
+2026-01-30 11:35:24,756 - INFO - Queue: 19, Visited: 105
+2026-01-30 11:35:24,756 - INFO - [106/1000]: https://www.aau.edu.et/AAU-leadership/de0b99ed-8c72-4eae-8b82-4cdbae66f06c
+2026-01-30 11:35:24,757 - INFO - Loading: https://www.aau.edu.et/AAU-leadership/de0b99ed-8c72-4eae-8b82-4cdbae66f06c
+2026-01-30 11:35:28,114 - INFO - Categorized as: general
+2026-01-30 11:35:28,114 - INFO - Queue: 18, Visited: 106
+2026-01-30 11:35:28,115 - INFO - [107/1000]: https://www.aau.edu.et/AAU-leadership/9482d766-dffc-4d56-bb87-4eea0964c801
+2026-01-30 11:35:28,115 - INFO - Loading: https://www.aau.edu.et/AAU-leadership/9482d766-dffc-4d56-bb87-4eea0964c801
+2026-01-30 11:35:31,312 - INFO - Categorized as: general
+2026-01-30 11:35:31,312 - INFO - Queue: 17, Visited: 107
+2026-01-30 11:35:31,312 - INFO - [108/1000]: https://www.aau.edu.et/AAU-leadership/president-speeches
+2026-01-30 11:35:31,313 - INFO - Loading: https://www.aau.edu.et/AAU-leadership/president-speeches
+2026-01-30 11:35:34,499 - INFO - Categorized as: general
+2026-01-30 11:35:34,499 - INFO - Queue: 16, Visited: 108
+2026-01-30 11:35:34,499 - INFO - [109/1000]: https://www.aau.edu.et/AAU-leadership/e4755578-8f95-45cc-ba55-70e1ea352c76
+2026-01-30 11:35:34,499 - INFO - Loading: https://www.aau.edu.et/AAU-leadership/e4755578-8f95-45cc-ba55-70e1ea352c76
+2026-01-30 11:35:37,708 - INFO - Categorized as: general
+2026-01-30 11:35:37,709 - INFO - Queue: 15, Visited: 109
+2026-01-30 11:35:37,709 - INFO - [110/1000]: https://www.aau.edu.et/AAU-leadership/d4eddd44-64a4-40fb-9a4b-c3b25780eef8
+2026-01-30 11:35:37,709 - INFO - Loading: https://www.aau.edu.et/AAU-leadership/d4eddd44-64a4-40fb-9a4b-c3b25780eef8
+2026-01-30 11:35:41,122 - INFO - Categorized as: general
+2026-01-30 11:35:41,122 - INFO - Queue: 14, Visited: 110
+2026-01-30 11:35:41,122 - INFO - [111/1000]: https://www.aau.edu.et/AAU-leadership/06f50640-937b-4bb9-ab15-88340ff1ebe4
+2026-01-30 11:35:41,123 - INFO - Loading: https://www.aau.edu.et/AAU-leadership/06f50640-937b-4bb9-ab15-88340ff1ebe4
+2026-01-30 11:35:44,311 - INFO - Categorized as: general
+2026-01-30 11:35:44,311 - INFO - Queue: 13, Visited: 111
+2026-01-30 11:35:44,311 - INFO - [112/1000]: https://www.aau.edu.et/AAU-leadership/18371795-4364-40ca-ba43-b314c21e0e8d
+2026-01-30 11:35:44,311 - INFO - Loading: https://www.aau.edu.et/AAU-leadership/18371795-4364-40ca-ba43-b314c21e0e8d
+2026-01-30 11:35:47,504 - INFO - Categorized as: general
+2026-01-30 11:35:47,504 - INFO - Queue: 12, Visited: 112
+2026-01-30 11:35:47,505 - INFO - [113/1000]: https://www.aau.edu.et/AAU-leadership/a8a22d54-2379-4d64-bb96-f4e306dfdb32
+2026-01-30 11:35:47,505 - INFO - Loading: https://www.aau.edu.et/AAU-leadership/a8a22d54-2379-4d64-bb96-f4e306dfdb32
+2026-01-30 11:35:50,720 - INFO - Categorized as: general
+2026-01-30 11:35:50,721 - INFO - Queue: 11, Visited: 113
+2026-01-30 11:35:50,721 - INFO - [114/1000]: https://www.aau.edu.et/announcements/detail
+2026-01-30 11:35:50,721 - INFO - Loading: https://www.aau.edu.et/announcements/detail
+2026-01-30 11:35:53,936 - INFO - Categorized as: news
+2026-01-30 11:35:53,936 - INFO - Queue: 10, Visited: 114
+2026-01-30 11:35:53,936 - INFO - [115/1000]: https://www.aau.edu.et/_next/static/css/b2ddb67dec4eb668.css
+2026-01-30 11:35:53,936 - INFO - Loading: https://www.aau.edu.et/_next/static/css/b2ddb67dec4eb668.css
+2026-01-30 11:35:56,979 - INFO - Categorized as: general
+2026-01-30 11:35:56,979 - INFO - Queue: 9, Visited: 115
+2026-01-30 11:35:56,980 - INFO - [116/1000]: https://www.aau.edu.et/news/detail
+2026-01-30 11:35:56,980 - INFO - Loading: https://www.aau.edu.et/news/detail
+2026-01-30 11:36:00,206 - INFO - Categorized as: news
+2026-01-30 11:36:00,207 - INFO - Queue: 8, Visited: 116
+2026-01-30 11:36:00,207 - INFO - [117/1000]: https://www.aau.edu.et/pages/Admission/detail
+2026-01-30 11:36:00,207 - INFO - Loading: https://www.aau.edu.et/pages/Admission/detail
+2026-01-30 11:36:03,435 - INFO - Categorized as: admission
+2026-01-30 11:36:03,436 - INFO - Queue: 7, Visited: 117
+2026-01-30 11:36:03,436 - INFO - [118/1000]: https://www.aau.edu.et/pages
+2026-01-30 11:36:03,436 - INFO - Loading: https://www.aau.edu.et/pages
+2026-01-30 11:36:06,718 - INFO - Categorized as: general
+2026-01-30 11:36:06,718 - INFO - Queue: 21, Visited: 118
+2026-01-30 11:36:06,719 - INFO - [119/1000]: https://www.aau.edu.et/pages/Admission
+2026-01-30 11:36:06,719 - INFO - Loading: https://www.aau.edu.et/pages/Admission
+2026-01-30 11:36:09,870 - INFO - Categorized as: admission
+2026-01-30 11:36:09,870 - INFO - Queue: 20, Visited: 119
+2026-01-30 11:36:09,870 - INFO - [120/1000]: https://www.aau.edu.et/pages/Library
+2026-01-30 11:36:09,870 - INFO - Loading: https://www.aau.edu.et/pages/Library
+2026-01-30 11:36:13,071 - INFO - Categorized as: library
+2026-01-30 11:36:13,072 - INFO - Queue: 19, Visited: 120
+2026-01-30 11:36:13,072 - INFO - [121/1000]: https://www.aau.edu.et/pages/Library/detail
+2026-01-30 11:36:13,072 - INFO - Loading: https://www.aau.edu.et/pages/Library/detail
+2026-01-30 11:36:16,236 - INFO - Categorized as: library
+2026-01-30 11:36:16,236 - INFO - Queue: 18, Visited: 121
+2026-01-30 11:36:16,236 - INFO - [122/1000]: https://www.aau.edu.et/pages/AAU-Services/detail
+2026-01-30 11:36:16,236 - INFO - Loading: https://www.aau.edu.et/pages/AAU-Services/detail
+2026-01-30 11:36:19,426 - INFO - Categorized as: general
+2026-01-30 11:36:19,426 - INFO - Queue: 17, Visited: 122
+2026-01-30 11:36:19,426 - INFO - [123/1000]: https://www.aau.edu.et/pages/AAU-Services
+2026-01-30 11:36:19,426 - INFO - Loading: https://www.aau.edu.et/pages/AAU-Services
+2026-01-30 11:36:22,593 - INFO - Categorized as: general
+2026-01-30 11:36:22,593 - INFO - Queue: 16, Visited: 123
+2026-01-30 11:36:22,594 - INFO - [124/1000]: http://www.aau.edu.et
+2026-01-30 11:36:22,594 - INFO - Loading: http://www.aau.edu.et
+2026-01-30 11:36:25,864 - INFO - Categorized as: general
+2026-01-30 11:36:25,864 - INFO - Queue: 54, Visited: 124
+2026-01-30 11:36:25,864 - INFO - [125/1000]: https://www.aau.edu.et/pages/A-A-U- -S-e-r-v-i-c-e-s/  detail?title=AAU~Museums
+2026-01-30 11:36:25,864 - INFO - Loading: https://www.aau.edu.et/pages/A-A-U- -S-e-r-v-i-c-e-s/  detail?title=AAU~Museums
+2026-01-30 11:36:29,070 - INFO - Categorized as: general
+2026-01-30 11:36:29,071 - INFO - Queue: 55, Visited: 125
+2026-01-30 11:36:29,071 - INFO - [126/1000]: https://www.aau.edu.et/pages/L-i-b-r-a-r-y/  detail?title=Branch~Libraries
+2026-01-30 11:36:29,071 - INFO - Loading: https://www.aau.edu.et/pages/L-i-b-r-a-r-y/  detail?title=Branch~Libraries
+2026-01-30 11:36:32,339 - INFO - Categorized as: general
+2026-01-30 11:36:32,340 - INFO - Queue: 56, Visited: 126
+2026-01-30 11:36:32,340 - INFO - [127/1000]: https://www.aau.edu.et/pages/A-d-m-i-s-s-i-o-n/  detail?title=Admission
+2026-01-30 11:36:32,340 - INFO - Loading: https://www.aau.edu.et/pages/A-d-m-i-s-s-i-o-n/  detail?title=Admission
+2026-01-30 11:36:35,716 - INFO - Categorized as: admission
+2026-01-30 11:36:35,716 - INFO - Queue: 57, Visited: 127
+2026-01-30 11:36:35,716 - INFO - [128/1000]: https://www.aau.edu.et/pages/A-A-U- -S-e-r-v-i-c-e-s/  detail?title=Book~Center
+2026-01-30 11:36:35,716 - INFO - Loading: https://www.aau.edu.et/pages/A-A-U- -S-e-r-v-i-c-e-s/  detail?title=Book~Center
+2026-01-30 11:36:39,092 - INFO - Categorized as: library
+2026-01-30 11:36:39,092 - INFO - Queue: 56, Visited: 128
+2026-01-30 11:36:39,092 - INFO - [129/1000]: https://www.aau.edu.et/pages/A-d-m-i-s-s-i-o-n/  detail?title=Academic~Cases
+2026-01-30 11:36:39,093 - INFO - Loading: https://www.aau.edu.et/pages/A-d-m-i-s-s-i-o-n/  detail?title=Academic~Cases
+2026-01-30 11:36:42,315 - INFO - Categorized as: general
+2026-01-30 11:36:42,316 - INFO - Queue: 55, Visited: 129
+2026-01-30 11:36:42,316 - INFO - [130/1000]: https://www.aau.edu.et/pages/A-A-U- -S-e-r-v-i-c-e-s/  detail?title=Ashenafi~Kebede~Performance~Arts~Center~
+2026-01-30 11:36:42,316 - INFO - Loading: https://www.aau.edu.et/pages/A-A-U- -S-e-r-v-i-c-e-s/  detail?title=Ashenafi~Kebede~Performance~Arts~Center~
+2026-01-30 11:36:45,555 - INFO - Categorized as: general
+2026-01-30 11:36:45,555 - INFO - Queue: 54, Visited: 130
+2026-01-30 11:36:45,555 - INFO - [131/1000]: https://www.aau.edu.et/pages/A-A-U- -S-e-r-v-i-c-e-s/  detail?title=ICT
+2026-01-30 11:36:45,555 - INFO - Loading: https://www.aau.edu.et/pages/A-A-U- -S-e-r-v-i-c-e-s/  detail?title=ICT
+2026-01-30 11:36:48,796 - INFO - Categorized as: general
+2026-01-30 11:36:48,796 - INFO - Queue: 53, Visited: 131
+2026-01-30 11:36:48,797 - INFO - [132/1000]: https://www.aau.edu.et/pages/A-d-m-i-s-s-i-o-n/  detail?title=Services
+2026-01-30 11:36:48,797 - INFO - Loading: https://www.aau.edu.et/pages/A-d-m-i-s-s-i-o-n/  detail?title=Services
+2026-01-30 11:36:51,980 - INFO - Categorized as: general
+2026-01-30 11:36:51,980 - INFO - Queue: 52, Visited: 132
+2026-01-30 11:36:51,980 - INFO - [133/1000]: https://www.aau.edu.et/pages/A-A-U- -S-e-r-v-i-c-e-s/  detail?title=AAU~Community~Radio
+2026-01-30 11:36:51,981 - INFO - Loading: https://www.aau.edu.et/pages/A-A-U- -S-e-r-v-i-c-e-s/  detail?title=AAU~Community~Radio
+2026-01-30 11:36:55,142 - INFO - Categorized as: general
+2026-01-30 11:36:55,142 - INFO - Queue: 51, Visited: 133
+2026-01-30 11:36:55,142 - INFO - [134/1000]: https://www.aau.edu.et/pages/A-d-m-i-s-s-i-o-n/  detail?title=Contacts
+2026-01-30 11:36:55,142 - INFO - Loading: https://www.aau.edu.et/pages/A-d-m-i-s-s-i-o-n/  detail?title=Contacts
+2026-01-30 11:36:58,419 - INFO - Categorized as: general
+2026-01-30 11:36:58,419 - INFO - Queue: 50, Visited: 134
+2026-01-30 11:36:58,419 - INFO - [135/1000]: https://www.aau.edu.et/pages/A-A-U- -S-e-r-v-i-c-e-s/  detail?title=Tikur~Anbessa~Specialized~Hospital~(TASH)~
+2026-01-30 11:36:58,419 - INFO - Loading: https://www.aau.edu.et/pages/A-A-U- -S-e-r-v-i-c-e-s/  detail?title=Tikur~Anbessa~Specialized~Hospital~(TASH)~
+2026-01-30 11:37:02,042 - INFO - Categorized as: general
+2026-01-30 11:37:02,043 - INFO - Queue: 49, Visited: 135
+2026-01-30 11:37:02,043 - INFO - [136/1000]: https://www.aau.edu.et/pages/A-A-U- -S-e-r-v-i-c-e-s/  detail?title=AAU~Startups
+2026-01-30 11:37:02,044 - INFO - Loading: https://www.aau.edu.et/pages/A-A-U- -S-e-r-v-i-c-e-s/  detail?title=AAU~Startups
+2026-01-30 11:37:05,404 - INFO - Categorized as: general
+2026-01-30 11:37:05,404 - INFO - Queue: 48, Visited: 136
+2026-01-30 11:37:05,405 - INFO - [137/1000]: https://www.aau.edu.et/pages/A-A-U- -S-e-r-v-i-c-e-s/  detail?title=Sports~and~Recreation
+2026-01-30 11:37:05,405 - INFO - Loading: https://www.aau.edu.et/pages/A-A-U- -S-e-r-v-i-c-e-s/  detail?title=Sports~and~Recreation
+2026-01-30 11:37:08,590 - INFO - Categorized as: general
+2026-01-30 11:37:08,590 - INFO - Queue: 47, Visited: 137
+2026-01-30 11:37:08,590 - INFO - [138/1000]: https://www.aau.edu.et/pages/V-P- -O-f-f-i-c-e/  detail?title=Partnership~and~Communication~Vice~President~
+2026-01-30 11:37:08,590 - INFO - Loading: https://www.aau.edu.et/pages/V-P- -O-f-f-i-c-e/  detail?title=Partnership~and~Communication~Vice~President~
+2026-01-30 11:37:11,846 - INFO - Categorized as: general
+2026-01-30 11:37:11,847 - INFO - Queue: 48, Visited: 138
+2026-01-30 11:37:11,847 - INFO - [139/1000]: https://www.aau.edu.et/pages/A-d-m-i-s-s-i-o-n/  detail?title=Tuition~and~Service~Fees
+2026-01-30 11:37:11,847 - INFO - Loading: https://www.aau.edu.et/pages/A-d-m-i-s-s-i-o-n/  detail?title=Tuition~and~Service~Fees
+2026-01-30 11:37:15,076 - INFO - Categorized as: fees
+2026-01-30 11:37:15,076 - INFO - Queue: 47, Visited: 139
+2026-01-30 11:37:15,076 - INFO - [140/1000]: http://www.aau.edu.et/statistics
+2026-01-30 11:37:15,076 - INFO - Loading: http://www.aau.edu.et/statistics
+2026-01-30 11:37:18,236 - INFO - Categorized as: general
+2026-01-30 11:37:18,236 - INFO - Queue: 46, Visited: 140
+2026-01-30 11:37:18,237 - INFO - [141/1000]: http://www.aau.edu.et/news/detail?title=Addis~Ababa~University~Ranks~First~Among~East~African~Universities
+2026-01-30 11:37:18,237 - INFO - Loading: http://www.aau.edu.et/news/detail?title=Addis~Ababa~University~Ranks~First~Among~East~African~Universities
+2026-01-30 11:37:21,428 - INFO - Categorized as: news
+2026-01-30 11:37:21,428 - INFO - Queue: 48, Visited: 141
+2026-01-30 11:37:21,428 - INFO - [142/1000]: http://www.aau.edu.et/news/detail?title=Institute~of~Ethiopian~Studies~Hosts~Symposium~on~Ethiopian~Islamic~Manuscript~Traditions
+2026-01-30 11:37:21,429 - INFO - Loading: http://www.aau.edu.et/news/detail?title=Institute~of~Ethiopian~Studies~Hosts~Symposium~on~Ethiopian~Islamic~Manuscript~Traditions
+2026-01-30 11:37:24,653 - INFO - Categorized as: news
+2026-01-30 11:37:24,653 - INFO - Queue: 47, Visited: 142
+2026-01-30 11:37:24,653 - INFO - [143/1000]: http://www.aau.edu.et/aau-at-a-glance
+2026-01-30 11:37:24,653 - INFO - Loading: http://www.aau.edu.et/aau-at-a-glance
+2026-01-30 11:37:28,400 - INFO - Categorized as: general
+2026-01-30 11:37:28,400 - INFO - Queue: 46, Visited: 143
+2026-01-30 11:37:28,400 - INFO - [144/1000]: http://www.aau.edu.et/announcements/detail?title=final~examination~schedule~for~the~course~Inclusiveness~(for~2nd~year~Students)
+2026-01-30 11:37:28,400 - INFO - Loading: http://www.aau.edu.et/announcements/detail?title=final~examination~schedule~for~the~course~Inclusiveness~(for~2nd~year~Students)
+2026-01-30 11:37:31,613 - INFO - Categorized as: grades
+2026-01-30 11:37:31,614 - INFO - Queue: 46, Visited: 144
+2026-01-30 11:37:31,614 - INFO - [145/1000]: http://www.aau.edu.et/_next/static/css/6e09fc4a51e39a40.css
+2026-01-30 11:37:31,614 - INFO - Loading: http://www.aau.edu.et/_next/static/css/6e09fc4a51e39a40.css
+2026-01-30 11:37:34,657 - INFO - Categorized as: general
+2026-01-30 11:37:34,657 - INFO - Queue: 45, Visited: 145
+2026-01-30 11:37:34,658 - INFO - [146/1000]: http://www.aau.edu.et/presidents
+2026-01-30 11:37:34,658 - INFO - Loading: http://www.aau.edu.et/presidents
+2026-01-30 11:37:37,845 - INFO - Categorized as: general
+2026-01-30 11:37:37,845 - INFO - Queue: 45, Visited: 146
+2026-01-30 11:37:37,846 - INFO - [147/1000]: http://www.aau.edu.et/library
+2026-01-30 11:37:37,846 - INFO - Loading: http://www.aau.edu.et/library
+2026-01-30 11:37:41,055 - INFO - Categorized as: library
+2026-01-30 11:37:41,056 - INFO - Queue: 45, Visited: 147
+2026-01-30 11:37:41,056 - INFO - [148/1000]: http://www.aau.edu.et/services
+2026-01-30 11:37:41,056 - INFO - Loading: http://www.aau.edu.et/services
+2026-01-30 11:37:44,216 - INFO - Categorized as: general
+2026-01-30 11:37:44,216 - INFO - Queue: 52, Visited: 148
+2026-01-30 11:37:44,217 - INFO - [149/1000]: http://www.aau.edu.et/announcements/detail?title=GAT~Exam~Schedule~(Monday~January~05,~2026~Morning~and~Afternoon~Session)
+2026-01-30 11:37:44,217 - INFO - Loading: http://www.aau.edu.et/announcements/detail?title=GAT~Exam~Schedule~(Monday~January~05,~2026~Morning~and~Afternoon~Session)
+2026-01-30 11:37:47,483 - INFO - Categorized as: grades
+2026-01-30 11:37:47,483 - INFO - Queue: 51, Visited: 149
+2026-01-30 11:37:47,484 - INFO - [150/1000]: http://www.aau.edu.et/_next/static/media/028c0d39d2e8f589-s.p.woff2
+2026-01-30 11:37:47,484 - INFO - Loading: http://www.aau.edu.et/_next/static/media/028c0d39d2e8f589-s.p.woff2
+2026-01-30 11:37:50,539 - INFO - Categorized as: general
+2026-01-30 11:37:50,539 - INFO - Queue: 50, Visited: 150
+2026-01-30 11:37:50,540 - INFO - [151/1000]: http://www.aau.edu.et/contactus
+2026-01-30 11:37:50,540 - INFO - Loading: http://www.aau.edu.et/contactus
+2026-01-30 11:37:53,861 - INFO - Categorized as: general
+2026-01-30 11:37:53,862 - INFO - Queue: 49, Visited: 151
+2026-01-30 11:37:53,862 - INFO - [152/1000]: http://www.aau.edu.et/staffs
+2026-01-30 11:37:53,862 - INFO - Loading: http://www.aau.edu.et/staffs
+2026-01-30 11:37:57,011 - INFO - Categorized as: general
+2026-01-30 11:37:57,012 - INFO - Queue: 49, Visited: 152
+2026-01-30 11:37:57,012 - INFO - [153/1000]: http://www.aau.edu.et/partners
+2026-01-30 11:37:57,012 - INFO - Loading: http://www.aau.edu.et/partners
+2026-01-30 11:38:00,231 - INFO - Categorized as: general
+2026-01-30 11:38:00,231 - INFO - Queue: 48, Visited: 153
+2026-01-30 11:38:00,231 - INFO - [154/1000]: http://www.aau.edu.et/history
+2026-01-30 11:38:00,231 - INFO - Loading: http://www.aau.edu.et/history
+2026-01-30 11:38:03,497 - INFO - Categorized as: general
+2026-01-30 11:38:03,497 - INFO - Queue: 47, Visited: 154
+2026-01-30 11:38:03,498 - INFO - [155/1000]: http://www.aau.edu.et/_next/static/css/661e90584160d7c0.css
+2026-01-30 11:38:03,498 - INFO - Loading: http://www.aau.edu.et/_next/static/css/661e90584160d7c0.css
+2026-01-30 11:38:06,551 - INFO - Categorized as: general
+2026-01-30 11:38:06,551 - INFO - Queue: 46, Visited: 155
+2026-01-30 11:38:06,551 - INFO - [156/1000]: http://www.aau.edu.et/_next/static/chunks/webpack-e60a5c12366df2cd.js
+2026-01-30 11:38:06,551 - INFO - Loading: http://www.aau.edu.et/_next/static/chunks/webpack-e60a5c12366df2cd.js
+2026-01-30 11:38:09,600 - INFO - Categorized as: general
+2026-01-30 11:38:09,601 - INFO - Queue: 45, Visited: 156
+2026-01-30 11:38:09,601 - INFO - [157/1000]: http://www.aau.edu.et/studentsCorner
+2026-01-30 11:38:09,601 - INFO - Loading: http://www.aau.edu.et/studentsCorner
+2026-01-30 11:38:12,995 - INFO - Categorized as: general
+2026-01-30 11:38:12,995 - INFO - Queue: 44, Visited: 157
+2026-01-30 11:38:12,995 - INFO - [158/1000]: http://www.aau.edu.et/announcements/detail?title=First-Year~Students~Final~online~exam~Schedule
+2026-01-30 11:38:12,996 - INFO - Loading: http://www.aau.edu.et/announcements/detail?title=First-Year~Students~Final~online~exam~Schedule
+2026-01-30 11:38:16,239 - INFO - Categorized as: grades
+2026-01-30 11:38:16,240 - INFO - Queue: 43, Visited: 158
+2026-01-30 11:38:16,240 - INFO - [159/1000]: http://www.aau.edu.et/news/detail?title=Public~Lecture~at~AAU~Highlights~Contributions~of~Prof.~Sven~Rubenson~to~Ethiopian~History
+2026-01-30 11:38:16,240 - INFO - Loading: http://www.aau.edu.et/news/detail?title=Public~Lecture~at~AAU~Highlights~Contributions~of~Prof.~Sven~Rubenson~to~Ethiopian~History
+2026-01-30 11:38:19,441 - INFO - Categorized as: news
+2026-01-30 11:38:19,442 - INFO - Queue: 42, Visited: 159
+2026-01-30 11:38:19,442 - INFO - [160/1000]: http://www.aau.edu.et/gallery
+2026-01-30 11:38:19,442 - INFO - Loading: http://www.aau.edu.et/gallery
+2026-01-30 11:38:23,863 - INFO - Categorized as: general
+2026-01-30 11:38:23,864 - INFO - Queue: 41, Visited: 160
+2026-01-30 11:38:23,864 - INFO - [161/1000]: http://www.aau.edu.et/archives
+2026-01-30 11:38:23,864 - INFO - Loading: http://www.aau.edu.et/archives
+2026-01-30 11:38:27,144 - INFO - Categorized as: general
+2026-01-30 11:38:27,144 - INFO - Queue: 40, Visited: 161
+2026-01-30 11:38:27,144 - INFO - [162/1000]: http://www.aau.edu.et/A-to-Z_listing
+2026-01-30 11:38:27,144 - INFO - Loading: http://www.aau.edu.et/A-to-Z_listing
+2026-01-30 11:38:30,320 - INFO - Categorized as: general
+2026-01-30 11:38:30,321 - INFO - Queue: 39, Visited: 162
+2026-01-30 11:38:30,321 - INFO - [163/1000]: http://www.aau.edu.et/announcements/detail?title=AAU~Connect~Volume~10~–~75~Years~of~Excellence
+2026-01-30 11:38:30,321 - INFO - Loading: http://www.aau.edu.et/announcements/detail?title=AAU~Connect~Volume~10~–~75~Years~of~Excellence
+2026-01-30 11:38:33,523 - INFO - Categorized as: news
+2026-01-30 11:38:33,524 - INFO - Queue: 38, Visited: 163
+2026-01-30 11:38:33,524 - INFO - [164/1000]: http://www.aau.edu.et/images/gray1.svg
+2026-01-30 11:38:33,524 - INFO - Loading: http://www.aau.edu.et/images/gray1.svg
+2026-01-30 11:38:46,859 - WARNING - Timeout: http://www.aau.edu.et/images/gray1.svg
+2026-01-30 11:38:46,872 - INFO - Categorized as: general
+2026-01-30 11:38:46,872 - INFO - Queue: 37, Visited: 164
+2026-01-30 11:38:46,872 - INFO - [165/1000]: http://www.aau.edu.et/announcements/detail?title=Submission~of~Updated~Grade~12~Examination~Results
+2026-01-30 11:38:46,873 - INFO - Loading: http://www.aau.edu.et/announcements/detail?title=Submission~of~Updated~Grade~12~Examination~Results
+2026-01-30 11:38:50,132 - INFO - Categorized as: grades
+2026-01-30 11:38:50,133 - INFO - Queue: 36, Visited: 165
+2026-01-30 11:38:50,133 - INFO - [166/1000]: http://www.aau.edu.et/AAU-leadership
+2026-01-30 11:38:50,133 - INFO - Loading: http://www.aau.edu.et/AAU-leadership
+2026-01-30 11:38:53,274 - INFO - Categorized as: general
+2026-01-30 11:38:53,275 - INFO - Queue: 42, Visited: 166
+2026-01-30 11:38:53,275 - INFO - [167/1000]: http://www.aau.edu.et/gallery/STUDENT_LIFE
+2026-01-30 11:38:53,275 - INFO - Loading: http://www.aau.edu.et/gallery/STUDENT_LIFE
+2026-01-30 11:38:56,539 - INFO - Categorized as: general
+2026-01-30 11:38:56,540 - INFO - Queue: 41, Visited: 167
+2026-01-30 11:38:56,540 - INFO - [168/1000]: http://www.aau.edu.et/gallery/OTHERS
+2026-01-30 11:38:56,540 - INFO - Loading: http://www.aau.edu.et/gallery/OTHERS
+2026-01-30 11:38:59,745 - INFO - Categorized as: general
+2026-01-30 11:38:59,746 - INFO - Queue: 40, Visited: 168
+2026-01-30 11:38:59,746 - INFO - [169/1000]: http://www.aau.edu.et/announcements
+2026-01-30 11:38:59,746 - INFO - Loading: http://www.aau.edu.et/announcements
+2026-01-30 11:39:02,894 - INFO - Categorized as: news
+2026-01-30 11:39:02,894 - INFO - Queue: 39, Visited: 169
+2026-01-30 11:39:02,894 - INFO - [170/1000]: http://www.aau.edu.et/events
+2026-01-30 11:39:02,895 - INFO - Loading: http://www.aau.edu.et/events
+2026-01-30 11:39:06,138 - INFO - Categorized as: events
+2026-01-30 11:39:06,138 - INFO - Queue: 38, Visited: 170
+2026-01-30 11:39:06,138 - INFO - [171/1000]: http://www.aau.edu.et/alumni
+2026-01-30 11:39:06,138 - INFO - Loading: http://www.aau.edu.et/alumni
+2026-01-30 11:39:09,319 - INFO - Categorized as: general
+2026-01-30 11:39:09,320 - INFO - Queue: 37, Visited: 171
+2026-01-30 11:39:09,320 - INFO - [172/1000]: http://www.aau.edu.et/images/blue2.svg
+2026-01-30 11:39:09,320 - INFO - Loading: http://www.aau.edu.et/images/blue2.svg
+2026-01-30 11:39:22,656 - WARNING - Timeout: http://www.aau.edu.et/images/blue2.svg
+2026-01-30 11:39:22,672 - INFO - Categorized as: general
+2026-01-30 11:39:22,672 - INFO - Queue: 36, Visited: 172
+2026-01-30 11:39:22,672 - INFO - [173/1000]: http://www.aau.edu.et/emergencyservices
+2026-01-30 11:39:22,673 - INFO - Loading: http://www.aau.edu.et/emergencyservices
+2026-01-30 11:39:25,888 - INFO - Categorized as: general
+2026-01-30 11:39:25,888 - INFO - Queue: 35, Visited: 173
+2026-01-30 11:39:25,888 - INFO - [174/1000]: http://www.aau.edu.et/publications
+2026-01-30 11:39:25,888 - INFO - Loading: http://www.aau.edu.et/publications
+2026-01-30 11:39:29,086 - INFO - Categorized as: research
+2026-01-30 11:39:29,087 - INFO - Queue: 34, Visited: 174
+2026-01-30 11:39:29,087 - INFO - [175/1000]: http://www.aau.edu.et/campus_life
+2026-01-30 11:39:29,087 - INFO - Loading: http://www.aau.edu.et/campus_life
+2026-01-30 11:39:32,297 - INFO - Categorized as: general
+2026-01-30 11:39:32,297 - INFO - Queue: 33, Visited: 175
+2026-01-30 11:39:32,297 - INFO - [176/1000]: http://www.aau.edu.et/documents
+2026-01-30 11:39:32,297 - INFO - Loading: http://www.aau.edu.et/documents
+2026-01-30 11:39:35,534 - INFO - Categorized as: documents
+2026-01-30 11:39:35,535 - INFO - Queue: 32, Visited: 176
+2026-01-30 11:39:35,535 - INFO - [177/1000]: http://www.aau.edu.et/research
+2026-01-30 11:39:35,535 - INFO - Loading: http://www.aau.edu.et/research
+2026-01-30 11:39:38,721 - INFO - Categorized as: research
+2026-01-30 11:39:38,722 - INFO - Queue: 31, Visited: 177
+2026-01-30 11:39:38,722 - INFO - [178/1000]: http://www.aau.edu.et/_next/static/css/95a3dc6dc85067ca.css
+2026-01-30 11:39:38,722 - INFO - Loading: http://www.aau.edu.et/_next/static/css/95a3dc6dc85067ca.css
+2026-01-30 11:39:41,789 - INFO - Categorized as: general
+2026-01-30 11:39:41,789 - INFO - Queue: 30, Visited: 178
+2026-01-30 11:39:41,789 - INFO - [179/1000]: https://www.aau.edu.et/pages/A-A-U-%20-S-e-r-v-i-c-e-s/%20%20detail
+2026-01-30 11:39:41,789 - INFO - Loading: https://www.aau.edu.et/pages/A-A-U-%20-S-e-r-v-i-c-e-s/%20%20detail
+2026-01-30 11:39:45,160 - INFO - Categorized as: general
+2026-01-30 11:39:45,160 - INFO - Queue: 29, Visited: 179
+2026-01-30 11:39:45,160 - INFO - [180/1000]: https://www.aau.edu.et/pages/A-A-U-%20-S-e-r-v-i-c-e-s
+2026-01-30 11:39:45,160 - INFO - Loading: https://www.aau.edu.et/pages/A-A-U-%20-S-e-r-v-i-c-e-s
+2026-01-30 11:39:48,325 - INFO - Categorized as: general
+2026-01-30 11:39:48,325 - INFO - Queue: 28, Visited: 180
+2026-01-30 11:39:48,325 - INFO - [181/1000]: https://www.aau.edu.et/pages/L-i-b-r-a-r-y
+2026-01-30 11:39:48,326 - INFO - Loading: https://www.aau.edu.et/pages/L-i-b-r-a-r-y
+2026-01-30 11:39:51,534 - INFO - Categorized as: general
+2026-01-30 11:39:51,534 - INFO - Queue: 27, Visited: 181
+2026-01-30 11:39:51,534 - INFO - [182/1000]: https://www.aau.edu.et/pages/L-i-b-r-a-r-y/%20%20detail
+2026-01-30 11:39:51,534 - INFO - Loading: https://www.aau.edu.et/pages/L-i-b-r-a-r-y/%20%20detail
+2026-01-30 11:39:54,729 - INFO - Categorized as: general
+2026-01-30 11:39:54,729 - INFO - Queue: 26, Visited: 182
+2026-01-30 11:39:54,729 - INFO - [183/1000]: https://www.aau.edu.et/pages/A-d-m-i-s-s-i-o-n
+2026-01-30 11:39:54,729 - INFO - Loading: https://www.aau.edu.et/pages/A-d-m-i-s-s-i-o-n
+2026-01-30 11:39:57,912 - INFO - Categorized as: general
+2026-01-30 11:39:57,912 - INFO - Queue: 25, Visited: 183
+2026-01-30 11:39:57,913 - INFO - [184/1000]: https://www.aau.edu.et/pages/A-d-m-i-s-s-i-o-n/%20%20detail
+2026-01-30 11:39:57,913 - INFO - Loading: https://www.aau.edu.et/pages/A-d-m-i-s-s-i-o-n/%20%20detail
+2026-01-30 11:40:01,140 - INFO - Categorized as: general
+2026-01-30 11:40:01,140 - INFO - Queue: 24, Visited: 184
+2026-01-30 11:40:01,141 - INFO - [185/1000]: https://www.aau.edu.et/pages/V-P-%20-O-f-f-i-c-e/%20%20detail
+2026-01-30 11:40:01,141 - INFO - Loading: https://www.aau.edu.et/pages/V-P-%20-O-f-f-i-c-e/%20%20detail
+2026-01-30 11:40:04,344 - INFO - Categorized as: general
+2026-01-30 11:40:04,344 - INFO - Queue: 23, Visited: 185
+2026-01-30 11:40:04,344 - INFO - [186/1000]: https://www.aau.edu.et/pages/V-P-%20-O-f-f-i-c-e
+2026-01-30 11:40:04,345 - INFO - Loading: https://www.aau.edu.et/pages/V-P-%20-O-f-f-i-c-e
+2026-01-30 11:40:07,507 - INFO - Categorized as: general
+2026-01-30 11:40:07,508 - INFO - Queue: 22, Visited: 186
+2026-01-30 11:40:07,508 - INFO - [187/1000]: http://www.aau.edu.et/_next/static/css/b2ddb67dec4eb668.css
+2026-01-30 11:40:07,508 - INFO - Loading: http://www.aau.edu.et/_next/static/css/b2ddb67dec4eb668.css
+2026-01-30 11:40:10,568 - INFO - Categorized as: general
+2026-01-30 11:40:10,568 - INFO - Queue: 21, Visited: 187
+2026-01-30 11:40:10,568 - INFO - [188/1000]: http://www.aau.edu.et/news/detail
+2026-01-30 11:40:10,569 - INFO - Loading: http://www.aau.edu.et/news/detail
+2026-01-30 11:40:13,925 - INFO - Categorized as: news
+2026-01-30 11:40:13,925 - INFO - Queue: 20, Visited: 188
+2026-01-30 11:40:13,925 - INFO - [189/1000]: http://www.aau.edu.et/news
+2026-01-30 11:40:13,925 - INFO - Loading: http://www.aau.edu.et/news
+2026-01-30 11:40:17,134 - INFO - Categorized as: news
+2026-01-30 11:40:17,134 - INFO - Queue: 19, Visited: 189
+2026-01-30 11:40:17,134 - INFO - [190/1000]: http://www.aau.edu.et/announcements/detail
+2026-01-30 11:40:17,135 - INFO - Loading: http://www.aau.edu.et/announcements/detail
+2026-01-30 11:40:20,339 - INFO - Categorized as: news
+2026-01-30 11:40:20,339 - INFO - Queue: 18, Visited: 190
+2026-01-30 11:40:20,339 - INFO - [191/1000]: http://www.aau.edu.et/AAU-leadership/06f50640-937b-4bb9-ab15-88340ff1ebe4
+2026-01-30 11:40:20,340 - INFO - Loading: http://www.aau.edu.et/AAU-leadership/06f50640-937b-4bb9-ab15-88340ff1ebe4
+2026-01-30 11:40:23,512 - INFO - Categorized as: general
+2026-01-30 11:40:23,513 - INFO - Queue: 17, Visited: 191
+2026-01-30 11:40:23,513 - INFO - [192/1000]: http://www.aau.edu.et/pages/Library/detail?title=Branch~Libraries
+2026-01-30 11:40:23,513 - INFO - Loading: http://www.aau.edu.et/pages/Library/detail?title=Branch~Libraries
+2026-01-30 11:40:26,727 - INFO - Categorized as: library
+2026-01-30 11:40:26,727 - INFO - Queue: 19, Visited: 192
+2026-01-30 11:40:26,727 - INFO - [193/1000]: http://www.aau.edu.et/pages/AAU-Services/detail?title=AAU~Museums
+2026-01-30 11:40:26,727 - INFO - Loading: http://www.aau.edu.et/pages/AAU-Services/detail?title=AAU~Museums
+2026-01-30 11:40:29,990 - INFO - Categorized as: general
+2026-01-30 11:40:29,990 - INFO - Queue: 20, Visited: 193
+2026-01-30 11:40:29,990 - INFO - [194/1000]: http://www.aau.edu.et/pages/AAU-Services/detail?title=AAU~Startups
+2026-01-30 11:40:29,990 - INFO - Loading: http://www.aau.edu.et/pages/AAU-Services/detail?title=AAU~Startups
+2026-01-30 11:40:33,200 - INFO - Categorized as: general
+2026-01-30 11:40:33,200 - INFO - Queue: 19, Visited: 194
+2026-01-30 11:40:33,200 - INFO - [195/1000]: http://www.aau.edu.et/pages/AAU-Services/detail?title=Ashenafi~Kebede~Performance~Arts~Center~
+2026-01-30 11:40:33,201 - INFO - Loading: http://www.aau.edu.et/pages/AAU-Services/detail?title=Ashenafi~Kebede~Performance~Arts~Center~
+2026-01-30 11:40:36,447 - INFO - Categorized as: general
+2026-01-30 11:40:36,447 - INFO - Queue: 18, Visited: 195
+2026-01-30 11:40:36,448 - INFO - [196/1000]: http://www.aau.edu.et/pages/AAU-Services/detail?title=Tikur~Anbessa~Specialized~Hospital~(TASH)~
+2026-01-30 11:40:36,448 - INFO - Loading: http://www.aau.edu.et/pages/AAU-Services/detail?title=Tikur~Anbessa~Specialized~Hospital~(TASH)~
+2026-01-30 11:40:39,687 - INFO - Categorized as: general
+2026-01-30 11:40:39,687 - INFO - Queue: 17, Visited: 196
+2026-01-30 11:40:39,687 - INFO - [197/1000]: http://www.aau.edu.et/pages/AAU-Services/detail?title=Book~Center
+2026-01-30 11:40:39,687 - INFO - Loading: http://www.aau.edu.et/pages/AAU-Services/detail?title=Book~Center
+2026-01-30 11:40:42,892 - INFO - Categorized as: library
+2026-01-30 11:40:42,892 - INFO - Queue: 16, Visited: 197
+2026-01-30 11:40:42,892 - INFO - [198/1000]: http://www.aau.edu.et/pages/AAU-Services/detail?title=Sports~and~Recreation
+2026-01-30 11:40:42,893 - INFO - Loading: http://www.aau.edu.et/pages/AAU-Services/detail?title=Sports~and~Recreation
+2026-01-30 11:40:46,111 - INFO - Categorized as: general
+2026-01-30 11:40:46,111 - INFO - Queue: 15, Visited: 198
+2026-01-30 11:40:46,111 - INFO - [199/1000]: http://www.aau.edu.et/pages/AAU-Services/detail?title=AAU~Community~Radio
+2026-01-30 11:40:46,111 - INFO - Loading: http://www.aau.edu.et/pages/AAU-Services/detail?title=AAU~Community~Radio
+2026-01-30 11:40:49,301 - INFO - Categorized as: general
+2026-01-30 11:40:49,301 - INFO - Queue: 14, Visited: 199
+2026-01-30 11:40:49,302 - INFO - [200/1000]: http://www.aau.edu.et/pages/AAU-Services/detail?title=ICT
+2026-01-30 11:40:49,302 - INFO - Loading: http://www.aau.edu.et/pages/AAU-Services/detail?title=ICT
+2026-01-30 11:40:52,555 - INFO - Categorized as: general
+2026-01-30 11:40:52,555 - INFO - Queue: 13, Visited: 200
+2026-01-30 11:40:52,555 - INFO - [201/1000]: http://www.aau.edu.et/staff-profile
+2026-01-30 11:40:52,555 - INFO - Loading: http://www.aau.edu.et/staff-profile
+2026-01-30 11:40:55,738 - INFO - Categorized as: general
+2026-01-30 11:40:55,739 - INFO - Queue: 12, Visited: 201
+2026-01-30 11:40:55,739 - INFO - [202/1000]: http://www.aau.edu.et/AAU-leadership/a8a22d54-2379-4d64-bb96-f4e306dfdb32
+2026-01-30 11:40:55,739 - INFO - Loading: http://www.aau.edu.et/AAU-leadership/a8a22d54-2379-4d64-bb96-f4e306dfdb32
+2026-01-30 11:40:58,978 - INFO - Categorized as: general
+2026-01-30 11:40:58,978 - INFO - Queue: 11, Visited: 202
+2026-01-30 11:40:58,979 - INFO - [203/1000]: http://www.aau.edu.et/AAU-leadership/18371795-4364-40ca-ba43-b314c21e0e8d
+2026-01-30 11:40:58,979 - INFO - Loading: http://www.aau.edu.et/AAU-leadership/18371795-4364-40ca-ba43-b314c21e0e8d
+2026-01-30 11:41:02,156 - INFO - Categorized as: general
+2026-01-30 11:41:02,156 - INFO - Queue: 10, Visited: 203
+2026-01-30 11:41:02,156 - INFO - [204/1000]: http://www.aau.edu.et/AAU-leadership/de0b99ed-8c72-4eae-8b82-4cdbae66f06c
+2026-01-30 11:41:02,156 - INFO - Loading: http://www.aau.edu.et/AAU-leadership/de0b99ed-8c72-4eae-8b82-4cdbae66f06c
+2026-01-30 11:41:05,452 - INFO - Categorized as: general
+2026-01-30 11:41:05,453 - INFO - Queue: 9, Visited: 204
+2026-01-30 11:41:05,453 - INFO - [205/1000]: http://www.aau.edu.et/AAU-leadership/9482d766-dffc-4d56-bb87-4eea0964c801
+2026-01-30 11:41:05,454 - INFO - Loading: http://www.aau.edu.et/AAU-leadership/9482d766-dffc-4d56-bb87-4eea0964c801
+2026-01-30 11:41:08,933 - INFO - Categorized as: general
+2026-01-30 11:41:08,934 - INFO - Queue: 8, Visited: 205
+2026-01-30 11:41:08,934 - INFO - [206/1000]: http://www.aau.edu.et/AAU-leadership/e4755578-8f95-45cc-ba55-70e1ea352c76
+2026-01-30 11:41:08,934 - INFO - Loading: http://www.aau.edu.et/AAU-leadership/e4755578-8f95-45cc-ba55-70e1ea352c76
+2026-01-30 11:41:12,183 - INFO - Categorized as: general
+2026-01-30 11:41:12,183 - INFO - Queue: 7, Visited: 206
+2026-01-30 11:41:12,183 - INFO - [207/1000]: http://www.aau.edu.et/AAU-leadership/d4eddd44-64a4-40fb-9a4b-c3b25780eef8
+2026-01-30 11:41:12,183 - INFO - Loading: http://www.aau.edu.et/AAU-leadership/d4eddd44-64a4-40fb-9a4b-c3b25780eef8
+2026-01-30 11:41:15,471 - INFO - Categorized as: general
+2026-01-30 11:41:15,472 - INFO - Queue: 6, Visited: 207
+2026-01-30 11:41:15,472 - INFO - [208/1000]: http://www.aau.edu.et/AAU-leadership/president-speeches
+2026-01-30 11:41:15,472 - INFO - Loading: http://www.aau.edu.et/AAU-leadership/president-speeches
+2026-01-30 11:41:18,644 - INFO - Categorized as: general
+2026-01-30 11:41:18,644 - INFO - Queue: 5, Visited: 208
+2026-01-30 11:41:18,645 - INFO - [209/1000]: http://www.aau.edu.et/pages
+2026-01-30 11:41:18,645 - INFO - Loading: http://www.aau.edu.et/pages
+2026-01-30 11:41:21,980 - INFO - Categorized as: general
+2026-01-30 11:41:21,980 - INFO - Queue: 19, Visited: 209
+2026-01-30 11:41:21,980 - INFO - [210/1000]: http://www.aau.edu.et/pages/Library/detail
+2026-01-30 11:41:21,980 - INFO - Loading: http://www.aau.edu.et/pages/Library/detail
+2026-01-30 11:41:25,233 - INFO - Categorized as: library
+2026-01-30 11:41:25,233 - INFO - Queue: 18, Visited: 210
+2026-01-30 11:41:25,234 - INFO - [211/1000]: http://www.aau.edu.et/pages/Library
+2026-01-30 11:41:25,234 - INFO - Loading: http://www.aau.edu.et/pages/Library
+2026-01-30 11:41:28,402 - INFO - Categorized as: library
+2026-01-30 11:41:28,403 - INFO - Queue: 17, Visited: 211
+2026-01-30 11:41:28,403 - INFO - [212/1000]: http://www.aau.edu.et/pages/AAU-Services/detail
+2026-01-30 11:41:28,403 - INFO - Loading: http://www.aau.edu.et/pages/AAU-Services/detail
+2026-01-30 11:41:32,066 - INFO - Categorized as: general
+2026-01-30 11:41:32,067 - INFO - Queue: 16, Visited: 212
+2026-01-30 11:41:32,067 - INFO - [213/1000]: http://www.aau.edu.et/pages/AAU-Services
+2026-01-30 11:41:32,067 - INFO - Loading: http://www.aau.edu.et/pages/AAU-Services
+2026-01-30 11:41:35,219 - INFO - Categorized as: general
+2026-01-30 11:41:35,220 - INFO - Queue: 15, Visited: 213
+2026-01-30 11:41:35,220 - INFO - [214/1000]: http://www.aau.edu.et/pages/A-d-m-i-s-s-i-o-n/  detail?title=Contacts
+2026-01-30 11:41:35,220 - INFO - Loading: http://www.aau.edu.et/pages/A-d-m-i-s-s-i-o-n/  detail?title=Contacts
+2026-01-30 11:41:38,475 - INFO - Categorized as: general
+2026-01-30 11:41:38,475 - INFO - Queue: 16, Visited: 214
+2026-01-30 11:41:38,475 - INFO - [215/1000]: http://www.aau.edu.et/pages/A-A-U- -S-e-r-v-i-c-e-s/  detail?title=ICT
+2026-01-30 11:41:38,475 - INFO - Loading: http://www.aau.edu.et/pages/A-A-U- -S-e-r-v-i-c-e-s/  detail?title=ICT
+2026-01-30 11:41:41,798 - INFO - Categorized as: general
+2026-01-30 11:41:41,799 - INFO - Queue: 17, Visited: 215
+2026-01-30 11:41:41,799 - INFO - [216/1000]: http://www.aau.edu.et/pages/A-d-m-i-s-s-i-o-n/  detail?title=Academic~Cases
+2026-01-30 11:41:41,799 - INFO - Loading: http://www.aau.edu.et/pages/A-d-m-i-s-s-i-o-n/  detail?title=Academic~Cases
+2026-01-30 11:41:45,045 - INFO - Categorized as: general
+2026-01-30 11:41:45,046 - INFO - Queue: 16, Visited: 216
+2026-01-30 11:41:45,046 - INFO - [217/1000]: http://www.aau.edu.et/pages/A-d-m-i-s-s-i-o-n/  detail?title=Services
+2026-01-30 11:41:45,046 - INFO - Loading: http://www.aau.edu.et/pages/A-d-m-i-s-s-i-o-n/  detail?title=Services
+2026-01-30 11:41:48,499 - INFO - Categorized as: general
+2026-01-30 11:41:48,500 - INFO - Queue: 15, Visited: 217
+2026-01-30 11:41:48,500 - INFO - [218/1000]: http://www.aau.edu.et/pages/A-d-m-i-s-s-i-o-n/  detail?title=Admission
+2026-01-30 11:41:48,500 - INFO - Loading: http://www.aau.edu.et/pages/A-d-m-i-s-s-i-o-n/  detail?title=Admission
+2026-01-30 11:41:52,123 - INFO - Categorized as: admission
+2026-01-30 11:41:52,124 - INFO - Queue: 14, Visited: 218
+2026-01-30 11:41:52,124 - INFO - [219/1000]: http://www.aau.edu.et/pages/A-A-U- -S-e-r-v-i-c-e-s/  detail?title=Sports~and~Recreation
+2026-01-30 11:41:52,124 - INFO - Loading: http://www.aau.edu.et/pages/A-A-U- -S-e-r-v-i-c-e-s/  detail?title=Sports~and~Recreation
+2026-01-30 11:41:55,708 - INFO - Categorized as: general
+2026-01-30 11:41:55,708 - INFO - Queue: 13, Visited: 219
+2026-01-30 11:41:55,709 - INFO - [220/1000]: http://www.aau.edu.et/pages/A-A-U- -S-e-r-v-i-c-e-s/  detail?title=Book~Center
+2026-01-30 11:41:55,709 - INFO - Loading: http://www.aau.edu.et/pages/A-A-U- -S-e-r-v-i-c-e-s/  detail?title=Book~Center
+2026-01-30 11:41:59,097 - INFO - Categorized as: library
+2026-01-30 11:41:59,097 - INFO - Queue: 12, Visited: 220
+2026-01-30 11:41:59,097 - INFO - [221/1000]: http://www.aau.edu.et/pages/A-A-U- -S-e-r-v-i-c-e-s/  detail?title=AAU~Museums
+2026-01-30 11:41:59,098 - INFO - Loading: http://www.aau.edu.et/pages/A-A-U- -S-e-r-v-i-c-e-s/  detail?title=AAU~Museums
+2026-01-30 11:42:02,318 - INFO - Categorized as: general
+2026-01-30 11:42:02,318 - INFO - Queue: 11, Visited: 221
+2026-01-30 11:42:02,318 - INFO - [222/1000]: http://www.aau.edu.et/pages/A-d-m-i-s-s-i-o-n/  detail?title=Tuition~and~Service~Fees
+2026-01-30 11:42:02,318 - INFO - Loading: http://www.aau.edu.et/pages/A-d-m-i-s-s-i-o-n/  detail?title=Tuition~and~Service~Fees
+2026-01-30 11:42:05,888 - INFO - Categorized as: fees
+2026-01-30 11:42:05,889 - INFO - Queue: 10, Visited: 222
+2026-01-30 11:42:05,889 - INFO - [223/1000]: http://www.aau.edu.et/pages/A-A-U- -S-e-r-v-i-c-e-s/  detail?title=Tikur~Anbessa~Specialized~Hospital~(TASH)~
+2026-01-30 11:42:05,889 - INFO - Loading: http://www.aau.edu.et/pages/A-A-U- -S-e-r-v-i-c-e-s/  detail?title=Tikur~Anbessa~Specialized~Hospital~(TASH)~
+2026-01-30 11:42:09,100 - INFO - Categorized as: general
+2026-01-30 11:42:09,101 - INFO - Queue: 9, Visited: 223
+2026-01-30 11:42:09,101 - INFO - [224/1000]: http://www.aau.edu.et/pages/V-P- -O-f-f-i-c-e/  detail?title=Partnership~and~Communication~Vice~President~
+2026-01-30 11:42:09,101 - INFO - Loading: http://www.aau.edu.et/pages/V-P- -O-f-f-i-c-e/  detail?title=Partnership~and~Communication~Vice~President~
+2026-01-30 11:42:12,313 - INFO - Categorized as: general
+2026-01-30 11:42:12,313 - INFO - Queue: 10, Visited: 224
+2026-01-30 11:42:12,313 - INFO - [225/1000]: http://www.aau.edu.et/pages/A-A-U- -S-e-r-v-i-c-e-s/  detail?title=AAU~Startups
+2026-01-30 11:42:12,313 - INFO - Loading: http://www.aau.edu.et/pages/A-A-U- -S-e-r-v-i-c-e-s/  detail?title=AAU~Startups
+2026-01-30 11:42:15,576 - INFO - Categorized as: general
+2026-01-30 11:42:15,576 - INFO - Queue: 9, Visited: 225
+2026-01-30 11:42:15,576 - INFO - [226/1000]: http://www.aau.edu.et/pages/A-A-U- -S-e-r-v-i-c-e-s/  detail?title=AAU~Community~Radio
+2026-01-30 11:42:15,576 - INFO - Loading: http://www.aau.edu.et/pages/A-A-U- -S-e-r-v-i-c-e-s/  detail?title=AAU~Community~Radio
+2026-01-30 11:42:18,796 - INFO - Categorized as: general
+2026-01-30 11:42:18,797 - INFO - Queue: 8, Visited: 226
+2026-01-30 11:42:18,797 - INFO - [227/1000]: http://www.aau.edu.et/pages/A-A-U- -S-e-r-v-i-c-e-s/  detail?title=Ashenafi~Kebede~Performance~Arts~Center~
+2026-01-30 11:42:18,797 - INFO - Loading: http://www.aau.edu.et/pages/A-A-U- -S-e-r-v-i-c-e-s/  detail?title=Ashenafi~Kebede~Performance~Arts~Center~
+2026-01-30 11:42:22,018 - INFO - Categorized as: general
+2026-01-30 11:42:22,019 - INFO - Queue: 7, Visited: 227
+2026-01-30 11:42:22,019 - INFO - [228/1000]: http://www.aau.edu.et/pages/L-i-b-r-a-r-y/  detail?title=Branch~Libraries
+2026-01-30 11:42:22,019 - INFO - Loading: http://www.aau.edu.et/pages/L-i-b-r-a-r-y/  detail?title=Branch~Libraries
+2026-01-30 11:42:25,251 - INFO - Categorized as: general
+2026-01-30 11:42:25,251 - INFO - Queue: 8, Visited: 228
+2026-01-30 11:42:25,251 - INFO - [229/1000]: http://www.aau.edu.et/pages/A-d-m-i-s-s-i-o-n/%20%20detail
+2026-01-30 11:42:25,251 - INFO - Loading: http://www.aau.edu.et/pages/A-d-m-i-s-s-i-o-n/%20%20detail
+2026-01-30 11:42:28,877 - INFO - Categorized as: general
+2026-01-30 11:42:28,877 - INFO - Queue: 7, Visited: 229
+2026-01-30 11:42:28,877 - INFO - [230/1000]: http://www.aau.edu.et/pages/A-d-m-i-s-s-i-o-n
+2026-01-30 11:42:28,877 - INFO - Loading: http://www.aau.edu.et/pages/A-d-m-i-s-s-i-o-n
+2026-01-30 11:42:32,153 - INFO - Categorized as: general
+2026-01-30 11:42:32,154 - INFO - Queue: 6, Visited: 230
+2026-01-30 11:42:32,154 - INFO - [231/1000]: http://www.aau.edu.et/pages/A-A-U-%20-S-e-r-v-i-c-e-s
+2026-01-30 11:42:32,154 - INFO - Loading: http://www.aau.edu.et/pages/A-A-U-%20-S-e-r-v-i-c-e-s
+2026-01-30 11:42:35,325 - INFO - Categorized as: general
+2026-01-30 11:42:35,326 - INFO - Queue: 5, Visited: 231
+2026-01-30 11:42:35,326 - INFO - [232/1000]: http://www.aau.edu.et/pages/A-A-U-%20-S-e-r-v-i-c-e-s/%20%20detail
+2026-01-30 11:42:35,326 - INFO - Loading: http://www.aau.edu.et/pages/A-A-U-%20-S-e-r-v-i-c-e-s/%20%20detail
+2026-01-30 11:42:38,798 - INFO - Categorized as: general
+2026-01-30 11:42:38,798 - INFO - Queue: 4, Visited: 232
+2026-01-30 11:42:38,798 - INFO - [233/1000]: http://www.aau.edu.et/pages/V-P-%20-O-f-f-i-c-e/%20%20detail
+2026-01-30 11:42:38,799 - INFO - Loading: http://www.aau.edu.et/pages/V-P-%20-O-f-f-i-c-e/%20%20detail
+2026-01-30 11:42:42,224 - INFO - Categorized as: general
+2026-01-30 11:42:42,224 - INFO - Queue: 3, Visited: 233
+2026-01-30 11:42:42,224 - INFO - [234/1000]: http://www.aau.edu.et/pages/V-P-%20-O-f-f-i-c-e
+2026-01-30 11:42:42,224 - INFO - Loading: http://www.aau.edu.et/pages/V-P-%20-O-f-f-i-c-e
+2026-01-30 11:42:45,485 - INFO - Categorized as: general
+2026-01-30 11:42:45,485 - INFO - Queue: 2, Visited: 234
+2026-01-30 11:42:45,485 - INFO - [235/1000]: http://www.aau.edu.et/pages/L-i-b-r-a-r-y/%20%20detail
+2026-01-30 11:42:45,486 - INFO - Loading: http://www.aau.edu.et/pages/L-i-b-r-a-r-y/%20%20detail
+2026-01-30 11:42:48,860 - INFO - Categorized as: general
+2026-01-30 11:42:48,860 - INFO - Queue: 1, Visited: 235
+2026-01-30 11:42:48,860 - INFO - [236/1000]: http://www.aau.edu.et/pages/L-i-b-r-a-r-y
+2026-01-30 11:42:48,861 - INFO - Loading: http://www.aau.edu.et/pages/L-i-b-r-a-r-y
+2026-01-30 11:42:52,042 - INFO - Categorized as: general
+2026-01-30 11:42:52,042 - INFO - Queue: 0, Visited: 236
+2026-01-30 11:42:52,043 - INFO - Crawling completed. Visited 236 pages
+2026-01-30 11:42:54,360 - INFO - Saved 11 items (4 new) to aau_admission.json
+2026-01-30 11:42:54,363 - INFO - Saved 1 items (0 new) to aau_registration.json
+2026-01-30 11:42:54,365 - INFO - Saved 4 items (2 new) to aau_fees.json
+2026-01-30 11:42:54,368 - INFO - Saved 2 items (2 new) to aau_documents.json
+2026-01-30 11:42:54,388 - INFO - Saved 8 items (0 new) to aau_grades.json
+2026-01-30 11:42:54,399 - INFO - Saved 2 items (0 new) to aau_courses.json
+2026-01-30 11:42:54,412 - INFO - Saved 2 items (1 new) to aau_events.json
+2026-01-30 11:42:54,426 - INFO - Saved 16 items (8 new) to aau_news.json
+2026-01-30 11:42:54,429 - INFO - Saved 4 items (0 new) to aau_research.json
+2026-01-30 11:42:54,432 - INFO - Saved 12 items (6 new) to aau_library.json
+2026-01-30 11:42:54,460 - INFO - Saved 174 items (126 new) to aau_general.json
+2026-01-30 11:42:54,462 - INFO - Saved statistics
+2026-01-30 11:42:54,462 - INFO - ================================================================================
+2026-01-30 11:42:54,462 - INFO - SCRAPING COMPLETED
+2026-01-30 11:42:54,463 - INFO -   admission: 11 pages
+2026-01-30 11:42:54,463 - INFO -   registration: 1 pages
+2026-01-30 11:42:54,463 - INFO -   fees: 4 pages
+2026-01-30 11:42:54,463 - INFO -   documents: 2 pages
+2026-01-30 11:42:54,463 - INFO -   grades: 8 pages
+2026-01-30 11:42:54,464 - INFO -   courses: 2 pages
+2026-01-30 11:42:54,464 - INFO -   events: 2 pages
+2026-01-30 11:42:54,464 - INFO -   news: 16 pages
+2026-01-30 11:42:54,464 - INFO -   research: 4 pages
+2026-01-30 11:42:54,464 - INFO -   library: 12 pages
+2026-01-30 11:42:54,464 - INFO -   general: 174 pages
+2026-01-30 11:42:54,465 - INFO - ================================================================================
