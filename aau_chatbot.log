@@ -571,3 +571,127 @@
 2026-01-30 00:46:18,977 - watchfiles.main - INFO - 9 changes detected
 2026-01-30 00:46:24,915 - watchfiles.main - INFO - 29 changes detected
 2026-01-30 00:46:31,361 - watchfiles.main - INFO - 4 changes detected
+2026-01-30 12:53:25,284 - news_retriever - INFO - Loaded 1397 news items for retrieval
+2026-01-30 12:53:27,876 - news_retriever - INFO - Loaded 1397 news items for retrieval
+2026-01-30 12:53:27,948 - watchfiles.main - INFO - 1 change detected
+2026-01-30 12:53:28,181 - news_retriever - INFO - Loaded 1397 news items for retrieval
+2026-01-30 12:53:28,185 - utils - INFO - Starting AAU Helpdesk Chatbot...
+2026-01-30 12:53:28,186 - utils - INFO - Loaded 113 samples from quality Q&A data
+2026-01-30 12:53:28,187 - utils - INFO - Loaded 44 samples from enhanced data
+2026-01-30 12:53:28,201 - utils - INFO - Loaded 612 samples from telegram data
+2026-01-30 12:53:28,202 - utils - INFO - Loaded 75 samples from AAU data
+2026-01-30 12:53:28,202 - utils - INFO - Total training data: 844 samples
+2026-01-30 12:53:28,220 - utils - INFO - Chatbot initialized successfully!
+2026-01-30 12:53:41,905 - utils - INFO - Conversation: {'user_message': 'when is the registration deadline for semester 2 2024.25?', 'bot_response': 'Registration for semester 2 2024:\n\n**Key Points:**\n- Check your academic standing\n- Ensure all prerequisites are met\n- Register for required courses first\n- Add electives if space permits\n\n**Tip:** Register early to secure your preferred schedule!', 'intent': np.str_('registration_help'), 'confidence': np.float64(0.5018113956445389), 'parameters': {'semester': ['semester 2'], 'year': ['2024']}, 'user_id': None, 'session_id': 'session-1769766809235', 'out_of_domain': None}
+2026-01-30 12:53:56,165 - utils - INFO - Conversation: {'user_message': 'where can I register?', 'bot_response': 'Registration for semester 2 2024:\n\n**Key Points:**\n- Check your academic standing\n- Ensure all prerequisites are met\n- Register for required courses first\n- Add electives if space permits\n\n**Tip:** Register early to secure your preferred schedule!', 'intent': np.str_('registration_help'), 'confidence': np.float64(0.6459283980053476), 'parameters': {'semester': ['semester 2'], 'year': ['2024']}, 'user_id': None, 'session_id': 'session-1769766809235', 'out_of_domain': None}
+2026-01-30 12:54:10,996 - utils - INFO - Conversation: {'user_message': 'telegram registration data', 'bot_response': "For semester 2 2024 registration:\n\n**Registration Steps:**\n1. Meet with your academic advisor\n2. Select courses based on your curriculum\n3. Complete online registration\n4. Pay semester fees\n5. Confirm registration\n\n**Important:** Registration typically opens 2 weeks before semester start.\n**Need help?** Contact the registrar's office.", 'intent': np.str_('registration_help'), 'confidence': np.float64(0.3469952890004977), 'parameters': {'semester': ['semester 2'], 'year': ['2024']}, 'user_id': None, 'session_id': 'session-1769766809235', 'out_of_domain': None}
+2026-01-30 12:58:24,109 - watchfiles.main - INFO - 3 changes detected
+2026-01-30 13:07:40,730 - watchfiles.main - INFO - 1 change detected
+2026-01-30 13:07:41,295 - watchfiles.main - INFO - 1 change detected
+2026-01-30 13:07:44,528 - news_retriever - INFO - Loaded 1397 news items for retrieval
+2026-01-30 13:07:44,605 - watchfiles.main - INFO - 1 change detected
+2026-01-30 13:07:44,793 - news_retriever - INFO - Loaded 1397 news items for retrieval
+2026-01-30 13:07:44,797 - utils - INFO - Starting AAU Helpdesk Chatbot...
+2026-01-30 13:07:44,798 - utils - INFO - Loaded 113 samples from quality Q&A data
+2026-01-30 13:07:44,798 - utils - INFO - Loaded 44 samples from enhanced data
+2026-01-30 13:07:44,812 - utils - INFO - Loaded 612 samples from telegram data
+2026-01-30 13:07:44,813 - utils - INFO - Loaded 75 samples from AAU data
+2026-01-30 13:07:44,813 - utils - INFO - Total training data: 844 samples
+2026-01-30 13:07:44,830 - utils - INFO - Chatbot initialized successfully!
+2026-01-30 13:08:09,709 - watchfiles.main - INFO - 1 change detected
+2026-01-30 13:08:10,232 - watchfiles.main - INFO - 1 change detected
+2026-01-30 13:08:13,009 - news_retriever - INFO - Loaded 1397 news items for retrieval
+2026-01-30 13:08:13,084 - watchfiles.main - INFO - 1 change detected
+2026-01-30 13:08:13,279 - news_retriever - INFO - Loaded 1397 news items for retrieval
+2026-01-30 13:08:13,283 - utils - INFO - Starting AAU Helpdesk Chatbot...
+2026-01-30 13:08:13,283 - utils - INFO - Loaded 113 samples from quality Q&A data
+2026-01-30 13:08:13,284 - utils - INFO - Loaded 44 samples from enhanced data
+2026-01-30 13:08:13,298 - utils - INFO - Loaded 612 samples from telegram data
+2026-01-30 13:08:13,299 - utils - INFO - Loaded 75 samples from AAU data
+2026-01-30 13:08:13,299 - utils - INFO - Total training data: 844 samples
+2026-01-30 13:08:13,314 - utils - INFO - Chatbot initialized successfully!
+2026-01-30 13:08:31,008 - watchfiles.main - INFO - 1 change detected
+2026-01-30 13:08:31,486 - watchfiles.main - INFO - 1 change detected
+2026-01-30 13:08:34,148 - news_retriever - INFO - Loaded 1397 news items for retrieval
+2026-01-30 13:08:34,258 - watchfiles.main - INFO - 1 change detected
+2026-01-30 13:08:34,434 - news_retriever - INFO - Loaded 1397 news items for retrieval
+2026-01-30 13:08:34,438 - utils - INFO - Starting AAU Helpdesk Chatbot...
+2026-01-30 13:08:34,438 - utils - INFO - Loaded 113 samples from quality Q&A data
+2026-01-30 13:08:34,439 - utils - INFO - Loaded 44 samples from enhanced data
+2026-01-30 13:08:34,453 - utils - INFO - Loaded 612 samples from telegram data
+2026-01-30 13:08:34,454 - utils - INFO - Loaded 75 samples from AAU data
+2026-01-30 13:08:34,454 - utils - INFO - Total training data: 844 samples
+2026-01-30 13:08:34,468 - utils - INFO - Chatbot initialized successfully!
+2026-01-30 13:09:05,973 - watchfiles.main - INFO - 2 changes detected
+2026-01-30 13:09:06,540 - watchfiles.main - INFO - 1 change detected
+2026-01-30 13:09:09,058 - news_retriever - INFO - Loaded 1397 news items for retrieval
+2026-01-30 13:09:09,141 - watchfiles.main - INFO - 1 change detected
+2026-01-30 13:09:09,301 - news_retriever - INFO - Loaded 1397 news items for retrieval
+2026-01-30 13:09:09,305 - utils - INFO - Starting AAU Helpdesk Chatbot...
+2026-01-30 13:09:09,306 - utils - INFO - Loaded 113 samples from quality Q&A data
+2026-01-30 13:09:09,307 - utils - INFO - Loaded 44 samples from enhanced data
+2026-01-30 13:09:09,320 - utils - INFO - Loaded 612 samples from telegram data
+2026-01-30 13:09:09,320 - utils - INFO - Loaded 75 samples from AAU data
+2026-01-30 13:09:09,321 - utils - INFO - Total training data: 844 samples
+2026-01-30 13:09:09,335 - utils - INFO - Chatbot initialized successfully!
+2026-01-30 13:10:22,539 - watchfiles.main - INFO - 1 change detected
+2026-01-30 13:10:23,042 - watchfiles.main - INFO - 1 change detected
+2026-01-30 13:10:26,186 - news_retriever - INFO - Loaded 1397 news items for retrieval
+2026-01-30 13:10:26,278 - watchfiles.main - INFO - 1 change detected
+2026-01-30 13:10:26,451 - news_retriever - INFO - Loaded 1397 news items for retrieval
+2026-01-30 13:10:26,456 - utils - INFO - Starting AAU Helpdesk Chatbot...
+2026-01-30 13:10:26,458 - utils - INFO - Loaded 113 samples from quality Q&A data
+2026-01-30 13:10:26,458 - utils - INFO - Loaded 44 samples from enhanced data
+2026-01-30 13:10:26,473 - utils - INFO - Loaded 612 samples from telegram data
+2026-01-30 13:10:26,474 - utils - INFO - Loaded 75 samples from AAU data
+2026-01-30 13:10:26,474 - utils - INFO - Total training data: 844 samples
+2026-01-30 13:10:26,488 - utils - INFO - Chatbot initialized successfully!
+2026-01-30 13:10:39,761 - watchfiles.main - INFO - 1 change detected
+2026-01-30 13:10:40,268 - watchfiles.main - INFO - 1 change detected
+2026-01-30 13:10:42,919 - news_retriever - INFO - Loaded 1397 news items for retrieval
+2026-01-30 13:10:43,029 - watchfiles.main - INFO - 1 change detected
+2026-01-30 13:10:43,192 - news_retriever - INFO - Loaded 1397 news items for retrieval
+2026-01-30 13:10:43,196 - utils - INFO - Starting AAU Helpdesk Chatbot...
+2026-01-30 13:10:43,197 - utils - INFO - Loaded 113 samples from quality Q&A data
+2026-01-30 13:10:43,197 - utils - INFO - Loaded 44 samples from enhanced data
+2026-01-30 13:10:43,211 - utils - INFO - Loaded 612 samples from telegram data
+2026-01-30 13:10:43,212 - utils - INFO - Loaded 75 samples from AAU data
+2026-01-30 13:10:43,212 - utils - INFO - Total training data: 844 samples
+2026-01-30 13:10:43,226 - utils - INFO - Chatbot initialized successfully!
+2026-01-30 13:10:51,023 - watchfiles.main - INFO - 3 changes detected
+2026-01-30 13:10:59,767 - utils - INFO - Conversation: {'user_message': 'where can I register?', 'bot_response': 'To provide specific registration guidance, please let me know the semester and academic year.\n\n• Could you specify the semester?\n• Which academic year are you asking about?', 'intent': np.str_('registration_help'), 'confidence': np.float64(0.6459283980053476), 'parameters': {}, 'user_id': None, 'session_id': 'session-1769767854781', 'out_of_domain': None}
+2026-01-30 13:11:25,944 - utils - INFO - Conversation: {'user_message': 'where can I register for peace dialogue?', 'bot_response': 'To provide specific registration guidance, please let me know the semester and academic year.\n\n• Could you specify the semester?\n• What year is this for?', 'intent': np.str_('registration_help'), 'confidence': np.float64(0.35678867347611043), 'parameters': {}, 'user_id': None, 'session_id': 'session-1769767854781', 'out_of_domain': None}
+2026-01-30 13:11:30,196 - utils - INFO - Conversation: {'user_message': 'semester 2', 'bot_response': 'I can help with schedule information. Which semester and year are you asking about?\n\n• Which academic year are you asking about?', 'intent': np.str_('schedule_inquiry'), 'confidence': np.float64(0.40130453825423085), 'parameters': {'semester': ['semester 2']}, 'user_id': None, 'session_id': 'session-1769767854781', 'out_of_domain': None}
+2026-01-30 13:12:45,327 - watchfiles.main - INFO - 1 change detected
+2026-01-30 13:12:45,919 - watchfiles.main - INFO - 2 changes detected
+2026-01-30 13:12:48,610 - news_retriever - INFO - Loaded 1397 news items for retrieval
+2026-01-30 13:12:48,681 - watchfiles.main - INFO - 1 change detected
+2026-01-30 13:12:48,848 - news_retriever - INFO - Loaded 1397 news items for retrieval
+2026-01-30 13:12:48,852 - utils - INFO - Starting AAU Helpdesk Chatbot...
+2026-01-30 13:12:48,852 - utils - INFO - Loaded 113 samples from quality Q&A data
+2026-01-30 13:12:48,853 - utils - INFO - Loaded 44 samples from enhanced data
+2026-01-30 13:12:48,866 - utils - INFO - Loaded 612 samples from telegram data
+2026-01-30 13:12:48,866 - utils - INFO - Loaded 75 samples from AAU data
+2026-01-30 13:12:48,866 - utils - INFO - Total training data: 844 samples
+2026-01-30 13:12:48,879 - utils - INFO - Chatbot initialized successfully!
+2026-01-30 13:13:05,755 - watchfiles.main - INFO - 1 change detected
+2026-01-30 13:13:09,845 - watchfiles.main - INFO - 3 changes detected
+2026-01-30 13:13:10,906 - watchfiles.main - INFO - 2 changes detected
+2026-01-30 13:25:57,003 - watchfiles.main - INFO - 3 changes detected
+2026-01-30 13:26:34,845 - watchfiles.main - INFO - 6 changes detected
+2026-01-30 13:26:35,380 - watchfiles.main - INFO - 1 change detected
+2026-01-30 13:26:38,308 - news_retriever - INFO - Loaded 1397 news items for retrieval
+2026-01-30 13:26:38,426 - watchfiles.main - INFO - 1 change detected
+2026-01-30 13:26:38,572 - news_retriever - INFO - Loaded 1397 news items for retrieval
+2026-01-30 13:26:38,576 - utils - INFO - Starting AAU Helpdesk Chatbot...
+2026-01-30 13:26:38,577 - utils - INFO - Loaded 113 samples from quality Q&A data
+2026-01-30 13:26:38,578 - utils - INFO - Loaded 44 samples from enhanced data
+2026-01-30 13:26:38,592 - utils - INFO - Loaded 612 samples from telegram data
+2026-01-30 13:26:38,592 - utils - INFO - Loaded 75 samples from AAU data
+2026-01-30 13:26:38,592 - utils - INFO - Total training data: 844 samples
+2026-01-30 13:26:38,607 - utils - INFO - Chatbot initialized successfully!
+2026-01-30 13:27:40,751 - watchfiles.main - INFO - 12 changes detected
+2026-01-30 13:28:54,994 - watchfiles.main - INFO - 37 changes detected
+2026-01-30 13:29:07,284 - watchfiles.main - INFO - 7 changes detected
+2026-01-30 13:33:46,557 - watchfiles.main - INFO - 3 changes detected
+2026-01-30 14:03:08,277 - watchfiles.main - INFO - 7 changes detected
