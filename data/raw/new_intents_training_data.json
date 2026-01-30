@@ -1,0 +1,1343 @@
+[
+  {
+    "text": "I want to apply for undergraduate computer science program at AAU",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "What are the requirements for undergraduate admission in engineering?",
+    "intent": "undergraduate_admission", 
+    "parameters": {"department": ["engineering"]}
+  },
+  {
+    "text": "How can I apply for medicine undergraduate program?",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["medicine"]}
+  },
+  {
+    "text": "I need information about undergraduate admission requirements",
+    "intent": "undergraduate_admission",
+    "parameters": {}
+  },
+  {
+    "text": "What documents do I need for undergraduate application?",
+    "intent": "undergraduate_admission",
+    "parameters": {}
+  },
+  {
+    "text": "When is the deadline for undergraduate admission?",
+    "intent": "undergraduate_admission",
+    "parameters": {}
+  },
+  {
+    "text": "I want to submit my Grade 12 results for admission",
+    "intent": "undergraduate_admission",
+    "parameters": {}
+  },
+  {
+    "text": "How do I apply for Masters program in business?",
+    "intent": "graduate_admission",
+    "parameters": {"department": ["business"]}
+  },
+  {
+    "text": "What are PhD admission requirements for computer science?",
+    "intent": "graduate_admission",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "I want to apply for graduate studies in law",
+    "intent": "graduate_admission",
+    "parameters": {"department": ["law"]}
+  },
+  {
+    "text": "How can I get admission for Masters in engineering?",
+    "intent": "graduate_admission",
+    "parameters": {"department": ["engineering"]}
+  },
+  {
+    "text": "What is the process for PhD in sustainable development?",
+    "intent": "graduate_admission",
+    "parameters": {"department": ["sustainable development"]}
+  },
+  {
+    "text": "I need information about graduate program admission",
+    "intent": "graduate_admission",
+    "parameters": {}
+  },
+  {
+    "text": "When is the GAT exam scheduled?",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "Where is the GAT exam venue?",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "I need information about Graduate Aptitude Test",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "What time is the GAT exam on January 5?",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "How do I register for GAT exam?",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "I'm visually impaired, where should I take GAT?",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "I am an international student from Kenya, what are the admission requirements?",
+    "intent": "international_admission",
+    "parameters": {}
+  },
+  {
+    "text": "How can refugees apply to AAU?",
+    "intent": "international_admission",
+    "parameters": {}
+  },
+  {
+    "text": "What are the requirements for IGAD country students?",
+    "intent": "international_admission",
+    "parameters": {}
+  },
+  {
+    "text": "I'm from Nigeria, how do I apply for admission?",
+    "intent": "international_admission",
+    "parameters": {}
+  },
+  {
+    "text": "What documents do international students need?",
+    "intent": "international_admission",
+    "parameters": {}
+  },
+  {
+    "text": "How much are undergraduate fees for computer science?",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "What is the cost of medicine undergraduate program?",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["medicine"]}
+  },
+  {
+    "text": "I need to know engineering undergraduate fees",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["engineering"]}
+  },
+  {
+    "text": "How much does it cost to study law at AAU?",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["law"]}
+  },
+  {
+    "text": "What are the fees for business undergraduate program?",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["business"]}
+  },
+  {
+    "text": "How much are undergraduate fees per ECTS?",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "What are Masters program fees for engineering?",
+    "intent": "graduate_fee_inquiry",
+    "parameters": {"department": ["engineering"]}
+  },
+  {
+    "text": "How much does PhD in computer science cost?",
+    "intent": "graduate_fee_inquiry",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "I need information about Masters fees in business",
+    "intent": "graduate_fee_inquiry",
+    "parameters": {"department": ["business"]}
+  },
+  {
+    "text": "What is the cost of PhD dissertation?",
+    "intent": "graduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "How much are thesis fees for Masters?",
+    "intent": "graduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "What are graduate program fees per ECTS?",
+    "intent": "graduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "How much do international students pay for medicine?",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "What are the fees for IGAD country students?",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "I'm a refugee, what fees do I pay?",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "How much do other international students pay?",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "What are international student fees in USD?",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "How can I pay my fees at AAU?",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "What payment methods does AAU accept?",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "Can I pay fees using TeleBirr?",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "Where is the Finance Office for fee payment?",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "What bank account should I use for fee payment?",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "I need the course catalog for engineering",
+    "intent": "course_catalog_inquiry",
+    "parameters": {"department": ["engineering"]}
+  },
+  {
+    "text": "Where can I find the course catalog?",
+    "intent": "course_catalog_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "I want to see available courses in computer science",
+    "intent": "course_catalog_inquiry",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "What courses are offered in business department?",
+    "intent": "course_catalog_inquiry",
+    "parameters": {"department": ["business"]}
+  },
+  {
+    "text": "How can I access the online course catalog?",
+    "intent": "course_catalog_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "What are the prerequisites for this course?",
+    "intent": "prerequisite_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "I need to know course prerequisites for engineering",
+    "intent": "prerequisite_inquiry",
+    "parameters": {"department": ["engineering"]}
+  },
+  {
+    "text": "What courses do I need before taking advanced mathematics?",
+    "intent": "prerequisite_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "Can I waive course prerequisites?",
+    "intent": "prerequisite_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "How do I check if I meet prerequisites?",
+    "intent": "prerequisite_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "When does the academic year start?",
+    "intent": "academic_calendar_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "What is the academic calendar for 2026?",
+    "intent": "academic_calendar_inquiry",
+    "parameters": {"year": ["2026"]}
+  },
+  {
+    "text": "When is summer semester?",
+    "intent": "academic_calendar_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "How long is a regular semester?",
+    "intent": "academic_calendar_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "When are the semester breaks?",
+    "intent": "academic_calendar_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "When is the exam schedule for first year students?",
+    "intent": "exam_schedule_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "I need the exam schedule for second semester 2026",
+    "intent": "exam_schedule_inquiry",
+    "parameters": {"semester": ["second"], "year": ["2026"]}
+  },
+  {
+    "text": "Where is my exam venue?",
+    "intent": "exam_schedule_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "What time is the Inclusiveness course exam?",
+    "intent": "exam_schedule_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "When are final exams scheduled?",
+    "intent": "exam_schedule_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "I need my grade report",
+    "intent": "grade_report_request",
+    "parameters": {}
+  },
+  {
+    "text": "How can I get my semester grades?",
+    "intent": "grade_report_request",
+    "parameters": {}
+  },
+  {
+    "text": "I want to request official grade report",
+    "intent": "grade_report_request",
+    "parameters": {}
+  },
+  {
+    "text": "Where do I get my cumulative grade report?",
+    "intent": "grade_report_request",
+    "parameters": {}
+  },
+  {
+    "text": "How much does a grade report cost?",
+    "intent": "grade_report_request",
+    "parameters": {}
+  },
+  {
+    "text": "I need an official transcript",
+    "intent": "official_transcript_request",
+    "parameters": {"document_type": ["transcript"]}
+  },
+  {
+    "text": "How do I request my transcript?",
+    "intent": "official_transcript_request",
+    "parameters": {"document_type": ["transcript"]}
+  },
+  {
+    "text": "What documents do I need for transcript request?",
+    "intent": "official_transcript_request",
+    "parameters": {}
+  },
+  {
+    "text": "How much does a transcript cost?",
+    "intent": "official_transcript_request",
+    "parameters": {}
+  },
+  {
+    "text": "How long does transcript processing take?",
+    "intent": "official_transcript_request",
+    "parameters": {}
+  },
+  {
+    "text": "I need my degree certificate",
+    "intent": "certificate_request",
+    "parameters": {"document_type": ["degree certificate"]}
+  },
+  {
+    "text": "How do I get my graduation certificate?",
+    "intent": "certificate_request",
+    "parameters": {"document_type": ["graduation certificate"]}
+  },
+  {
+    "text": "I want to request enrollment verification",
+    "intent": "certificate_request",
+    "parameters": {"document_type": ["enrollment verification"]}
+  },
+  {
+    "text": "What certificates can I request from AAU?",
+    "intent": "certificate_request",
+    "parameters": {}
+  },
+  {
+    "text": "How long does certificate processing take?",
+    "intent": "certificate_request",
+    "parameters": {}
+  },
+  {
+    "text": "I lost my student ID card",
+    "intent": "student_id_services",
+    "parameters": {}
+  },
+  {
+    "text": "How do I get a replacement student ID?",
+    "intent": "student_id_services",
+    "parameters": {}
+  },
+  {
+    "text": "My student ID is damaged, can I get a new one?",
+    "intent": "student_id_services",
+    "parameters": {}
+  },
+  {
+    "text": "What do I need for student ID replacement?",
+    "intent": "student_id_services",
+    "parameters": {}
+  },
+  {
+    "text": "How much does student ID replacement cost?",
+    "intent": "student_id_services",
+    "parameters": {}
+  },
+  {
+    "text": "What services does AAU library offer?",
+    "intent": "library_services_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "How can I access digital library resources?",
+    "intent": "library_services_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "Where are the branch libraries located?",
+    "intent": "library_services_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "Can I borrow books from AAU library?",
+    "intent": "library_services_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "How do I access electronic journals?",
+    "intent": "library_services_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "I need information about student accommodation",
+    "intent": "accommodation_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "How do I apply for hostel accommodation?",
+    "intent": "accommodation_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "What are the accommodation options at AAU?",
+    "intent": "accommodation_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "Is there on-campus housing available?",
+    "intent": "accommodation_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "What dining options are available on campus?",
+    "intent": "accommodation_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "Where is the main campus located?",
+    "intent": "campus_location_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "How do I get to Sefere Selam campus?",
+    "intent": "campus_location_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "Where is the Science campus?",
+    "intent": "campus_location_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "I need directions to Bishoftu campus",
+    "intent": "campus_location_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "What facilities are available at each campus?",
+    "intent": "campus_location_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "How do I book a conference room?",
+    "intent": "facility_booking_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "I want to reserve Ras Mekonnen Hall",
+    "intent": "facility_booking_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "What facilities can I book for events?",
+    "intent": "facility_booking_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "How much does it cost to book a hall?",
+    "intent": "facility_booking_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "What is the process for facility booking?",
+    "intent": "facility_booking_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "How do I submit my thesis?",
+    "intent": "thesis_submission_process",
+    "parameters": {}
+  },
+  {
+    "text": "What are the requirements for thesis submission?",
+    "intent": "thesis_submission_process",
+    "parameters": {}
+  },
+  {
+    "text": "How much does thesis submission cost?",
+    "intent": "thesis_submission_process",
+    "parameters": {}
+  },
+  {
+    "text": "When can I defend my dissertation?",
+    "intent": "thesis_submission_process",
+    "parameters": {}
+  },
+  {
+    "text": "I need help with thesis formatting requirements",
+    "intent": "thesis_submission_process",
+    "parameters": {}
+  },
+  {
+    "text": "Are there research opportunities available?",
+    "intent": "research_opportunity_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "I want to apply for postdoctoral fellowship",
+    "intent": "research_opportunity_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "What research grants are available?",
+    "intent": "research_opportunity_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "How can I get involved in research projects?",
+    "intent": "research_opportunity_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "I need information about EfD-Ethiopia fellowships",
+    "intent": "research_opportunity_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "I want to return to AAU after taking a break",
+    "intent": "readmission_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "What is the readmission process?",
+    "intent": "readmission_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "I was dismissed, can I be readmitted?",
+    "intent": "readmission_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "What documents do I need for readmission?",
+    "intent": "readmission_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "When is the readmission deadline?",
+    "intent": "readmission_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "I'm an AAU alumni, what services are available?",
+    "intent": "alumni_services_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "When is the alumni homecoming event?",
+    "intent": "alumni_services_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "How can I join the alumni network?",
+    "intent": "alumni_services_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "What benefits do alumni get?",
+    "intent": "alumni_services_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "Are there alumni events this year?",
+    "intent": "alumni_services_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "I need medical services at Tikur Anbessa Hospital",
+    "intent": "hospital_services_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "What services does TASH provide?",
+    "intent": "hospital_services_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "How do I get treatment at AAU hospital?",
+    "intent": "hospital_services_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "Is there emergency service at the hospital?",
+    "intent": "hospital_services_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "What health screening services are available?",
+    "intent": "hospital_services_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "Where is the AAU Book Center?",
+    "intent": "book_center_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "What books are available at the book center?",
+    "intent": "book_center_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "Can I buy textbooks at AAU?",
+    "intent": "book_center_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "Does the book center sell stationery?",
+    "intent": "book_center_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "What are the book center operating hours?",
+    "intent": "book_center_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "How can I listen to AAU Radio?",
+    "intent": "radio_station_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "What is the frequency of AAU FM?",
+    "intent": "radio_station_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "Can I participate in radio programs?",
+    "intent": "radio_station_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "What programs does AAU Radio broadcast?",
+    "intent": "radio_station_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "How do I volunteer at AAU Radio?",
+    "intent": "radio_station_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "I want to visit AAU museums",
+    "intent": "museum_services_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "What museums does AAU have?",
+    "intent": "museum_services_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "Where is the Ethnographic Museum?",
+    "intent": "museum_services_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "Can I get a guided tour of the museum?",
+    "intent": "museum_services_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "What exhibitions are currently at AAU museums?",
+    "intent": "museum_services_inquiry",
+    "parameters": {}
+  },
+
+  {
+    "text": "What are the campuses in AAU?",
+    "intent": "campus_location_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "Where are AAU campuses located?",
+    "intent": "campus_location_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "Tell me about AAU campus locations",
+    "intent": "campus_location_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "Which campuses does Addis Ababa University have?",
+    "intent": "campus_location_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "How many campuses are there in AAU?",
+    "intent": "campus_location_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "List all AAU campuses",
+    "intent": "campus_location_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "Where is the main campus?",
+    "intent": "campus_location_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "How do I pay my fee?",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "How do I pay my fees?",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "What are the ways to pay fees?",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "Fee payment options",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "How to pay tuition fees",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "Payment methods for AAU fees",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "Where can I pay my university fees?",
+    "intent": "payment_methods_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "What are some undergrad tuition fees?",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "What are undergraduate tuition fees?",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "How much are undergraduate fees?",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "Undergraduate program costs",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "Tell me about undergraduate fees",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "Cost of undergraduate studies",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "Undergraduate fee structure",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "What does undergraduate education cost?",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "Tuition fees for bachelor degree",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "Where is Sefere Selam?",
+    "intent": "campus_location_inquiry",
+    "parameters": {"campus": ["sefere selam"]}
+  },
+  {
+    "text": "Where is Sefere Selam campus?",
+    "intent": "campus_location_inquiry",
+    "parameters": {"campus": ["sefere selam"]}
+  },
+  {
+    "text": "Location of Sefere Selam campus",
+    "intent": "campus_location_inquiry",
+    "parameters": {"campus": ["sefere selam"]}
+  },
+  {
+    "text": "How to get to Sefere Selam?",
+    "intent": "campus_location_inquiry",
+    "parameters": {"campus": ["sefere selam"]}
+  },
+  {
+    "text": "Directions to Sefere Selam campus",
+    "intent": "campus_location_inquiry",
+    "parameters": {"campus": ["sefere selam"]}
+  },
+  {
+    "text": "What is at Sefere Selam campus?",
+    "intent": "campus_location_inquiry",
+    "parameters": {"campus": ["sefere selam"]}
+  },
+  {
+    "text": "Tell me about Sefere Selam",
+    "intent": "campus_location_inquiry",
+    "parameters": {"campus": ["sefere selam"]}
+  },
+  {
+    "text": "I need help with AAU",
+    "intent": "general_info",
+    "parameters": {}
+  },
+  {
+    "text": "Tell me about AAU",
+    "intent": "general_info",
+    "parameters": {}
+  },
+  {
+    "text": "What is AAU?",
+    "intent": "general_info",
+    "parameters": {}
+  },
+  {
+    "text": "Information about Addis Ababa University",
+    "intent": "general_info",
+    "parameters": {}
+  },
+  {
+    "text": "AAU general information",
+    "intent": "general_info",
+    "parameters": {}
+  },
+  {
+    "text": "About Addis Ababa University",
+    "intent": "general_info",
+    "parameters": {}
+  },
+  {
+    "text": "AAU overview",
+    "intent": "general_info",
+    "parameters": {}
+  },
+  {
+    "text": "What services does AAU offer?",
+    "intent": "general_info",
+    "parameters": {}
+  },
+  {
+    "text": "AAU student services",
+    "intent": "general_info",
+    "parameters": {}
+  },
+  {
+    "text": "Help with university matters",
+    "intent": "general_info",
+    "parameters": {}
+  },
+  {
+    "text": "When is registration?",
+    "intent": "registration_help",
+    "parameters": {}
+  },
+  {
+    "text": "When does registration start?",
+    "intent": "registration_help",
+    "parameters": {}
+  },
+  {
+    "text": "Registration period",
+    "intent": "registration_help",
+    "parameters": {}
+  },
+  {
+    "text": "How to register for courses?",
+    "intent": "registration_help",
+    "parameters": {}
+  },
+  {
+    "text": "Course registration process",
+    "intent": "registration_help",
+    "parameters": {}
+  },
+  {
+    "text": "When can I register?",
+    "intent": "registration_help",
+    "parameters": {}
+  },
+  {
+    "text": "Registration deadline",
+    "intent": "registration_help",
+    "parameters": {}
+  },
+  {
+    "text": "How do I register for classes?",
+    "intent": "registration_help",
+    "parameters": {}
+  },
+  {
+    "text": "Student registration",
+    "intent": "registration_help",
+    "parameters": {}
+  },
+  {
+    "text": "Registration schedule",
+    "intent": "registration_help",
+    "parameters": {}
+  },
+  {
+    "text": "How do I apply to CS?",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "How do apply to cs?",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "Apply to computer science",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "CS admission process",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "Computer science application",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "How to get into computer science program?",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "CS program admission",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "Apply for computer science degree",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "Computer science undergraduate admission",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "How much is tuition fee?",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "How much is tuition fees?",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "Tuition cost",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "University fees",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "How much does it cost to study?",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "Student fees",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "Cost of education",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "Fees for undergraduate",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "Tell me about undergraduate fee",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "Undergraduate program fees",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "When is GAT exam?",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "When is gat exam?",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "GAT exam date",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "Graduate aptitude test schedule",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "GAT exam timing",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "When will GAT be held?",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "GAT test date",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "Graduate admission test schedule",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "GAT exam calendar",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "When does GAT happen?",
+    "intent": "gat_exam_inquiry",
+    "parameters": {}
+  },
+  {
+    "text": "Apply for engineering",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["engineering"]}
+  },
+  {
+    "text": "Engineering admission",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["engineering"]}
+  },
+  {
+    "text": "How to join engineering program?",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["engineering"]}
+  },
+  {
+    "text": "Engineering application process",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["engineering"]}
+  },
+  {
+    "text": "Apply for medicine",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["medicine"]}
+  },
+  {
+    "text": "Medicine admission",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["medicine"]}
+  },
+  {
+    "text": "How to get into medical school?",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["medicine"]}
+  },
+  {
+    "text": "Medical program application",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["medicine"]}
+  },
+  {
+    "text": "Apply for business",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["business"]}
+  },
+  {
+    "text": "Business program admission",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["business"]}
+  },
+  {
+    "text": "How to join business school?",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["business"]}
+  },
+  {
+    "text": "Business administration application",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["business"]}
+  },
+  {
+    "text": "Apply for law",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["law"]}
+  },
+  {
+    "text": "Law school admission",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["law"]}
+  },
+  {
+    "text": "How to get into law program?",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["law"]}
+  },
+  {
+    "text": "Legal studies application",
+    "intent": "undergraduate_admission",
+    "parameters": {"department": ["law"]}
+  },
+  {
+    "text": "Engineering fees",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["engineering"]}
+  },
+  {
+    "text": "How much for engineering program?",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["engineering"]}
+  },
+  {
+    "text": "Cost of engineering degree",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["engineering"]}
+  },
+  {
+    "text": "Medicine program cost",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["medicine"]}
+  },
+  {
+    "text": "Medical school fees",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["medicine"]}
+  },
+  {
+    "text": "How much for medicine degree?",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["medicine"]}
+  },
+  {
+    "text": "Computer science fees",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "CS program cost",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "How much for CS degree?",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "Business program fees",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["business"]}
+  },
+  {
+    "text": "Cost of business degree",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["business"]}
+  },
+  {
+    "text": "How much for business program?",
+    "intent": "undergraduate_fee_inquiry",
+    "parameters": {"department": ["business"]}
+  },
+  {
+    "text": "How much is the tuition fee for engineering for an international student?",
+    "intent": "international_student_fees",
+    "parameters": {"department": ["engineering"]}
+  },
+  {
+    "text": "International student fees for engineering",
+    "intent": "international_student_fees",
+    "parameters": {"department": ["engineering"]}
+  },
+  {
+    "text": "What do international students pay for medicine?",
+    "intent": "international_student_fees",
+    "parameters": {"department": ["medicine"]}
+  },
+  {
+    "text": "International tuition fees for computer science",
+    "intent": "international_student_fees",
+    "parameters": {"department": ["computer science"]}
+  },
+  {
+    "text": "How much do foreign students pay for business?",
+    "intent": "international_student_fees",
+    "parameters": {"department": ["business"]}
+  },
+  {
+    "text": "International student costs for law program",
+    "intent": "international_student_fees",
+    "parameters": {"department": ["law"]}
+  },
+  {
+    "text": "Fees for international students in engineering",
+    "intent": "international_student_fees",
+    "parameters": {"department": ["engineering"]}
+  },
+  {
+    "text": "What are international student fees?",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "International student tuition costs",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "How much do foreign students pay?",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "International fees at AAU",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "Cost for international students",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "Foreign student fees",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "International student fee structure",
+    "intent": "international_student_fees",
+    "parameters": {}
+  },
+  {
+    "text": "Tuition for international students",
+    "intent": "international_student_fees",
+    "parameters": {}
+  }
+]

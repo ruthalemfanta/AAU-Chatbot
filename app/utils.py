@@ -46,6 +46,15 @@ class DataLoader:
         # Try to load all available training data sources
         all_data = []
         
+        # Load new intents training data
+        try:
+            with open('data/raw/new_intents_training_data.json', 'r', encoding='utf-8') as f:
+                new_intents_data = json.load(f)
+                all_data.extend(new_intents_data)
+                logger.info(f"Loaded {len(new_intents_data)} samples from new intents training data")
+        except FileNotFoundError:
+            logger.info("No new intents training data found")
+        
         # Load quality Q&A training data FIRST (highest priority)
         try:
             with open('data/raw/quality_training_data.json', 'r', encoding='utf-8') as f:

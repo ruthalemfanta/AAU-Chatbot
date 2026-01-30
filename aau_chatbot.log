@@ -571,3 +571,124 @@
 2026-01-30 00:46:18,977 - watchfiles.main - INFO - 9 changes detected
 2026-01-30 00:46:24,915 - watchfiles.main - INFO - 29 changes detected
 2026-01-30 00:46:31,361 - watchfiles.main - INFO - 4 changes detected
+2026-01-30 16:37:12,085 - utils - INFO - Loaded 166 samples from new intents training data
+2026-01-30 16:37:12,088 - utils - INFO - No quality training data found
+2026-01-30 16:37:12,099 - utils - INFO - No enhanced training data found
+2026-01-30 16:37:12,100 - utils - INFO - No telegram training data found
+2026-01-30 16:37:12,113 - utils - INFO - No AAU training data found
+2026-01-30 16:37:12,115 - utils - INFO - Total training data: 166 samples
+2026-01-30 16:38:22,482 - utils - INFO - Loaded 166 samples from new intents training data
+2026-01-30 16:38:22,483 - utils - INFO - No quality training data found
+2026-01-30 16:38:22,483 - utils - INFO - No enhanced training data found
+2026-01-30 16:38:22,483 - utils - INFO - No telegram training data found
+2026-01-30 16:38:22,483 - utils - INFO - No AAU training data found
+2026-01-30 16:38:22,483 - utils - INFO - Total training data: 166 samples
+2026-01-30 16:39:46,426 - news_retriever - WARNING - News data file not found: data/raw/telegram_training_data.json
+2026-01-30 16:39:55,126 - news_retriever - WARNING - News data file not found: data/raw/telegram_training_data.json
+2026-01-30 16:39:55,189 - news_retriever - WARNING - News data file not found: data/raw/telegram_training_data.json
+2026-01-30 16:39:55,208 - utils - INFO - Starting AAU Helpdesk Chatbot...
+2026-01-30 16:39:55,211 - utils - INFO - Loaded 166 samples from new intents training data
+2026-01-30 16:39:55,212 - utils - INFO - No quality training data found
+2026-01-30 16:39:55,213 - utils - INFO - No enhanced training data found
+2026-01-30 16:39:55,213 - utils - INFO - No telegram training data found
+2026-01-30 16:39:55,213 - utils - INFO - No AAU training data found
+2026-01-30 16:39:55,213 - utils - INFO - Total training data: 166 samples
+2026-01-30 16:39:55,229 - utils - INFO - Chatbot initialized successfully!
+2026-01-30 16:40:33,382 - utils - INFO - Conversation: {'user_message': 'What are the campuses in aau', 'bot_response': "I don't have enough confidence in my answer for that. For reliable information, visit www.aau.edu.et or check our Telegram @aau_official.", 'intent': 'out_of_domain', 'confidence': 0.17983745360697465, 'parameters': {}, 'user_id': None, 'session_id': 'session-1769780404337'}
+2026-01-30 16:40:46,620 - utils - INFO - Conversation: {'user_message': 'how do i pay my fee', 'bot_response': "I'm not sure I have the right information for that. Please check the AAU website at www.aau.edu.et or our Telegram channel @aau_official for official updates.", 'intent': 'out_of_domain', 'confidence': 0.10067549036018274, 'parameters': {}, 'user_id': None, 'session_id': 'session-1769780404337'}
+2026-01-30 16:41:03,506 - utils - INFO - Conversation: {'user_message': 'What are some undergrad tuttion fees', 'bot_response': "I don't have enough confidence in my answer for that. For reliable information, visit www.aau.edu.et or check our Telegram @aau_official.", 'intent': 'out_of_domain', 'confidence': 0.09382602689848658, 'parameters': {}, 'user_id': None, 'session_id': 'session-1769780404337'}
+2026-01-30 16:41:16,910 - utils - INFO - Conversation: {'user_message': 'where is sefere selam', 'bot_response': "I'm not sure I have the right information for that. Please check the AAU website at www.aau.edu.et or our Telegram channel @aau_official for official updates.", 'intent': 'out_of_domain', 'confidence': 0.1053576293896239, 'parameters': {'campus': ['sefere selam']}, 'user_id': None, 'session_id': 'session-1769780404337'}
+2026-01-30 16:44:35,921 - utils - INFO - Loaded 188 samples from new intents training data
+2026-01-30 16:44:35,923 - utils - INFO - No quality training data found
+2026-01-30 16:44:35,924 - utils - INFO - No enhanced training data found
+2026-01-30 16:44:35,926 - utils - INFO - No telegram training data found
+2026-01-30 16:44:35,927 - utils - INFO - No AAU training data found
+2026-01-30 16:44:35,927 - utils - INFO - Total training data: 188 samples
+2026-01-30 16:46:54,606 - utils - INFO - Loaded 188 samples from new intents training data
+2026-01-30 16:46:54,606 - utils - INFO - No quality training data found
+2026-01-30 16:46:54,607 - utils - INFO - No enhanced training data found
+2026-01-30 16:46:54,607 - utils - INFO - No telegram training data found
+2026-01-30 16:46:54,607 - utils - INFO - No AAU training data found
+2026-01-30 16:46:54,607 - utils - INFO - Total training data: 188 samples
+2026-01-30 16:51:26,531 - utils - INFO - Loaded 255 samples from new intents training data
+2026-01-30 16:51:26,531 - utils - INFO - No quality training data found
+2026-01-30 16:51:26,531 - utils - INFO - No enhanced training data found
+2026-01-30 16:51:26,531 - utils - INFO - No telegram training data found
+2026-01-30 16:51:26,532 - utils - INFO - No AAU training data found
+2026-01-30 16:51:26,532 - utils - INFO - Total training data: 255 samples
+2026-01-30 16:52:16,955 - utils - INFO - Loaded 255 samples from new intents training data
+2026-01-30 16:52:16,957 - utils - INFO - No quality training data found
+2026-01-30 16:52:16,957 - utils - INFO - No enhanced training data found
+2026-01-30 16:52:16,957 - utils - INFO - No telegram training data found
+2026-01-30 16:52:16,959 - utils - INFO - No AAU training data found
+2026-01-30 16:52:16,960 - utils - INFO - Total training data: 255 samples
+2026-01-30 16:53:33,486 - news_retriever - WARNING - News data file not found: data/raw/telegram_training_data.json
+2026-01-30 16:53:33,542 - news_retriever - WARNING - News data file not found: data/raw/telegram_training_data.json
+2026-01-30 16:53:33,559 - utils - INFO - Starting AAU Helpdesk Chatbot...
+2026-01-30 16:53:33,560 - utils - INFO - Loaded 253 samples from new intents training data
+2026-01-30 16:53:33,560 - utils - INFO - No quality training data found
+2026-01-30 16:53:33,560 - utils - INFO - No enhanced training data found
+2026-01-30 16:53:33,561 - utils - INFO - No telegram training data found
+2026-01-30 16:53:33,561 - utils - INFO - No AAU training data found
+2026-01-30 16:53:33,561 - utils - INFO - Total training data: 253 samples
+2026-01-30 16:53:33,578 - utils - INFO - Chatbot initialized successfully!
+2026-01-30 16:55:31,746 - utils - INFO - Loaded 253 samples from new intents training data
+2026-01-30 16:55:31,747 - utils - INFO - No quality training data found
+2026-01-30 16:55:31,747 - utils - INFO - No enhanced training data found
+2026-01-30 16:55:31,747 - utils - INFO - No telegram training data found
+2026-01-30 16:55:31,748 - utils - INFO - No AAU training data found
+2026-01-30 16:55:31,748 - utils - INFO - Total training data: 253 samples
+2026-01-30 16:56:47,535 - news_retriever - WARNING - News data file not found: data/raw/telegram_training_data.json
+2026-01-30 16:56:47,600 - news_retriever - WARNING - News data file not found: data/raw/telegram_training_data.json
+2026-01-30 16:56:47,617 - utils - INFO - Starting AAU Helpdesk Chatbot...
+2026-01-30 16:56:47,619 - utils - INFO - Loaded 253 samples from new intents training data
+2026-01-30 16:56:47,619 - utils - INFO - No quality training data found
+2026-01-30 16:56:47,619 - utils - INFO - No enhanced training data found
+2026-01-30 16:56:47,620 - utils - INFO - No telegram training data found
+2026-01-30 16:56:47,620 - utils - INFO - No AAU training data found
+2026-01-30 16:56:47,620 - utils - INFO - Total training data: 253 samples
+2026-01-30 16:56:47,637 - utils - INFO - Chatbot initialized successfully!
+2026-01-30 16:57:00,630 - utils - INFO - Loaded 253 samples from new intents training data
+2026-01-30 16:57:00,630 - utils - INFO - No quality training data found
+2026-01-30 16:57:00,631 - utils - INFO - No enhanced training data found
+2026-01-30 16:57:00,631 - utils - INFO - No telegram training data found
+2026-01-30 16:57:00,631 - utils - INFO - No AAU training data found
+2026-01-30 16:57:00,631 - utils - INFO - Total training data: 253 samples
+2026-01-30 16:57:44,966 - utils - INFO - Conversation: {'user_message': 'what campuses are there in aau', 'bot_response': "I don't have enough confidence in my answer for that. For reliable information, visit www.aau.edu.et or check our Telegram @aau_official.", 'intent': 'campus_location_inquiry', 'confidence': 0.19458405087088282, 'parameters': {}, 'user_id': None, 'session_id': 'session-1769781458099'}
+2026-01-30 16:59:23,721 - news_retriever - WARNING - News data file not found: data/raw/telegram_training_data.json
+2026-01-30 16:59:23,839 - news_retriever - WARNING - News data file not found: data/raw/telegram_training_data.json
+2026-01-30 16:59:23,857 - utils - INFO - Starting AAU Helpdesk Chatbot...
+2026-01-30 16:59:23,863 - utils - INFO - Loaded 253 samples from new intents training data
+2026-01-30 16:59:23,867 - utils - INFO - No quality training data found
+2026-01-30 16:59:23,868 - utils - INFO - No enhanced training data found
+2026-01-30 16:59:23,868 - utils - INFO - No telegram training data found
+2026-01-30 16:59:23,868 - utils - INFO - No AAU training data found
+2026-01-30 16:59:23,868 - utils - INFO - Total training data: 253 samples
+2026-01-30 16:59:23,888 - utils - INFO - Chatbot initialized successfully!
+2026-01-30 16:59:49,320 - utils - INFO - Conversation: {'user_message': 'what campuses are there in aau', 'bot_response': '**AAU Campus Locations**\n\n**Main Campuses:**\n• Sidist Kilo Campus (Main Campus) - 6 Kilo\n• Sefere Selam Campus - Medical training and research hub\n• Science Campus (4 Kilo) - Natural and Computational Sciences\n• Bishoftu Campus - Veterinary Medicine and Agriculture\n\n**Specialized Facilities:**\n• Tikur Anbessa Specialized Hospital (TASH)\n• Institute of Ethiopian Studies (IES)\n• AAU Museums and Cultural Center\n• National Herbarium\n• AAU Book Center\n\n**Campus Features:**\n• Multiple libraries across campuses\n• Student hostels and dining facilities\n• Sports and recreation facilities\n• Ashenafi Kebede Performance Arts Center\n\n**Transportation:** Various public transport options available to all campuses', 'intent': 'campus_location_inquiry', 'confidence': 0.19458405087088282, 'parameters': {}, 'user_id': None, 'session_id': 'session-1769781587479'}
+2026-01-30 17:00:00,496 - utils - INFO - Conversation: {'user_message': 'how much does undergrad cost', 'bot_response': "I can provide undergraduate fee information. Which program or department are you asking about?\n\n• What's your field of study or intended major?", 'intent': 'undergraduate_fee_inquiry', 'confidence': 0.382482493975137, 'parameters': {}, 'user_id': None, 'session_id': 'session-1769781587479'}
+2026-01-30 17:00:30,972 - utils - INFO - Conversation: {'user_message': 'engineering', 'bot_response': '**AAU Undergraduate Fees (Ethiopian Students) - engineering**\n\n**Fee Structure by Program Category:**\n• Medicine & Dental Medicine: 2,307.69 ETB per ECTS\n• Pharmacy/Veterinary Medicine: 1,153.17 ETB per ECTS\n• Computer Science/Software Engineering: 1,500.00 ETB per ECTS\n• Architecture: 1,500.00 ETB per ECTS\n• Engineering: 900 ETB per ECTS\n• Law/Business: 700 ETB per ECTS\n• Social Sciences/Education: 600 ETB per ECTS\n\n**Additional Fees:**\n• Internship/Practicum: 5,400 ETB per student\n• Senior Essay/Research Project: 375 ETB per student\n• Laboratory work: 175-440 ETB per ECTS\n\n**Payment:** Contact Finance Office for payment methods', 'intent': 'undergraduate_fee_inquiry', 'confidence': 0.2663226981599873, 'parameters': {'department': ['engineering']}, 'user_id': None, 'session_id': 'session-1769781587479'}
+2026-01-30 17:00:41,041 - utils - INFO - Conversation: {'user_message': 'what about international', 'bot_response': '**AAU Undergraduate Fees (Ethiopian Students) - engineering**\n\n**Fee Structure by Program Category:**\n• Medicine & Dental Medicine: 2,307.69 ETB per ECTS\n• Pharmacy/Veterinary Medicine: 1,153.17 ETB per ECTS\n• Computer Science/Software Engineering: 1,500.00 ETB per ECTS\n• Architecture: 1,500.00 ETB per ECTS\n• Engineering: 900 ETB per ECTS\n• Law/Business: 700 ETB per ECTS\n• Social Sciences/Education: 600 ETB per ECTS\n\n**Additional Fees:**\n• Internship/Practicum: 5,400 ETB per student\n• Senior Essay/Research Project: 375 ETB per student\n• Laboratory work: 175-440 ETB per ECTS\n\n**Payment:** Contact Finance Office for payment methods', 'intent': 'undergraduate_fee_inquiry', 'confidence': 0.12190700926781323, 'parameters': {'department': ['engineering']}, 'user_id': None, 'session_id': 'session-1769781587479'}
+2026-01-30 17:01:45,930 - utils - INFO - Conversation: {'user_message': 'how much is the tuition fee for engineering for an international student', 'bot_response': '**AAU Undergraduate Fees (Ethiopian Students) - engineering**\n\n**Fee Structure by Program Category:**\n• Medicine & Dental Medicine: 2,307.69 ETB per ECTS\n• Pharmacy/Veterinary Medicine: 1,153.17 ETB per ECTS\n• Computer Science/Software Engineering: 1,500.00 ETB per ECTS\n• Architecture: 1,500.00 ETB per ECTS\n• Engineering: 900 ETB per ECTS\n• Law/Business: 700 ETB per ECTS\n• Social Sciences/Education: 600 ETB per ECTS\n\n**Additional Fees:**\n• Internship/Practicum: 5,400 ETB per student\n• Senior Essay/Research Project: 375 ETB per student\n• Laboratory work: 175-440 ETB per ECTS\n\n**Payment:** Contact Finance Office for payment methods', 'intent': 'undergraduate_fee_inquiry', 'confidence': 0.4180203630160634, 'parameters': {'department': ['engineering']}, 'user_id': None, 'session_id': 'session-1769781681060'}
+2026-01-30 17:02:45,071 - utils - INFO - Conversation: {'user_message': 'where is sefere selam', 'bot_response': '**AAU Campus Locations**\n\n**Main Campuses:**\n• Sidist Kilo Campus (Main Campus) - 6 Kilo\n• Sefere Selam Campus - Medical training and research hub\n• Science Campus (4 Kilo) - Natural and Computational Sciences\n• Bishoftu Campus - Veterinary Medicine and Agriculture\n\n**Specialized Facilities:**\n• Tikur Anbessa Specialized Hospital (TASH)\n• Institute of Ethiopian Studies (IES)\n• AAU Museums and Cultural Center\n• National Herbarium\n• AAU Book Center\n\n**Campus Features:**\n• Multiple libraries across campuses\n• Student hostels and dining facilities\n• Sports and recreation facilities\n• Ashenafi Kebede Performance Arts Center\n\n**Transportation:** Various public transport options available to all campuses', 'intent': 'campus_location_inquiry', 'confidence': 0.4777875122873023, 'parameters': {'department': ['engineering'], 'campus': ['sefere selam']}, 'user_id': None, 'session_id': 'session-1769781681060'}
+2026-01-30 17:03:30,175 - news_retriever - WARNING - News data file not found: data/raw/telegram_training_data.json
+2026-01-30 17:03:30,264 - news_retriever - WARNING - News data file not found: data/raw/telegram_training_data.json
+2026-01-30 17:03:30,293 - utils - INFO - Starting AAU Helpdesk Chatbot...
+2026-01-30 17:03:30,295 - utils - INFO - Loaded 268 samples from new intents training data
+2026-01-30 17:03:30,295 - utils - INFO - No quality training data found
+2026-01-30 17:03:30,295 - utils - INFO - No enhanced training data found
+2026-01-30 17:03:30,296 - utils - INFO - No telegram training data found
+2026-01-30 17:03:30,296 - utils - INFO - No AAU training data found
+2026-01-30 17:03:30,297 - utils - INFO - Total training data: 268 samples
+2026-01-30 17:03:30,326 - utils - INFO - Chatbot initialized successfully!
+2026-01-30 17:03:36,546 - utils - INFO - Loaded 268 samples from new intents training data
+2026-01-30 17:03:36,547 - utils - INFO - No quality training data found
+2026-01-30 17:03:36,547 - utils - INFO - No enhanced training data found
+2026-01-30 17:03:36,547 - utils - INFO - No telegram training data found
+2026-01-30 17:03:36,548 - utils - INFO - No AAU training data found
+2026-01-30 17:03:36,548 - utils - INFO - Total training data: 268 samples
+2026-01-30 17:04:40,071 - utils - INFO - Conversation: {'user_message': 'how much is the tuition fee for engineering for an international student', 'bot_response': '**International Student Fees at AAU**\n\n**Fee Categories:**\n• Refugees: ETB rates (same as Ethiopian students)\n• IGAD/East African Countries: Moderate USD rates\n• Other International Students: Higher USD rates\n\n**Undergraduate Programs (USD per ECTS):**\n• Medicine/Dental: $100-300 (varies by category)\n• Engineering/Computer Science: $60-180\n• Business/Law: $42-120\n• Social Sciences: $42-120\n\n**Graduate Programs (USD per ECTS):**\n• Masters: $150-300\n• PhD: $200-450\n\n**Research Fees:**\n• Masters Thesis: $500-1000\n• PhD Research: $1000-1500 per semester\n• Thesis Examination: $200-750\n\n**Payment:** USD payments required for international students', 'intent': 'international_student_fees', 'confidence': 0.3790481022802821, 'parameters': {'department': ['engineering'], 'student_type': ['international']}, 'user_id': None, 'session_id': 'session-1769781681060'}
+2026-01-30 17:04:58,753 - utils - INFO - Conversation: {'user_message': 'how much is the tuition fee for engineering for undergrad', 'bot_response': '**AAU Undergraduate Fees (Ethiopian Students) - engineering**\n\n**Fee Structure by Program Category:**\n• Medicine & Dental Medicine: 2,307.69 ETB per ECTS\n• Pharmacy/Veterinary Medicine: 1,153.17 ETB per ECTS\n• Computer Science/Software Engineering: 1,500.00 ETB per ECTS\n• Architecture: 1,500.00 ETB per ECTS\n• Engineering: 900 ETB per ECTS\n• Law/Business: 700 ETB per ECTS\n• Social Sciences/Education: 600 ETB per ECTS\n\n**Additional Fees:**\n• Internship/Practicum: 5,400 ETB per student\n• Senior Essay/Research Project: 375 ETB per student\n• Laboratory work: 175-440 ETB per ECTS\n\n**Payment:** Contact Finance Office for payment methods', 'intent': 'undergraduate_fee_inquiry', 'confidence': 0.4214013468709495, 'parameters': {'department': ['engineering'], 'student_type': ['international']}, 'user_id': None, 'session_id': 'session-1769781681060'}
+2026-01-30 17:05:08,961 - utils - INFO - Conversation: {'user_message': 'how much is the tuition fee', 'bot_response': '**AAU Undergraduate Fees (Ethiopian Students) - engineering**\n\n**Fee Structure by Program Category:**\n• Medicine & Dental Medicine: 2,307.69 ETB per ECTS\n• Pharmacy/Veterinary Medicine: 1,153.17 ETB per ECTS\n• Computer Science/Software Engineering: 1,500.00 ETB per ECTS\n• Architecture: 1,500.00 ETB per ECTS\n• Engineering: 900 ETB per ECTS\n• Law/Business: 700 ETB per ECTS\n• Social Sciences/Education: 600 ETB per ECTS\n\n**Additional Fees:**\n• Internship/Practicum: 5,400 ETB per student\n• Senior Essay/Research Project: 375 ETB per student\n• Laboratory work: 175-440 ETB per ECTS\n\n**Payment:** Contact Finance Office for payment methods', 'intent': 'undergraduate_fee_inquiry', 'confidence': 0.3910470420817806, 'parameters': {'department': ['engineering'], 'student_type': ['international']}, 'user_id': None, 'session_id': 'session-1769781681060'}
+2026-01-30 17:05:24,961 - utils - INFO - Conversation: {'user_message': 'how much is the tuition fee graduate', 'bot_response': '**AAU Undergraduate Fees (Ethiopian Students) - engineering**\n\n**Fee Structure by Program Category:**\n• Medicine & Dental Medicine: 2,307.69 ETB per ECTS\n• Pharmacy/Veterinary Medicine: 1,153.17 ETB per ECTS\n• Computer Science/Software Engineering: 1,500.00 ETB per ECTS\n• Architecture: 1,500.00 ETB per ECTS\n• Engineering: 900 ETB per ECTS\n• Law/Business: 700 ETB per ECTS\n• Social Sciences/Education: 600 ETB per ECTS\n\n**Additional Fees:**\n• Internship/Practicum: 5,400 ETB per student\n• Senior Essay/Research Project: 375 ETB per student\n• Laboratory work: 175-440 ETB per ECTS\n\n**Payment:** Contact Finance Office for payment methods', 'intent': 'undergraduate_fee_inquiry', 'confidence': 0.2976608333693167, 'parameters': {'department': ['engineering'], 'student_type': ['international']}, 'user_id': None, 'session_id': 'session-1769781681060'}
+2026-01-30 17:05:58,253 - utils - INFO - Conversation: {'user_message': 'how do i pay my tuituion fee', 'bot_response': '**AAU Fee Payment Methods**\n\n**Available Payment Options:**\n• Bank transfer to AAU account (Commercial Bank of Ethiopia)\n• Cash payment at University Finance Office\n• TeleBirr service platform (Ethio Telecom partnership)\n• Online payment portal (when available)\n\n**Required Documents:**\n• Student ID card\n• Fee notification slip\n• Valid identification\n• Payment receipt (keep safe!)\n\n**Payment Locations:**\n• AAU Finance Office (Main Campus)\n• Designated bank branches\n• Campus cashier offices\n\n**Important:** Check academic calendar for payment deadlines\n**Contact:** Finance Office for specific account details', 'intent': 'payment_methods_inquiry', 'confidence': 0.19501311926843298, 'parameters': {'department': ['engineering'], 'student_type': ['international']}, 'user_id': None, 'session_id': 'session-1769781681060'}

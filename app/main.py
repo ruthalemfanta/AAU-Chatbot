@@ -49,9 +49,6 @@ class ChatResponse(BaseModel):
     parameters: Dict[str, Any]
     missing_parameters: List[str]
     needs_clarification: bool
-    out_of_domain: Optional[Dict[str, Any]] = None
-    timestamp: str
-    needs_clarification: bool
     related_news: Optional[List[Dict[str, Any]]] = None
     timestamp: str
 
@@ -153,19 +150,17 @@ async def chat(request: ChatRequest):
         result = nlp_engine.process_query(cleaned_message, context)
         
         # Generate response
-        out_of_domain_info = result.get('out_of_domain')
         response_text = response_templates.generate_response(
             intent=result['intent'],
             parameters=result['parameters'],
             missing_parameters=result['missing_parameters'],
-            confidence=result['confidence'],
-            out_of_domain_info=out_of_domain_info
+            confidence=result['confidence']
         )
         
         # News Retrieval (Assignment Feature)
         # Check if we can find real-time info from Telegram to augment the response
         related_news_items = None
-        if result['confidence'] > 0.4 and not out_of_domain_info:
+        if result['confidence'] > 0.4:
             related_news_items = news_retriever.find_relevant_news(
                 intent=result['intent'],
                 parameters=result['parameters'],
@@ -199,8 +194,7 @@ async def chat(request: ChatRequest):
                 'confidence': result['confidence'],
                 'parameters': result['parameters'],
                 'user_id': request.user_id,
-                'session_id': request.session_id,
-                'out_of_domain': out_of_domain_info
+                'session_id': request.session_id
             }
             # In production, save to database
             logger.info(f"Conversation: {conversation_log}")
@@ -212,7 +206,6 @@ async def chat(request: ChatRequest):
             parameters=result['parameters'],
             missing_parameters=result['missing_parameters'],
             needs_clarification=result['needs_clarification'],
-            out_of_domain=out_of_domain_info,
             timestamp=datetime.now().isoformat()
         )
         
@@ -225,7 +218,6 @@ async def chat(request: ChatRequest):
             parameters={},
             missing_parameters=[],
             needs_clarification=True,
-            out_of_domain=None,
             timestamp=datetime.now().isoformat()
         )
 

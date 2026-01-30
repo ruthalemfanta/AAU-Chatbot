@@ -20,12 +20,7 @@ except ImportError:
     ML_AVAILABLE = False
     print("ML Parameter Extractor not available, using rule-based extraction")
 
-# Import out-of-domain detector
-try:
-    from .out_of_domain_detector import OutOfDomainDetector
-except ImportError:
-    # Fallback for when running from app directory
-    from out_of_domain_detector import OutOfDomainDetector
+# Removed out-of-domain detector - using simple confidence-based fallback instead
 
 
 class IntentClassifier:
@@ -37,8 +32,9 @@ class IntentClassifier:
             ('classifier', MultinomialNB())
         ])
         self.intent_labels = [
+            # Original intents (for backward compatibility)
             'admission_inquiry',
-            'registration_help',
+            'registration_help', 
             'fee_payment',
             'transcript_request',
             'grade_inquiry',
@@ -46,7 +42,53 @@ class IntentClassifier:
             'schedule_inquiry',
             'document_request',
             'general_info',
-            'technical_support'
+            'technical_support',
+            
+            # New granular admission & application intents
+            'undergraduate_admission',
+            'graduate_admission',
+            'gat_exam_inquiry',
+            'international_admission',
+            
+            # New fee & payment intents
+            'undergraduate_fee_inquiry',
+            'graduate_fee_inquiry',
+            'international_student_fees',
+            'payment_methods_inquiry',
+            
+            # New academic & course intents
+            'course_catalog_inquiry',
+            'prerequisite_inquiry',
+            'academic_calendar_inquiry',
+            
+            # New examination & grading intents
+            'exam_schedule_inquiry',
+            'grade_report_request',
+            
+            # New document & service intents
+            'official_transcript_request',
+            'certificate_request',
+            'student_id_services',
+            
+            # New campus & facility intents
+            'library_services_inquiry',
+            'accommodation_inquiry',
+            'campus_location_inquiry',
+            'facility_booking_inquiry',
+            
+            # New research & graduate intents
+            'thesis_submission_process',
+            'research_opportunity_inquiry',
+            
+            # New administrative & support intents
+            'readmission_inquiry',
+            'alumni_services_inquiry',
+            
+            # New specialized AAU service intents
+            'hospital_services_inquiry',
+            'book_center_inquiry',
+            'radio_station_inquiry',
+            'museum_services_inquiry'
         ]
         self.is_trained = False
     
@@ -80,23 +122,42 @@ class ParameterExtractor:
         # AAU-specific patterns
         self.department_patterns = [
             r'\b(computer science|cs|engineering|medicine|law|business|economics|psychology|biology|chemistry|physics|mathematics|english|amharic)\b',
+            r'\b(veterinary medicine|pharmacy|architecture|information science|software engineering)\b',
+            r'\b(social sciences|education|journalism|music|art|theatre)\b',
             r'\b(school of|faculty of|department of|college of)\s+([a-zA-Z\s]+)',
         ]
         
         self.document_patterns = [
             r'\b(transcript|certificate|diploma|degree|grade report|academic record|student id|recommendation letter)\b',
+            r'\b(enrollment verification|graduation certificate|academic standing certificate)\b',
         ]
         
         self.semester_patterns = [
             r'\b(semester|sem)\s*(\d+)',
             r'\b(first|second|third|1st|2nd|3rd)\s+(semester|sem)',
-            r'\b(fall|spring|summer)\s+(semester|term)',
+            r'\b(fall|spring|summer|kiremt)\s+(semester|term)',
         ]
         
         self.year_patterns = [
             r'\b(20\d{2})\b',
             r'\b(year|yr)\s*(\d+)',
             r'\b(\d{4})\s*(academic year|ay)',
+        ]
+        
+        self.fee_patterns = [
+            r'\b(\d+(?:,\d{3})*(?:\.\d{2})?)\s*(birr|etb|usd|\$)?\b',
+            r'\b(undergraduate|graduate|masters|phd|international|foreign)\s+fee\b',
+        ]
+        
+        self.student_type_patterns = [
+            r'\b(international|foreign)\s+(student|students)\b',
+            r'\b(refugee|refugees)\b',
+            r'\b(igad|east\s+african)\s+(student|students|country|countries)\b',
+        ]
+        
+        self.campus_patterns = [
+            r'\b(sidist kilo|main campus|sefere selam|science campus|4 kilo|bishoftu)\b',
+            r'\b(6 kilo|main|medical campus)\b',
         ]
     
     def extract_entities(self, text: str) -> Dict[str, List[str]]:
@@ -211,6 +272,41 @@ class ParameterExtractor:
         if years:
             parameters['year'] = list(set(years))
         
+        # Extract fee amounts and payment methods
+        fees = []
+        for pattern in self.fee_patterns:
+            matches = re.findall(pattern, text_lower, re.IGNORECASE)
+            if matches:
+                if isinstance(matches[0], tuple):
+                    fees.extend([match[0] for match in matches if match[0]])
+                else:
+                    fees.extend(matches)
+        
+        if fees:
+            parameters['fee_amount'] = list(set(fees))
+        
+        # Extract campus locations
+        campuses = []
+        for pattern in self.campus_patterns:
+            matches = re.findall(pattern, text_lower, re.IGNORECASE)
+            campuses.extend(matches)
+        
+        if campuses:
+            parameters['campus'] = list(set(campuses))
+        
+        # Extract student type (international, refugee, etc.)
+        student_types = []
+        for pattern in self.student_type_patterns:
+            matches = re.findall(pattern, text_lower, re.IGNORECASE)
+            if matches:
+                if isinstance(matches[0], tuple):
+                    student_types.extend([match[0] for match in matches])
+                else:
+                    student_types.extend(matches)
+        
+        if student_types:
+            parameters['student_type'] = list(set(student_types))
+        
         # Extract named entities
         entities = self.extract_entities(text)
         if entities['PERSON']:
@@ -247,17 +343,38 @@ class ParameterExtractor:
             'cse': 'computer science',
             'computer science': 'computer science',
             'comp sci': 'computer science',
+            'software engineering': 'software engineering',
+            'information science': 'information science',
             'engineering': 'engineering',
             'eng': 'engineering',
             'medicine': 'medicine',
             'med': 'medicine',
+            'veterinary medicine': 'veterinary medicine',
+            'vet med': 'veterinary medicine',
+            'pharmacy': 'pharmacy',
+            'architecture': 'architecture',
             'law': 'law',
             'business': 'business',
             'biz': 'business',
             'economics': 'economics',
             'econ': 'economics',
             'psychology': 'psychology',
-            'psych': 'psychology'
+            'psych': 'psychology',
+            'biology': 'biology',
+            'bio': 'biology',
+            'chemistry': 'chemistry',
+            'chem': 'chemistry',
+            'physics': 'physics',
+            'mathematics': 'mathematics',
+            'math': 'mathematics',
+            'english': 'english',
+            'amharic': 'amharic',
+            'social sciences': 'social sciences',
+            'education': 'education',
+            'journalism': 'journalism',
+            'music': 'music',
+            'art': 'art',
+            'theatre': 'theatre'
         }
         
         return dept_mappings.get(text)
@@ -373,10 +490,10 @@ class AAUNLPEngine:
             self.parameter_extractor = ParameterExtractor()
             print("📝 Using rule-based parameter extraction")
         
-        # Initialize out-of-domain detector
-        self.out_of_domain_detector = OutOfDomainDetector()
+        # Removed out-of-domain detector initialization
         
-        self.confidence_threshold = 0.3  # Lower threshold for better responsiveness
+        # Removed confidence threshold - always use the predicted intent
+        self.confidence_threshold = 0.0  # Accept all predictions
     
     def process_query(self, text: str, context: Optional[Dict] = None) -> Dict[str, Any]:
         """Process user query and return intent, parameters, and confidence"""
@@ -401,20 +518,7 @@ class AAUNLPEngine:
             # Regular processing for new queries
             intent, confidence = self.intent_classifier.predict(cleaned_text)
             
-            # Check for out-of-domain queries
-            out_of_domain_info = self.out_of_domain_detector.detect(cleaned_text, intent, confidence)
-            
-            if out_of_domain_info['is_out_of_domain']:
-                return {
-                    'intent': 'out_of_domain',
-                    'confidence': confidence,
-                    'parameters': {},
-                    'missing_parameters': [],
-                    'needs_clarification': False,
-                    'processed_text': cleaned_text,
-                    'context_used': context is not None,
-                    'out_of_domain': out_of_domain_info
-                }
+            # Removed out-of-domain detection - using simple confidence threshold instead
             
             parameters = self.parameter_extractor.extract_parameters(cleaned_text, intent, context)
             
@@ -435,7 +539,7 @@ class AAUNLPEngine:
             'confidence': confidence,
             'parameters': parameters,
             'missing_parameters': missing_params,
-            'needs_clarification': len(missing_params) > 0 or confidence < self.confidence_threshold,
+            'needs_clarification': len(missing_params) > 0,  # Only check for missing parameters
             'processed_text': cleaned_text,
             'context_used': context is not None
         }
@@ -463,6 +567,7 @@ class AAUNLPEngine:
     def _get_required_parameters(self, intent: str) -> List[str]:
         """Get required parameters for each intent"""
         required_params = {
+            # Original intents
             'admission_inquiry': ['department'],
             'registration_help': ['semester', 'year'],
             'fee_payment': ['fee_amount'],
@@ -472,7 +577,45 @@ class AAUNLPEngine:
             'schedule_inquiry': ['semester', 'year'],
             'document_request': ['document_type'],
             'general_info': [],
-            'technical_support': []
+            'technical_support': [],
+            
+            # New granular intents
+            'undergraduate_admission': ['department'],
+            'graduate_admission': ['department'],
+            'gat_exam_inquiry': [],
+            'international_admission': [],
+            
+            'undergraduate_fee_inquiry': ['department'],
+            'graduate_fee_inquiry': ['department'],
+            'international_student_fees': [],
+            'payment_methods_inquiry': [],
+            
+            'course_catalog_inquiry': ['department'],
+            'prerequisite_inquiry': ['department'],
+            'academic_calendar_inquiry': ['year'],
+            
+            'exam_schedule_inquiry': ['semester', 'year'],
+            'grade_report_request': [],
+            
+            'official_transcript_request': ['document_type'],
+            'certificate_request': ['document_type'],
+            'student_id_services': [],
+            
+            'library_services_inquiry': [],
+            'accommodation_inquiry': [],
+            'campus_location_inquiry': [],
+            'facility_booking_inquiry': [],
+            
+            'thesis_submission_process': [],
+            'research_opportunity_inquiry': [],
+            
+            'readmission_inquiry': [],
+            'alumni_services_inquiry': [],
+            
+            'hospital_services_inquiry': [],
+            'book_center_inquiry': [],
+            'radio_station_inquiry': [],
+            'museum_services_inquiry': []
         }
         
         return required_params.get(intent, [])
