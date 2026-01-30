@@ -3,7 +3,7 @@ Response Templates for AAU Helpdesk Chatbot
 Handles template-based responses and follow-up questions
 """
 
-from typing import Dict, List, Any
+from typing import Dict, List, Any, Optional
 import random
 
 
@@ -294,6 +294,28 @@ def _initialize_clarifications() -> List[str]:
         "Let me make sure I understand correctly. Could you elaborate on what you need help with?"
     ]
 
+def _initialize_out_of_domain_templates() -> Dict[str, str]:
+    """Initialize out-of-domain response templates"""
+    return {
+        'base_message': "I'm specifically designed to help with AAU (Addis Ababa University) services and I don't have information about that topic.",
+        
+        'medical': "I'm not able to provide medical advice or health information. For health-related questions, please consult with a qualified healthcare professional.",
+        
+        'weather': "I don't have access to weather information. You can check weather forecasts on weather websites or apps.",
+        
+        'entertainment': "I don't have information about entertainment topics. I'm focused on helping with university services.",
+        
+        'technology': "I don't provide general programming or technology support. However, if you need help with AAU's technical services or computer science courses, I can assist with that!",
+        
+        'general_knowledge': "I don't have general knowledge information. I'm specialized in AAU university services.",
+        
+        'personal': "I'm an AI assistant designed to help with AAU university services. I don't have personal information to share.",
+        
+        'math_problem': "I don't solve general math problems. If you need help with AAU mathematics courses or academic requirements, I can help with that!",
+        
+        'general': "I don't have information about that topic."
+    }
+
 
 def get_error_response() -> str:
     """Get an error response"""
@@ -335,10 +357,16 @@ class ResponseTemplates:
         self.templates = _initialize_templates()
         self.follow_up_questions = _initialize_follow_ups()
         self.clarification_templates = _initialize_clarifications()
+        self.out_of_domain_templates = _initialize_out_of_domain_templates()
 
     def generate_response(self, intent: str, parameters: Dict[str, Any],
-                         missing_parameters: List[str], confidence: float) -> str:
+                         missing_parameters: List[str], confidence: float, 
+                         out_of_domain_info: Optional[Dict] = None) -> str:
         """Generate appropriate response based on intent and parameters"""
+        
+        # Handle out-of-domain queries
+        if out_of_domain_info and out_of_domain_info.get('is_out_of_domain'):
+            return self._generate_out_of_domain_response(out_of_domain_info)
         
         # Low confidence - ask for clarification (lowered threshold)
         if confidence < 0.25:
@@ -350,6 +378,40 @@ class ResponseTemplates:
         
         # Complete information - provide full response
         return self._generate_complete_response(intent, parameters)
+    
+    def _generate_out_of_domain_response(self, out_of_domain_info: Dict) -> str:
+        """Generate response for out-of-domain queries"""
+        detected_topic = out_of_domain_info.get('detected_topic', 'general')
+        
+        # Get topic-specific message
+        topic_message = self.out_of_domain_templates.get(detected_topic, 
+                                                        self.out_of_domain_templates['general'])
+        
+        # Base message
+        base_message = self.out_of_domain_templates['base_message']
+        
+        # Domain suggestions
+        suggestions = [
+            "• Admission inquiries and requirements",
+            "• Course registration assistance", 
+            "• Fee payment information",
+            "• Transcript and document requests",
+            "• Grade inquiries and academic records",
+            "• University schedules and contacts",
+            "• Department information",
+            "• Technical support for student services"
+        ]
+        
+        # Combine messages
+        if detected_topic != 'general':
+            response = f"{topic_message}\n\n{base_message}"
+        else:
+            response = base_message
+        
+        response += f"\n\nI can help you with:\n" + "\n".join(suggestions)
+        response += "\n\nHow can I assist you with AAU services today?"
+        
+        return response
     
     def _generate_follow_up_response(self, intent: str, missing_parameters: List[str], 
                                    existing_parameters: Dict[str, Any]) -> str:

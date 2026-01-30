@@ -12,6 +12,21 @@ from sklearn.metrics import precision_score, recall_score, f1_score
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.pipeline import Pipeline
 
+# Import ML parameter extractor
+try:
+    from models.ml_parameter_extractor import MLParameterExtractor
+    ML_AVAILABLE = True
+except ImportError:
+    ML_AVAILABLE = False
+    print("ML Parameter Extractor not available, using rule-based extraction")
+
+# Import out-of-domain detector
+try:
+    from .out_of_domain_detector import OutOfDomainDetector
+except ImportError:
+    # Fallback for when running from app directory
+    from out_of_domain_detector import OutOfDomainDetector
+
 
 class IntentClassifier:
     """Intent classification using scikit-learn pipeline"""
@@ -339,9 +354,28 @@ class ParameterExtractor:
 class AAUNLPEngine:
     """Main NLP engine combining intent classification and parameter extraction"""
     
-    def __init__(self):
+    def __init__(self, use_ml_extraction: bool = True):
         self.intent_classifier = IntentClassifier()
-        self.parameter_extractor = ParameterExtractor()
+        
+        # Choose parameter extraction method
+        self.use_ml_extraction = use_ml_extraction and ML_AVAILABLE
+        
+        if self.use_ml_extraction:
+            try:
+                self.parameter_extractor = MLParameterExtractor()
+                print("✅ Using ML-based parameter extraction")
+            except Exception as e:
+                print(f"❌ Failed to load ML extractor: {e}")
+                print("🔄 Falling back to rule-based extraction")
+                self.parameter_extractor = ParameterExtractor()
+                self.use_ml_extraction = False
+        else:
+            self.parameter_extractor = ParameterExtractor()
+            print("📝 Using rule-based parameter extraction")
+        
+        # Initialize out-of-domain detector
+        self.out_of_domain_detector = OutOfDomainDetector()
+        
         self.confidence_threshold = 0.3  # Lower threshold for better responsiveness
     
     def process_query(self, text: str, context: Optional[Dict] = None) -> Dict[str, Any]:
@@ -366,6 +400,22 @@ class AAUNLPEngine:
         else:
             # Regular processing for new queries
             intent, confidence = self.intent_classifier.predict(cleaned_text)
+            
+            # Check for out-of-domain queries
+            out_of_domain_info = self.out_of_domain_detector.detect(cleaned_text, intent, confidence)
+            
+            if out_of_domain_info['is_out_of_domain']:
+                return {
+                    'intent': 'out_of_domain',
+                    'confidence': confidence,
+                    'parameters': {},
+                    'missing_parameters': [],
+                    'needs_clarification': False,
+                    'processed_text': cleaned_text,
+                    'context_used': context is not None,
+                    'out_of_domain': out_of_domain_info
+                }
+            
             parameters = self.parameter_extractor.extract_parameters(cleaned_text, intent, context)
             
             # Merge with context parameters if available

@@ -49,6 +49,9 @@ class ChatResponse(BaseModel):
     parameters: Dict[str, Any]
     missing_parameters: List[str]
     needs_clarification: bool
+    out_of_domain: Optional[Dict[str, Any]] = None
+    timestamp: str
+    needs_clarification: bool
     related_news: Optional[List[Dict[str, Any]]] = None
     timestamp: str
 
@@ -149,18 +152,20 @@ async def chat(request: ChatRequest):
         # Process with NLP engine (with context)
         result = nlp_engine.process_query(cleaned_message, context)
         
-        # Generate generic template response
-        template_response = response_templates.generate_response(
+        # Generate response
+        out_of_domain_info = result.get('out_of_domain')
+        response_text = response_templates.generate_response(
             intent=result['intent'],
             parameters=result['parameters'],
             missing_parameters=result['missing_parameters'],
-            confidence=result['confidence']
+            confidence=result['confidence'],
+            out_of_domain_info=out_of_domain_info
         )
         
         # News Retrieval (Assignment Feature)
         # Check if we can find real-time info from Telegram to augment the response
         related_news_items = None
-        if result['confidence'] > 0.4:
+        if result['confidence'] > 0.4 and not out_of_domain_info:
             related_news_items = news_retriever.find_relevant_news(
                 intent=result['intent'],
                 parameters=result['parameters'],
@@ -180,7 +185,7 @@ async def chat(request: ChatRequest):
                 'last_parameters': merged_parameters,
                 'all_parameters': merged_parameters,  # Keep all collected parameters
                 'conversation_history': conversation_context.get(request.session_id, {}).get('conversation_history', []) + [
-                    {'user': cleaned_message, 'bot': template_response, 'timestamp': datetime.now().isoformat()}
+                    {'user': cleaned_message, 'bot': response_text, 'timestamp': datetime.now().isoformat()}
                 ],
                 'timestamp': datetime.now().isoformat()
             }
@@ -189,36 +194,38 @@ async def chat(request: ChatRequest):
         if config.get('log_conversations', True):
             conversation_log = {
                 'user_message': request.message,
-                'bot_response': template_response,
+                'bot_response': response_text,
                 'intent': result['intent'],
                 'confidence': result['confidence'],
                 'parameters': result['parameters'],
                 'user_id': request.user_id,
-                'session_id': request.session_id
+                'session_id': request.session_id,
+                'out_of_domain': out_of_domain_info
             }
             # In production, save to database
             logger.info(f"Conversation: {conversation_log}")
         
         return ChatResponse(
-            response=template_response,
+            response=response_text,
             intent=result['intent'],
             confidence=result['confidence'],
             parameters=result['parameters'],
             missing_parameters=result['missing_parameters'],
             needs_clarification=result['needs_clarification'],
-            related_news=related_news_items,
+            out_of_domain=out_of_domain_info,
             timestamp=datetime.now().isoformat()
         )
         
     except Exception as e:
         logger.error(f"Error processing chat request: {e}")
         return ChatResponse(
-            response=get_error_response(),
+            response=response_templates.get_error_response(),
             intent="error",
             confidence=0.0,
             parameters={},
             missing_parameters=[],
             needs_clarification=True,
+            out_of_domain=None,
             timestamp=datetime.now().isoformat()
         )
 
